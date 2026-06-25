@@ -1,14 +1,32 @@
-# My AWS FCAJ 2026 Journey
+# AWS Security Operations & Hardening: Insecure-by-Design to Managed Remediation
 
-This repository serves as the documentation and worklog for the Cybersecurity/OpSec Hardening project, developed as part of the AWS FCAJ 2026 workshop. The site is built using **Hugo** and the `hugo-theme-learn` theme, providing full English and Vietnamese localization for both project proposals and team worklogs.
+This repository serves as the official documentation, deployment guides, and workshop materials for the **AWS Security Operations & Hardening Lab**, developed for the AWS FCAJ 2026 program. 
+
+Built using **Hugo** and the `hugo-theme-learn` theme, this documentation site is fully localized in **English and Vietnamese** and acts as both a project showcase and a step-by-step practical workshop guide.
+
+---
 
 ## Project Overview
 
-This project explores a hybrid AWS architecture, focusing on the migration and deployment models for modern web applications. It includes:
+Instead of just spinning up functioning resources, this project approaches AWS Cloud through the lens of a **Cloud Security Engineer**. The core objective is to deploy a controlled, intentionally vulnerable cloud environment ("Insecure-by-Design"), monitor it using AWS native security services, and systematically harden it to meet enterprise security benchmarks (such as the CIS AWS Foundations Benchmark).
 
-* **Proposal Documentation**: Detailed architecture planning, including core feature mapping (Auth, Booking, Payment) against Monolith and Serverless deployment models.
-* **Team Worklogs**: Weekly progress tracking, meeting minutes, and task distribution across Front-end, Back-end, and AWS Admin tracks.
-* **Architecture Diagrams**: Technical visualization of hybrid data flows.
+### Key Features Covered:
+* **The Vulnerable Baseline**: Deploying common cloud misconfigurations (Public S3 Buckets, Over-privileged Wildcard IAM roles, un-MFA'ed users, and exposed EC2 instances).
+* **Continuous Monitoring & Detection**: Orchestrating a centralized logging and threat detection pipeline utilizing **AWS CloudTrail**, **Amazon GuardDuty**, and **AWS Security Hub**.
+* **Securing & Remediation**: Step-by-step technical execution to harden the infrastructure, applying the *Principle of Least Privilege* and demonstrating automated or manual remediation.
+* **Audit & Validation**: Validating compliance posture before and after hardening using Security Hub compliance scores.
+
+---
+
+## Repository & Website Structure
+
+The content within this Hugo site maps directly to the FCAJ final report requirements:
+* **Proposal (`/content/proposal/`)**: Project architecture, security threat modeling, risk evaluation, and estimated baseline budget.
+* **Workshop Lab Guide (`/content/workshop/`)**: The core technical project. A complete, bi-lingual, step-by-step guide for someone else to replicate the build, test security alerts, and execute the clean-up process.
+* **Worklogs (`/content/worklog/`)**: Comprehensive weekly tracking (Week 1 to Week 12) detailing research, deployment milestones, and challenges overcome.
+* **Self-Evaluation & Feedback (`/content/evaluation/`)**: Personal performance reflections and programmatic feedback.
+
+---
 
 ## Prerequisites
 
