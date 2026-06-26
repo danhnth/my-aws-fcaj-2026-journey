@@ -1,6 +1,6 @@
 ---
 title : "Bước 3: Kiểm thử & Đo lường"
-date : 2024-01-01 
+date : 2026-06-26
 weight : 6
 chapter : false
 pre : " <b> 5.6. </b> "

@@ -1,6 +1,6 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-06-26
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
@@ -39,3 +39,5 @@ The workshop follows a complete security lifecycle:
 8. [Step 5: Re-validation](5.8-Step5-Revalidation/)
 9. [Step 6: Clean-up](5.9-Step6-Cleanup/)
 10. [Lessons Learned](5.10-Lessons-Learned/)
+2026-journey
+my-aws-fcaj-2026-journey

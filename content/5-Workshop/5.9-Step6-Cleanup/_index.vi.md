@@ -1,6 +1,6 @@
 ---
 title : "Bước 6: Dọn dẹp tài nguyên"
-date : 2024-01-01 
+date : 2026-06-26
 weight : 9
 chapter : false
 pre : " <b> 5.9. </b> "

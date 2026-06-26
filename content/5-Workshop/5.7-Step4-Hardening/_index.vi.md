@@ -1,6 +1,6 @@
 ---
 title : "Bước 4: Gia cố & Khắc phục"
-date : 2024-01-01 
+date : 2026-06-26
 weight : 7
 chapter : false
 pre : " <b> 5.7. </b> "
