@@ -2,6 +2,21 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [2026-06-26]
+
+### Added
+* **Worklog Content:** Added comprehensive Vietnamese worklog entries for Week 2 documenting research progress, deployment milestones, and challenges.
+* **Site Index Pages:** Updated both English and Vietnamese index pages to reflect the current repository structure and available content sections.
+* **Architecture Description (Vietnamese):** Added a new Vietnamese-language architecture description detailing the security detection pipeline in the workshop.
+
+### Changed
+* **README Overhaul:** Reorganized the repository README for clarity and completeness — added dedicated sections for blogs, events, self-assessment, and feedback; included AWS CLI version 2 as a prerequisite.
+* **Workshop Restructure:** Refactored the entire workshop guide to center on the AWS Security Operations & Hardening Lab narrative — reordered deployment, security service enablement, insecure configuration, testing, hardening, re-validation, and cleanup into a cohesive flow; added a lessons learned section with future development directions; produced a full Vietnamese translation of the revised content.
+* **Workshop Cleanup:** Removed outdated S3 on-premises access lab sections (preparation, interface endpoint creation, DNS simulation, and VPC endpoint policies) to streamline the guide.
+
+### Fixed
+* **Class Identifier Correction:** Fixed the class code from an incorrect value to `CN23KHM1` in both English and Vietnamese index files.
+
 ## [2026-06-25]
 
 ### Added
