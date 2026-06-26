@@ -11,23 +11,32 @@ pre: " <b> 5. </b> "
 {{% /notice %}}
 
 
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+# AWS Security Operations & Hardening Lab
 
-#### Tổng quan
+## Insecure-by-Design to Managed Remediation
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+### Tổng quan
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+Workshop này hướng dẫn cách xây dựng một môi trường AWS giả lập chứa các lỗi cấu hình sai phổ biến về bảo mật (Insecure Baseline). Sau đó, chúng ta sẽ cấu hình các dịch vụ giám sát tự động của AWS để phát hiện sự cố, tiến hành vá lỗi (Hardening) và đo lường sự thay đổi của điểm số tuân thủ (Compliance Score).
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+Workshop theo một vòng đời bảo mật hoàn chỉnh:
+
+1. **Kích hoạt dịch vụ bảo mật** — Bật AWS CloudTrail, Amazon GuardDuty và AWS Security Hub để thiết lập ghi nhật ký và phát hiện mối đe dọa tập trung.
+2. **Triển khai hạ tầng lỗi cấu hình** — Cố tình tạo các lỗ hổng bảo mật phổ biến (S3 public, IAM quyền hạn quá rộng, Security Group EC2 mở toàn cầu).
+3. **Kiểm thử & Đo lường** — Quan sát cách Security Hub và GuardDuty gắn cờ các lỗi cấu hình và tạo cảnh báo.
+4. **Gia cố & Khắc phục** — Áp dụng nguyên tắc đặc quyền tối thiểu và sửa từng lỗ hổng dựa trên khuyến nghị từ Security Hub.
+5. **Tái thẩm định** — Xác nhận các cảnh báo chuyển từ Failed sang Passed và điểm số tuân thủ được cải thiện.
+6. **Dọn dẹp tài nguyên** — Xóa tất cả tài nguyên trong lab để tránh phát sinh chi phí.
 
 #### Nội dung
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+1. [Giới thiệu workshop](5.1-Workshop-overview/)
+2. [Điều kiện tiên quyết](5.2-Prerequiste/)
+3. [Sơ đồ kiến trúc](5.3-Architecture/)
+4. [Bước 1: Kích hoạt dịch vụ bảo mật](5.4-Step1-Enable-Security/)
+5. [Bước 2: Triển khai hạ tầng lỗi cấu hình](5.5-Step2-Deploy-Insecure/)
+6. [Bước 3: Kiểm thử & Đo lường](5.6-Step3-Test-Validation/)
+7. [Bước 4: Gia cố & Khắc phục](5.7-Step4-Hardening/)
+8. [Bước 5: Tái thẩm định](5.8-Step5-Revalidation/)
+9. [Bước 6: Dọn dẹp tài nguyên](5.9-Step6-Cleanup/)
+10. [Bài học rút ra](5.10-Lessons-Learned/)
