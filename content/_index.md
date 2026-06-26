@@ -23,7 +23,7 @@ chapter: false
 
 &emsp; **Major:** Computer Science
 
-&emsp; **Class:** AWS062026
+&emsp; **Class:** CN23KHM1
 
 &emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
 
