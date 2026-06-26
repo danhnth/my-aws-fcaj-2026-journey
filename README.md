@@ -20,11 +20,17 @@ Instead of just spinning up functioning resources, this project approaches AWS C
 
 ## Repository & Website Structure
 
-The content within this Hugo site maps directly to the FCAJ final report requirements:
-* **Proposal (`/content/proposal/`)**: Project architecture, security threat modeling, risk evaluation, and estimated baseline budget.
-* **Workshop Lab Guide (`/content/workshop/`)**: The core technical project. A complete, bi-lingual, step-by-step guide for someone else to replicate the build, test security alerts, and execute the clean-up process.
-* **Worklogs (`/content/worklog/`)**: Comprehensive weekly tracking (Week 1 to Week 12) detailing research, deployment milestones, and challenges overcome.
-* **Self-Evaluation & Feedback (`/content/evaluation/`)**: Personal performance reflections and programmatic feedback.
+The content within this Hugo site maps directly to the FCAJ final report requirements and is organized as follows:
+
+| # | Directory | Description |
+|---|-----------|-------------|
+| 1 | **Worklog** (`1-Worklog/`) | Comprehensive weekly tracking (Week 1 to Week 8) detailing research, deployment milestones, and challenges overcome. |
+| 2 | **Proposal** (`2-Proposal/`) | Project architecture, security threat modeling, risk evaluation, and estimated baseline budget. |
+| 3 | **Blogs Posted** (`3-BlogsPosted/`) | Technical blog posts published to the AWS Study Group community, covering topics such as EKS Pod Identity session policies and other AWS security related subjects. |
+| 4 | **Events Participated** (`4-EventParticipated/`) | Documentation of events attended (e.g., GenAI-powered App-DB Modernization workshop) with details on date, location, role, and key takeaways. |
+| 5 | **Workshop** (`5-Workshop/`) | The core technical project — a complete, bi-lingual, step-by-step lab guide for replicating the build, testing security alerts, and executing the clean-up process. Covers VPC Endpoints, S3 access patterns, and security hardening. |
+| 6 | **Self-Assessment** (`6-Self-evaluation/`) | Personal performance reflections across professional knowledge, communication, teamwork, and problem-solving skills with a structured scoring matrix. |
+| 7 | **Sharing and Feedback** (`7-Feedback/`) | Programmatic feedback on the internship experience, working environment, mentor support, and suggestions for improvement. |
 
 ---
 
