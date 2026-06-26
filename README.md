@@ -37,6 +37,7 @@ The content within this Hugo site maps directly to the FCAJ final report require
 ## Prerequisites
 
 * **Hugo v0.126+** (Extended build is highly recommended).
+* AWS CLI version 2.
 
 ## Getting Started
 
