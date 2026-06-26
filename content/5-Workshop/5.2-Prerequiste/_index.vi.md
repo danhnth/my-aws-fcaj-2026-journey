@@ -6,7 +6,18 @@ chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-#### IAM permissions
+#### AWS Account
+Cần 1 tài khoản AWS Paid Plan (để sử dụng GuardDuty và Security Hub).
+
+#### AWS CLI
+Cài đặt AWS CLI trên máy local để sử dụng.
+
+#### Region
+Lựa chọn một region mặc định cho các dịch vụ trên AWS. 
+
+
+
+<!-- #### IAM permissions
 Gắn IAM permission policy sau vào tài khoản aws user của bạn để triển khai và dọn dẹp tài nguyên trong workshop này.
 ```
 {
@@ -239,4 +250,4 @@ Quá trình triển khai CloudFormation cần khoảng 15 phút để hoàn thà
 
 + 3 EC2s đã được tạo
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png) -->
