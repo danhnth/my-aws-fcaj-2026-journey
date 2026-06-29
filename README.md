@@ -4,6 +4,9 @@ This repository serves as the official documentation, deployment guides, and wor
 
 Built using **Hugo** and the `hugo-theme-learn` theme, this documentation site is fully localized in **English and Vietnamese** and acts as both a project showcase and a step-by-step practical workshop guide.
 
+[![README Tiếng Việt](https://img.shields.io/badge/README-Ti%E1%BA%BFng%20Vi%E1%BB%87t-blue)](https://danhnth.github.io/my-aws-fcaj-2026-journey/)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fdanhnth.github.io%2Fmy-aws-fcaj-2026-journey%2F&label=Website&color=brightgreen)](https://danhnth.github.io/my-aws-fcaj-2026-journey/)
+
 ---
 
 ## Project Overview
