@@ -20,6 +20,20 @@ Chúng ta sẽ cố tình tạo ra 3 "lỗ hổng" kinh điển để hệ thố
 4. Xác nhận cảnh báo rằng bucket sẽ được công khai.
 5. Chọn **Create bucket**.
 
+{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+```bash
+# 1. Tạo bucket (mặc định chặn public access)
+aws s3 mb s3://vulnerable-public-data-<tên-bạn> --region ap-southeast-1
+
+# 2. Gỡ chặn public access để bucket có thể công khai
+aws s3api put-public-access-block --bucket vulnerable-public-data-<tên-bạn> \
+    --public-access-block-configuration "BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false"
+
+# 3. Gán ACL public-read
+aws s3api put-bucket-acl --bucket vulnerable-public-data-<tên-bạn> --acl public-read
+```
+{{%/expand%}}
+
 **2. Lỗ hổng IAM — Wildcard Quyền hạn quá rộng**
 
 1. Vào **IAM** console → **Users** → **Create user**.
@@ -48,6 +62,33 @@ Chúng ta sẽ cố tình tạo ra 3 "lỗ hổng" kinh điển để hệ thố
 8. Quay lại, chọn policy `WildcardFullAccess` vừa tạo → Chọn **Next**.
 9. Xem lại và chọn **Create user**.
 
+{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+```bash
+# 1. Tạo IAM policy wildcard
+aws iam create-policy --policy-name WildcardFullAccess --policy-document '{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*"
+    }
+  ]
+}'
+
+# 2. Tạo IAM user (chỉ truy cập programmatic)
+aws iam create-user --user-name developer-test
+
+# 3. Gán policy wildcard cho user
+aws iam attach-user-policy --user-name developer-test --policy-arn arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):policy/WildcardFullAccess
+
+# 4. Tạo access keys cho user
+aws iam create-access-key --user-name developer-test
+```
+> **Lưu ý:** Lưu `AccessKeyId` và `SecretAccessKey` từ kết quả — cần dùng ở Bước 3.
+
+{{%/expand%}}
+
 **3. Lỗ hổng EC2 — Mở cổng SSH toàn cầu**
 
 1. Tạo security group:
@@ -65,3 +106,26 @@ Chúng ta sẽ cố tình tạo ra 3 "lỗ hổng" kinh điển để hệ thố
    - **Key pair**: Tiếp tục không cần key pair
    - **Network settings**: Chọn **Edit** → Chọn **Select existing security group** → Chọn `insecure-sg`.
    - Chọn **Launch instance**.
+
+{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+```bash
+# 1. Tạo security group
+aws ec2 create-security-group --group-name insecure-sg \
+    --description "Security group cho phép SSH toàn cầu" \
+    --region ap-southeast-1
+
+# 2. Thêm inbound rule SSH từ 0.0.0.0/0
+aws ec2 authorize-security-group-ingress --group-name insecure-sg \
+    --protocol tcp --port 22 --cidr 0.0.0.0/0 \
+    --region ap-southeast-1
+
+# 3. (Tùy chọn) Khởi chạy EC2 instance
+aws ec2 run-instances \
+    --image-id resolve-ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64 \
+    --instance-type t2.micro \
+    --security-groups insecure-sg \
+    --region ap-southeast-1
+```
+> **Lưu ý:** Tham số `resolve-ssm` tự động lấy AMI ID mới nhất. Nếu không hỗ trợ, dùng `aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64` để lấy AMI ID trước.
+
+{{%/expand%}}

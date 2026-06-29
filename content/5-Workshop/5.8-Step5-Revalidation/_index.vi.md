@@ -34,3 +34,36 @@ Sau khi hoàn tất các bước gia cố, chúng ta cần xác minh rằng các
 4. **Xác nhận GuardDuty alerts**
 
    Các cảnh báo GuardDuty từ lần giả lập tấn công trước đó vẫn còn; nhưng sẽ không có cảnh báo nghiêm trọng mới nào được tạo ra từ hạ tầng đã được gia cố.
+
+{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+```bash
+# 1. Kiểm tra trạng thái S3.2 (sẽ là PASSED sau khi gia cố)
+aws securityhub get-findings \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"S3.2","Comparison":"EQUALS"}]}' \
+    --query 'Findings[].Compliance.Status' \
+    --region ap-southeast-1
+
+# 2. Kiểm tra trạng thái IAM.1
+aws securityhub get-findings \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"IAM.1","Comparison":"EQUALS"}]}' \
+    --query 'Findings[].Compliance.Status' \
+    --region ap-southeast-1
+
+# 3. Kiểm tra trạng thái EC2.19
+aws securityhub get-findings \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"EC2.19","Comparison":"EQUALS"}]}' \
+    --query 'Findings[].Compliance.Status' \
+    --region ap-southeast-1
+
+# 4. Tính điểm tuân thủ: PASSED / (PASSED + FAILED)
+aws securityhub get-findings \
+    --filters '{"ComplianceStatus":[{"Value":"PASSED","Comparison":"EQUALS"}]}' \
+    --query 'length(Findings)' \
+    --region ap-southeast-1
+
+aws securityhub get-findings \
+    --filters '{"ComplianceStatus":[{"Value":"FAILED","Comparison":"EQUALS"}]}' \
+    --query 'length(Findings)' \
+    --region ap-southeast-1
+```
+{{%/expand%}}

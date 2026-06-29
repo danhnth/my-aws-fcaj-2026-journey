@@ -34,3 +34,36 @@ After completing the hardening steps, we need to verify that our remediation act
 4. **Verify GuardDuty alerts**
 
    GuardDuty alerts from the earlier attack simulation will remain; but no new critical alerts should be generated from the now-hardened infrastructure.
+
+{{%expand "AWS CLI Alternative" %}}
+```bash
+# 1. Check S3.2 control status (should now be PASSED)
+aws securityhub get-findings \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"S3.2","Comparison":"EQUALS"}]}' \
+    --query 'Findings[].Compliance.Status' \
+    --region ap-southeast-1
+
+# 2. Check IAM.1 control status
+aws securityhub get-findings \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"IAM.1","Comparison":"EQUALS"}]}' \
+    --query 'Findings[].Compliance.Status' \
+    --region ap-southeast-1
+
+# 3. Check EC2.19 control status
+aws securityhub get-findings \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"EC2.19","Comparison":"EQUALS"}]}' \
+    --query 'Findings[].Compliance.Status' \
+    --region ap-southeast-1
+
+# 4. Compute compliance score: PASSED / (PASSED + FAILED)
+aws securityhub get-findings \
+    --filters '{"ComplianceStatus":[{"Value":"PASSED","Comparison":"EQUALS"}]}' \
+    --query 'length(Findings)' \
+    --region ap-southeast-1
+
+aws securityhub get-findings \
+    --filters '{"ComplianceStatus":[{"Value":"FAILED","Comparison":"EQUALS"}]}' \
+    --query 'length(Findings)' \
+    --region ap-southeast-1
+```
+{{%/expand%}}

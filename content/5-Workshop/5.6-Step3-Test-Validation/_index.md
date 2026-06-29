@@ -23,6 +23,30 @@ After deploying the insecure baseline, wait approximately **30-60 minutes** for 
 
 3. Navigate to **Security Hub** → **Summary** to view the overall **Compliance score**. Take a screenshot of the low score for your report.
 
+{{%expand "AWS CLI Alternative" %}}
+```bash
+# List all Security Hub findings
+aws securityhub get-findings --region ap-southeast-1
+
+# Filter findings for specific controls
+aws securityhub get-findings \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"S3.2","Comparison":"EQUALS"}]}' \
+    --region ap-southeast-1
+aws securityhub get-findings \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"IAM.1","Comparison":"EQUALS"}]}' \
+    --region ap-southeast-1
+aws securityhub get-findings \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"EC2.19","Comparison":"EQUALS"}]}' \
+    --region ap-southeast-1
+
+# Count failed findings
+aws securityhub get-findings \
+    --filters '{"ComplianceStatus":[{"Value":"FAILED","Comparison":"EQUALS"}]}' \
+    --query 'length(Findings)' \
+    --region ap-southeast-1
+```
+{{%/expand%}}
+
 **2. Check GuardDuty Findings**
 
 To simulate an actual attack and trigger GuardDuty alerts:
@@ -47,3 +71,18 @@ To simulate an actual attack and trigger GuardDuty alerts:
    - `Behavior:IAMUser/ResourceConsumption`
 
 4. Take screenshots of these findings for your workshop report documentation.
+
+{{%expand "AWS CLI Alternative" %}}
+```bash
+# List GuardDuty detectors and get the detector ID
+aws guardduty list-detectors --region ap-southeast-1
+
+# List all findings (replace <detector-id> with the ID from above)
+aws guardduty list-findings --detector-id <detector-id> --region ap-southeast-1
+
+# Get details of specific findings
+aws guardduty get-findings --detector-id <detector-id> \
+    --finding-ids $(aws guardduty list-findings --detector-id <detector-id> --query FindingIds --output text) \
+    --region ap-southeast-1
+```
+{{%/expand%}}
