@@ -149,7 +149,7 @@ Workshop được cấu trúc theo các bước tuần tự để xây dựng ki
     - Tuần 3-4: Thực hiện gia cố và khắc phục
     - Tuần 4: Tái thẩm định điểm số tuân thủ
     - Tuần 5: Dọn dẹp tất cả tài nguyên lab
-- **Sau workshop**: Tiếp tục truy cập lab để xem xét và các kịch bản bổ sung (tối đa 12 tuần)
+- **Sau workshop**: Tiếp tục truy cập lab để xem xét và các kịch bản bổ sung (tối đa 8 tuần)
 
 #### Các sản phẩm bàn giao chính
 - Tài liệu hạ tầng lỗi cấu hình baseline
