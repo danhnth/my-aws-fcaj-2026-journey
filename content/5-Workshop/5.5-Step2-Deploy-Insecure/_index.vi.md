@@ -1,6 +1,6 @@
 ---
 title : "Bước 2: Triển khai hạ tầng lỗi cấu hình"
-date : 2026-06-26
+date : 2026-06-29
 weight : 5
 chapter : false
 pre : " <b> 5.5. </b> "

@@ -1,6 +1,6 @@
 ---
 title : "Step 2: Deploy Insecure Baseline"
-date : 2026-06-26
+date : 2026-06-29
 weight : 5
 chapter : false
 pre : " <b> 5.5. </b> "
