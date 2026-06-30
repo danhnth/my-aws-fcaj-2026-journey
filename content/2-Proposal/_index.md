@@ -41,29 +41,38 @@ Participants gain **practical cloud security operations experience** through:
 - Foundation for advanced cloud security roles (Cloud Security Engineer, SecOps specialist)
 
 ### 3. Solution Architecture
-The workshop lab architecture follows a **security lifecycle approach**:
+The workshop lab architecture follows a **complete security lifecycle** with 6 sequential steps:
 
-1. **The Vulnerable Baseline (Phase 1)**: Deploy intentionally insecure AWS infrastructure with common misconfigurations
-   - Public S3 buckets with no encryption
-   - Over-privileged IAM roles with wildcard permissions
-   - EC2 instances exposed to the internet without proper security groups
-   - Disabled logging and monitoring
-
-2. **Continuous Monitoring & Detection (Phase 2)**: Establish centralized security monitoring
+1. **Enable Security Services**: Activate AWS CloudTrail, Amazon GuardDuty, and AWS Security Hub to establish centralized logging and threat detection before deploying any workload.
    - **AWS CloudTrail**: Logs all API activity across the AWS account
-   - **Amazon GuardDuty**: Detects threats and suspicious behavior patterns
+   - **Amazon GuardDuty**: Threat detection using ML and threat intelligence
    - **AWS Security Hub**: Centralizes security findings and compliance checks
 
-3. **Securing & Remediation (Phase 3)**: Systematically harden the infrastructure
+2. **Deploy Insecure Baseline**: Intentionally create common cloud misconfigurations
+   - Public S3 buckets with no encryption
+   - Over-privileged IAM roles with wildcard permissions
+   - EC2 instances exposed to the internet with unrestricted SSH access
+
+3. **Test & Validation**: Observe how Security Hub and GuardDuty detect and flag the misconfigurations
+   - Review generated security findings in Security Hub
+   - Analyze threat detection alerts from GuardDuty
+   - Document the pre-hardening compliance baseline
+
+4. **Hardening & Remediation**: Systematically fix each vulnerability based on Security Hub recommendations
    - Apply the Principle of Least Privilege to IAM policies
    - Enable encryption for data at rest and in transit
    - Restrict network access using security groups and network ACLs
    - Enable MFA for user accounts
 
-4. **Audit & Validation (Phase 4)**: Verify compliance and security posture
+5. **Re-validation**: Confirm that findings transition from Failed to Passed and compliance score improves
    - Assess against **CIS AWS Foundations Benchmark**
-   - Review Security Hub compliance scores before and after hardening
+   - Compare Security Hub compliance scores before and after hardening
    - Document remediation actions and outcomes
+
+6. **Clean-up**: Remove all lab resources to avoid ongoing charges
+   - Terminate EC2 instances and delete S3 buckets
+   - Disable CloudTrail, GuardDuty, and Security Hub
+   - Verify complete resource teardown
 
 ### AWS Services Used
 - **AWS CloudTrail**: Centralized API logging and audit trail
@@ -82,23 +91,27 @@ The workshop lab architecture follows a **security lifecycle approach**:
 
 ### 4. Technical Implementation
 **Implementation Approach**
-The workshop is structured in sequential phases designed to build progressive security knowledge:
+The workshop is structured in sequential steps designed to build progressive security knowledge:
 
-**Phase 1: Deploy Vulnerable Baseline (Week 1-2)**
+**Step 1: Enable Security Services (Week 1)**
+- Enable AWS CloudTrail logging to S3 for centralized API audit
+- Activate Amazon GuardDuty for threat detection
+- Configure AWS Security Hub as the centralized security dashboard
+
+**Step 2: Deploy Insecure Baseline (Week 1-2)**
 - Provision basic AWS infrastructure with intentional misconfigurations
-- Create over-privileged IAM roles and policies
+- Create over-privileged IAM roles and policies with wildcard permissions
 - Enable public S3 buckets without encryption
-- Set up EC2 instances with permissive security groups
+- Set up EC2 instances with permissive security groups (SSH open to 0.0.0.0/0)
 - Document the vulnerable state for later comparison
 
-**Phase 2: Establish Monitoring Pipeline (Week 2-3)**
-- Enable AWS CloudTrail logging to S3
-- Activate Amazon GuardDuty for threat detection
-- Configure AWS Security Hub as the centralized dashboard
-- Create custom alerts for security events
-- Validate monitoring is capturing findings
+**Step 3: Test & Validation (Week 2)**
+- Review generated security findings in Security Hub dashboard
+- Analyze threat detection alerts from GuardDuty
+- Document the pre-hardening compliance baseline and Security Hub score
+- Capture evidence of misconfigurations for comparison
 
-**Phase 3: Execute Hardening & Remediation (Week 3-4)**
+**Step 4: Hardening & Remediation (Week 3-4)**
 - Implement IAM least privilege (remove wildcards, scope permissions)
 - Enable encryption on S3 buckets and EBS volumes
 - Restrict EC2 security groups to required ports only
@@ -106,12 +119,16 @@ The workshop is structured in sequential phases designed to build progressive se
 - Implement VPC Flow Logs for network monitoring
 - Address each finding from Security Hub systematically
 
-**Phase 4: Validate & Document Compliance (Week 4-5)**
+**Step 5: Re-validation (Week 4)**
 - Review post-hardening Security Hub compliance scores
 - Compare with pre-hardening baseline
+- Confirm findings transition from Failed to Passed
 - Document all remediation actions taken
-- Generate compliance reports
-- Prepare technical documentation for reproducibility
+
+**Step 6: Clean-up (Week 5)**
+- Terminate EC2 instances and delete S3 buckets
+- Disable CloudTrail, GuardDuty, and Security Hub
+- Verify complete resource teardown to avoid ongoing charges
 
 **Technical Requirements**
 - AWS Account with appropriate permissions (for controlled lab environment)
@@ -124,10 +141,11 @@ The workshop is structured in sequential phases designed to build progressive se
 **Project Timeline**
 - **Pre-Workshop (Week 0)**: Research cloud security concepts and CIS benchmark requirements
 - **Workshop Execution (Weeks 1-5)**: 
-    - Week 1-2: Deploy and document vulnerable baseline
-    - Week 2-3: Configure monitoring and generate initial findings
+    - Week 1: Enable security services (CloudTrail, GuardDuty, Security Hub)
+    - Week 1-2: Deploy vulnerable baseline and run test & validation
     - Week 3-4: Execute hardening and remediation
-    - Week 4-5: Validate compliance and document outcomes
+    - Week 4: Re-validation of compliance scores
+    - Week 5: Clean-up all lab resources
 - **Post-Workshop**: Ongoing lab access for review and additional scenarios (up to 12 weeks)
 
 **Key Deliverables**
