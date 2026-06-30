@@ -1,57 +1,51 @@
 ---
 title: "Week 2 Worklog"
-date: 2026-04-28
+date: 2026-06-27
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 2 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand AWS Identity and Access Management (IAM) in depth — users, groups, roles, policies, and the principle of least privilege.
+* Learn about S3 security — bucket policies, ACLs, public access settings, and encryption.
+* Explore VPC fundamentals — subnets, route tables, Internet Gateway, NAT Gateway, and security best practices.
+* Get introduced to CloudTrail for API activity logging and monitoring.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| Mon (22/06) | - Deep-dive into IAM <br>&emsp; + Users, Groups, Roles, Policies <br>&emsp; + Managed vs Inline policies <br>&emsp; + IAM Policy Simulator <br> - Create IAM users with different permission levels | 22/06/2026 | 22/06/2026 | <https://docs.aws.amazon.com/IAM/> |
+| Tue (23/06) | - Learn about IAM Roles and trust policies <br> - Practice: cross-account access with IAM Roles <br> - Understand IAM best practices (least privilege, password policies, access keys rotation) | 23/06/2026 | 23/06/2026 | <https://docs.aws.amazon.com/IAM/> |
+| Wed (24/06) | - Learn Amazon S3 in depth <br>&emsp; + Bucket policies vs ACLs <br>&emsp; + Block Public Access settings <br>&emsp; + Server-side encryption (SSE-S3, SSE-KMS, SSE-C) <br> - Practice: create public vs private S3 buckets | 24/06/2026 | 24/06/2026 | <https://docs.aws.amazon.com/s3/> |
+| Thu (25/06) | - Learn VPC fundamentals <br>&emsp; + VPC, Subnets (public/private) <br>&emsp; + Route Tables, Internet Gateway <br>&emsp; + NAT Gateway, Security Groups, NACLs <br> - Launch EC2 instances in public and private subnets | 25/06/2026 | 26/06/2026 | <https://docs.aws.amazon.com/vpc/> |
+| Fri (26/06) | - Introduction to AWS CloudTrail <br>&emsp; + What is CloudTrail? (management vs data events) <br>&emsp; + Create a trail and log to S3 <br>&emsp; + CloudTrail Insights <br> - Review CloudTrail logs in the Console | 26/06/2026 | 26/06/2026 | <https://docs.aws.amazon.com/cloudtrail/> |
+| Sat (27/06) | - **Practice:** <br>&emsp; + Combine IAM + S3 + VPC in a mini-lab <br>&emsp; + Configure VPC Flow Logs for network monitoring <br> - Review and document Week 2 learnings | 27/06/2026 | 27/06/2026 | |
 
 ### Week 2 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Gained a thorough understanding of IAM — created users with granular permissions, set up groups with managed policies, and tested access boundaries with the IAM Policy Simulator.
 
-* Successfully created and configured an AWS Free Tier account.
+* Understood the difference between IAM Roles and Users, and practiced cross-account role assumption.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Applied IAM best practices: enforced a strong password policy, rotated access keys, and removed unused credentials.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Mastered S3 security controls:
+  * Blocked public access at the account level and bucket level
+  * Configured bucket policies for specific IP-based and role-based access
+  * Enabled SSE-S3 encryption on all buckets
+  * Tested public access attempts to verify Block Public Access settings
 
-* Used AWS CLI to perform basic operations such as:
+* Built a custom VPC from scratch with:
+  * Public and private subnets across two Availability Zones
+  * Internet Gateway for public subnet access
+  * NAT Gateway for private subnet outbound connectivity
+  * Security Groups with least-privilege rules and Network ACLs for subnet-level filtering
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Launched EC2 instances in both public and private subnets to verify connectivity patterns (SSH to public instance, private instance outbound through NAT).
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Set up AWS CloudTrail with a management-event-only trail logging to an S3 bucket, and explored CloudTrail event history to understand API activity recording.
+
+* Configured VPC Flow Logs and analyzed sample log entries to understand allowed/denied traffic patterns.
