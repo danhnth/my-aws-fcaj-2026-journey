@@ -10,7 +10,7 @@ pre: " <b> 1.1. </b> "
 
 * Get acquainted with FCAJ members, mentors, and the program structure.
 * Understand the internship rules, regulations, and reporting expectations.
-* Learn the fundamentals of AWS Cloud — global infrastructure, core service categories, and the shared responsibility model.
+* Learn the fundamentals of AWS Cloud, global infrastructure, core service categories, and the shared responsibility model.
 * Set up an AWS Free Tier account, the AWS Management Console, and AWS CLI.
 
 ### Tasks to be carried out this week:
@@ -30,7 +30,7 @@ pre: " <b> 1.1. </b> "
 
 * Successfully created and secured an AWS Free Tier account with MFA and billing alerts.
 
-* Became proficient with the AWS Management Console — navigating services, finding resources, and understanding the dashboard.
+* Became proficient with the AWS Management Console, navigating services, finding resources, and understanding the dashboard.
 
 * Installed and configured AWS CLI with proper IAM credentials, including:
   * Access Key & Secret Key setup
@@ -43,8 +43,8 @@ pre: " <b> 1.1. </b> "
   * Describe EC2 instances and key pairs
   * Create and manage S3 buckets via CLI
 
-* Launched an EC2 instance (t2.micro, Amazon Linux 2), connected via SSH, and attached an additional EBS volume.
+* Launched an EC2 instance (t3.micro, Amazon Linux 2), connected via SSH, and attached an additional EBS volume.
 
 * Understood the difference between ephemeral and persistent storage, and how Security Groups act as a virtual firewall.
 
-* Set up the foundation for the coming weeks — AWS account ready, CLI configured, and core compute/storage/networking concepts in place.
+* Set up the foundation for the coming weeks - AWS account ready, CLI configured, and core compute/storage/networking concepts in place.

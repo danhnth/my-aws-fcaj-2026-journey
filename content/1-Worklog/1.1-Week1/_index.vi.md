@@ -10,7 +10,7 @@ pre: " <b> 1.1. </b> "
 
 * Làm quen với các thành viên FCAJ, người hướng dẫn và cấu trúc chương trình.
 * Hiểu nội quy thực tập, quy định và yêu cầu báo cáo.
-* Tìm hiểu những kiến thức cơ bản về AWS — hạ tầng toàn cầu, các nhóm dịch vụ chính, và mô hình Shared Responsibility.
+* Tìm hiểu những kiến thức cơ bản về AWS, hạ tầng toàn cầu, các nhóm dịch vụ chính, và mô hình Shared Responsibility.
 * Thiết lập tài khoản AWS Free Tier, AWS Management Console và AWS CLI.
 
 ### Các công việc cần triển khai trong tuần này:
@@ -30,7 +30,7 @@ pre: " <b> 1.1. </b> "
 
 * Tạo và bảo mật tài khoản AWS Free Tier thành công với MFA và billing alerts.
 
-* Thành thạo AWS Management Console — điều hướng dịch vụ, tìm tài nguyên và hiểu bảng điều khiển.
+* Thành thạo AWS Management Console, điều hướng dịch vụ, tìm tài nguyên và hiểu bảng điều khiển.
 
 * Cài đặt và cấu hình AWS CLI với IAM credentials phù hợp, bao gồm:
   * Thiết lập Access Key & Secret Key
@@ -43,8 +43,8 @@ pre: " <b> 1.1. </b> "
   * Mô tả EC2 instances và key pairs
   * Tạo và quản lý S3 buckets qua CLI
 
-* Đã tạo một EC2 instance (t2.micro, Amazon Linux 2), kết nối SSH và gắn thêm một EBS volume.
+* Đã tạo một EC2 instance (t3.micro, Amazon Linux 2), kết nối SSH và gắn thêm một EBS volume.
 
 * Hiểu sự khác biệt giữa ephemeral và persistent storage, và cách Security Groups hoạt động như tường lửa ảo.
 
-* Đã thiết lập nền tảng cho các tuần tiếp theo — tài khoản AWS sẵn sàng, CLI đã cấu hình, và các khái niệm compute/storage/networking cơ bản đã nắm vững.
+* Đã thiết lập nền tảng cho các tuần tiếp theo - tài khoản AWS sẵn sàng, CLI đã cấu hình, và các khái niệm compute/storage/networking cơ bản đã nắm vững.

@@ -9,8 +9,8 @@ pre: " <b> 1.2. </b> "
 ### Week 2 Objectives:
 
 * Understand AWS Identity and Access Management (IAM) in depth — users, groups, roles, policies, and the principle of least privilege.
-* Learn about S3 security — bucket policies, ACLs, public access settings, and encryption.
-* Explore VPC fundamentals — subnets, route tables, Internet Gateway, NAT Gateway, and security best practices.
+* Learn about S3 security - bucket policies, ACLs, public access settings, and encryption.
+* Explore VPC fundamentals - subnets, route tables, Internet Gateway, NAT Gateway, and security best practices.
 * Get introduced to CloudTrail for API activity logging and monitoring.
 
 ### Tasks to be carried out this week:
@@ -26,7 +26,7 @@ pre: " <b> 1.2. </b> "
 
 ### Week 2 Achievements:
 
-* Gained a thorough understanding of IAM — created users with granular permissions, set up groups with managed policies, and tested access boundaries with the IAM Policy Simulator.
+* Gained a thorough understanding of IAM: created users with granular permissions, set up groups with managed policies, and tested access boundaries with the IAM Policy Simulator.
 
 * Understood the difference between IAM Roles and Users, and practiced cross-account role assumption.
 

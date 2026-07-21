@@ -1,57 +1,60 @@
 ---
 title: "Week 5 Worklog"
-date: 2026-04-28
+date: 2026-07-18
 weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 5 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Complete the hardening & remediation phase by verifying all fixes are effective.
+* Run re-validation (Step 5): compare post-hardening Security Hub compliance scores against the pre-hardening baseline.
+* Execute full clean-up (Step 6): remove all lab resources to avoid ongoing charges.
+* Compile the final project documentation, compliance comparison report, and lessons learned.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| Mon (13/07) | - Complete hardening & remediation: <br>&emsp; + Verify S3 bucket is fully private (test anonymous access) <br>&emsp; + Verify IAM user has only least-privilege permissions <br>&emsp; + Verify EC2 security group restricts SSH to my IP only <br> - Re-run Security Hub scan and check all three controls transition to PASSED | 13/07/2026 | 13/07/2026 | |
+| Tue (14/07) | - Run re-validation (Step 5): <br>&emsp; + Compare post-hardening Security Hub compliance score with pre-hardening baseline <br>&emsp; + Confirm S3.2, IAM.1, EC2.19 findings changed from FAILED to PASSED <br>&emsp; + Verify no new critical GuardDuty alerts are generated from hardened infrastructure <br> - Capture screenshots of the improved compliance score for the final report | 14/07/2026 | 14/07/2026 | <https://docs.aws.amazon.com/securityhub/> |
+| Wed (15/07) | - Execute clean-up (Step 6): <br>&emsp; + Delete IAM user `developer-test` and detach/delete policies <br>&emsp; + Terminate EC2 instance `vulnerable-ec2` <br>&emsp; + Delete security group `insecure-sg` <br>&emsp; + Empty and delete S3 bucket `vulnerable-public-data-*` <br>&emsp; + Disable GuardDuty detector <br>&emsp; + Disable Security Hub <br>&emsp; + Delete CloudTrail trail and its S3 logging bucket <br> - Verify complete resource teardown | 15/07/2026 | 15/07/2026 | |
+| Thu (16/07) | - Compile the final project report: <br>&emsp; + Write the compliance comparison (pre vs post hardening) <br>&emsp; + Document all remediation actions with CLI commands <br>&emsp; + Organize screenshots of Security Hub findings and GuardDuty alerts <br>&emsp; + Summarize the security lifecycle outcomes | 16/07/2026 | 17/07/2026 | |
+| Fri (17/07) | - Write the lessons learned section: <br>&emsp; + Key technical takeaways from the security operations lab <br>&emsp; + Challenges encountered and how they were resolved <br>&emsp; + Future improvements and advanced security scenarios <br> - Review and finalize all documentation | 17/07/2026 | 17/07/2026 | |
+| Sat (18/07) | - **Practice:** <br>&emsp; + Verify no remaining resources are incurring charges (AWS Cost Explorer) <br>&emsp; + Submit the final worklog and project documentation <br> - Reflect on the full 5-week workshop journey | 18/07/2026 | 18/07/2026 | |
 
 ### Week 5 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Completed the hardening & remediation phase with verified results:
+  * **S3**: Confirmed the bucket is fully private — anonymous access attempts returned 403 Forbidden
+  * **IAM**: Verified `developer-test` user only has `AmazonS3ReadOnlyAccess` attached; wildcard policy fully removed
+  * **EC2**: Confirmed SSH inbound rule restricted to my public IP only; global access (0.0.0.0/0) revoked
 
-* Successfully created and configured an AWS Free Tier account.
+* Ran re-validation and confirmed all three Security Hub controls transitioned from FAILED to PASSED:
+  * **S3.2** (S3 public access blocked): FAILED → **PASSED** ✅
+  * **IAM.1** (No full admin policy): FAILED → **PASSED** ✅
+  * **EC2.19** (SSH restricted): FAILED → **PASSED** ✅
+  * The overall Security Hub compliance score showed a significant improvement compared to the pre-hardening baseline
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Executed complete clean-up of all lab resources:
+  * Deleted IAM user `developer-test` and removed all attached policies
+  * Terminated EC2 instance `vulnerable-ec2` and deleted security group `insecure-sg`
+  * Emptied and deleted the vulnerable S3 bucket and the CloudTrail logging bucket
+  * Disabled GuardDuty detector and Security Hub
+  * Deleted the CloudTrail trail (`FCAJ-Central-Trail`)
+  * Verified complete resource teardown via AWS Console and Cost Explorer
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Compiled the final project documentation:
+  * Pre- and post-hardening compliance comparison report with screenshots
+  * Documented all remediation actions with corresponding AWS CLI commands
+  * Organized GuardDuty findings by category (Recon, UnauthorizedAccess, Impact, CryptoCurrency, Policy, Trojan)
+  * Summarized the complete security lifecycle: Enable → Deploy → Detect → Harden → Re-validate → Clean-up
 
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Documented key lessons learned:
+  * Security services must be enabled **before** deploying workloads to capture the full detection timeline
+  * Infrastructure as Code is effective for reproducible infrastructure but requires careful state management
+  * The CIS AWS Foundations Benchmark provides a practical framework for assessing and improving cloud security posture
+  * GuardDuty's ML-based threat detection can identify attack patterns (SSH brute force, port scanning, crypto mining) that traditional monitoring would miss
+  * The Principle of Least Privilege is the single most impactful security control for IAM
+  * Automated remediation via Security Hub integration would significantly reduce response time in production environments
