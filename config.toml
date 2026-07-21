@@ -23,9 +23,9 @@ home = [ "HTML", "RSS", "JSON"]
   
 [Languages]
 [Languages.en]
+  languageName = "English"
   title = "Internship Report"
   weight = 1
-  label = "English"
 
 [[Languages.en.menu.shortcuts]]
   name = "<i class='fab fa-aws'></i> AWS Study Group - Blog"
@@ -40,9 +40,9 @@ home = [ "HTML", "RSS", "JSON"]
   weight = 20
 
 [Languages.vi]
+  languageName = "Tiếng Việt"
   title = "Báo cáo thực tập"
   weight = 2
-  label = "Tiếng Việt"
 
 [[Languages.vi.menu.shortcuts]]
 name = "<i class='fab fa-aws'></i> AWS Study Group - Blog"
