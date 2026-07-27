@@ -2,6 +2,21 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [2026-07-27]
+
+### Added
+* **AGENTS.md:** Added project knowledge base documenting the repository structure, conventions, and anti-patterns for consistent development.
+* **Workshop Screenshots:** Added 15 screenshots across 3 workshop steps documenting exposure summaries, threat findings, CDK deployment results, IAM policy assignments, EC2 inbound rules, S3 public access blocking, and security score improvements.
+
+### Changed
+* **Worklog Weeks 6-8:** Updated all three bilingual pairs with completed tasks, objectives, and achievements for the final weeks of the internship.
+* **Blogs 1-3:** Polished content across all three blog posts (bilingual) and refreshed the blog index to reflect current entries.
+* **Event Section:** Restructured Event 1 details with comprehensive rewrites in both languages; removed Event 2 (deprecated); updated the event index accordingly.
+* **Workshop Steps 1-3:** Updated Step 1 (Enable Security), Step 2 (Deploy Insecure), and Step 3 (Test Validation) with refined deployment instructions and validation results.
+* **Workshop Steps 4-6:** Added Step 4 (Hardening), Step 5 (Revalidation), and Step 6 (Cleanup) content with bilingual hardening procedures, post-remediation validation, and cleanup guidance.
+* **Self-evaluation & Feedback:** Refreshed both sections with updated reflections and feedback entries.
+* **Navigation Cleanup:** Removed outdated lines from the proposal, workshop index, and homepage.
+
 ## [2026-06-26]
 
 ### Added
