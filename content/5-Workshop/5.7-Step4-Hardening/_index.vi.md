@@ -18,6 +18,8 @@ Bây giờ, chúng ta đóng vai trò Kỹ sư bảo mật để vá lại các 
 4. Chọn **Edit** → Tích chọn **Block all public access**.
 5. Chọn **Save changes**.
 
+   ![S3 Block Public Access](Screenshots/s3-block-public-access.jpeg)
+
 {{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
 ```bash
 # Bật lại Block All Public Access cho bucket
@@ -34,10 +36,18 @@ aws s3api put-bucket-acl --bucket vulnerable-public-data-<tên-bạn> --acl priv
 1. Vào **IAM** console → **Users** → `developer-test`.
 2. Vào tab **Permissions**.
 3. Tìm inline policy `WildcardFullAccess` → Chọn **Remove** (hoặc **Delete**).
+
+   ![Gỡ bỏ Wildcard Policy](Screenshots/IAM-wildcard-policy-remove.png)
+
 4. Chọn **Add permissions** → **Attach policies directly**.
 5. Tìm và chọn **AmazonS3ReadOnlyAccess** (một policy cụ thể, đặc quyền tối thiểu).
 6. Chọn **Next** → **Add permissions**.
+
+   ![Gắn S3 ReadOnly Policy](Screenshots/IAM-s3readonly-policy.png)
+
 7. (Khuyến nghị) Vào tab **Security credentials** → Mục **Multi-factor authentication (MFA)** → **Assign MFA device** để bật MFA cho user này.
+
+   ![Gán MFA](Screenshots/IAM-MFA-assign.png)
 
 {{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
 ```bash
@@ -63,6 +73,9 @@ aws iam list-attached-user-policies --user-name developer-test
 3. Vào tab **Inbound rules** → Chọn **Edit inbound rules**.
 4. Tìm rule SSH với Source `0.0.0.0/0`.
 5. Thay đổi **Source** thành **My IP** (sẽ tự động điền địa chỉ IP hiện tại của bạn).
+
+![Giới hạn SSH đến My IP](Screenshots/ec2-inbound-rule.png)<br>
+
 6. Chọn **Save rules**.
 
    > Thao tác này giới hạn SSH chỉ đến địa chỉ IP của bạn, loại bỏ hoàn toàn việc phơi bày cổng SSH ra toàn cầu.

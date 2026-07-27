@@ -22,9 +22,13 @@ This step is mandatory to avoid unexpected charges. Remove all lab resources:
 
 6. **Disable Security Hub**: Navigate to **Security Hub** → **Settings** → **General** → **Disable Security Hub**.
 
-7. **Delete CloudTrail trail**: Navigate to **CloudTrail** → **Trails** → Select `FCAJ-Central-Trail` → **Delete**.
+7. **Stop AWS Config recorder**: Security Hub relies on AWS Config, which was enabled in Step 1. If left running it keeps recording resource changes and delivering snapshots to S3, incurring charges. Navigate to **AWS Config** → **Settings** → **Edit** → toggle **Recording** off → **Save**. Then delete the recorder and delivery channel: **AWS Config** → **Settings** → scroll to bottom → **Delete AWS Config** (or use the CLI below).
 
-8. **Delete CloudTrail S3 bucket**: Navigate to **S3** → Select the logging bucket (`fcaj-security-logs-<random-id>`) → **Empty** → **Delete**.
+8. **Delete AWS Config S3 bucket**: Navigate to **S3** → Select `config-bucket-<account-id>-ap-southeast-1` → **Empty** → **Delete**.
+
+9. **Delete CloudTrail trail**: Navigate to **CloudTrail** → **Trails** → Select `FCAJ-Central-Trail` → **Delete**.
+
+10. **Delete CloudTrail S3 bucket**: Navigate to **S3** → Select the logging bucket (`fcaj-security-logs-<random-id>`) → **Empty** → **Delete**.
 
 {{%expand "AWS CLI Alternative" %}}
 ```bash
@@ -69,6 +73,21 @@ aws guardduty delete-detector --detector-id <detector-id> --region ap-southeast-
 
 # === Security Hub Cleanup ===
 aws securityhub disable-security-hub --region ap-southeast-1
+
+# === AWS Config Cleanup ===
+# Stop the recorder first (name matches what Step 1 created: "default")
+aws configservice stop-configuration-recorder \
+    --configuration-recorder-name default --region ap-southeast-1
+
+# Delete recorder and delivery channel
+aws configservice delete-configuration-recorder \
+    --configuration-recorder-name default --region ap-southeast-1
+aws configservice delete-delivery-channel \
+    --delivery-channel-name default --region ap-southeast-1
+
+# Empty and delete the Config S3 bucket
+aws s3 rm s3://config-bucket-<account-id>-ap-southeast-1 --recursive
+aws s3 rb s3://config-bucket-<account-id>-ap-southeast-1
 
 # === CloudTrail Cleanup ===
 aws cloudtrail delete-trail --name FCAJ-Central-Trail

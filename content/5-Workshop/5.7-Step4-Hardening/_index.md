@@ -18,6 +18,8 @@ Now, acting as a Cloud Security Engineer, we will fix each vulnerability based o
 4. Click **Edit** → Check **Block all public access**.
 5. Click **Save changes**.
 
+   ![S3 Block Public Access](Screenshots/s3-block-public-access.jpeg)
+
 {{%expand "AWS CLI Alternative" %}}
 ```bash
 # Block all public access on the bucket
@@ -34,10 +36,18 @@ aws s3api put-bucket-acl --bucket vulnerable-public-data-<your-name> --acl priva
 1. Navigate to **IAM** console → **Users** → `developer-test`.
 2. Go to the **Permissions** tab.
 3. Locate the inline policy `WildcardFullAccess` → Click **Remove** (or **Delete**).
+
+   ![Remove Wildcard Policy](Screenshots/IAM-wildcard-policy-remove.png)
+
 4. Click **Add permissions** → **Attach policies directly**.
 5. Search for and select **AmazonS3ReadOnlyAccess** (a scoped, least-privilege policy).
 6. Click **Next** → **Add permissions**.
+
+   ![Attach S3 ReadOnly Policy](Screenshots/IAM-s3readonly-policy.png)
+
 7. (Optional but recommended) Go to **Security credentials** tab → Under **Multi-factor authentication (MFA)** → **Assign MFA device** to enable MFA for this user.
+
+   ![Assign MFA Device](Screenshots/IAM-MFA-assign.png)
 
 {{%expand "AWS CLI Alternative" %}}
 ```bash
@@ -63,6 +73,9 @@ aws iam list-attached-user-policies --user-name developer-test
 3. Go to **Inbound rules** tab → Click **Edit inbound rules**.
 4. Find the SSH rule with Source `0.0.0.0/0`.
 5. Change **Source** to **My IP** (this will auto-populate your current public IP address).
+
+![Restrict SSH to My IP](Screenshots/ec2-inbound-rule.png)
+
 6. Click **Save rules**.
 
    > This restricts SSH access to only your IP address, eliminating the global exposure.

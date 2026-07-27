@@ -22,9 +22,13 @@ Bước bắt buộc để tránh phát sinh chi phí ngoài ý muốn. Xóa t�
 
 6. **Tắt Security Hub**: Vào **Security Hub** → **Settings** → **General** → **Disable Security Hub**.
 
-7. **Xóa CloudTrail trail**: Vào **CloudTrail** → **Trails** → Chọn `FCAJ-Central-Trail` → **Delete**.
+7. **Dừng AWS Config recorder**: Security Hub phụ thuộc vào AWS Config đã được bật ở Bước 1. Nếu để nguyên, recorder sẽ tiếp tục ghi lại các thay đổi tài nguyên và gửi snapshot lên S3, gây phát sinh chi phí. Vào **AWS Config** → **Settings** → **Edit** → tắt **Recording** → **Save**. Sau đó xóa recorder và delivery channel: **AWS Config** → **Settings** → kéo xuống dưới cùng → **Delete AWS Config** (hoặc dùng CLI bên dưới).
 
-8. **Xóa S3 bucket của CloudTrail**: Vào **S3** → Chọn bucket log (`fcaj-security-logs-<random-id>`) → **Empty** → **Delete**.
+8. **Xóa S3 bucket của AWS Config**: Vào **S3** → Chọn `config-bucket-<account-id>-ap-southeast-1` → **Empty** → **Delete**.
+
+9. **Xóa CloudTrail trail**: Vào **CloudTrail** → **Trails** → Chọn `FCAJ-Central-Trail` → **Delete**.
+
+10. **Xóa S3 bucket của CloudTrail**: Vào **S3** → Chọn bucket log (`fcaj-security-logs-<random-id>`) → **Empty** → **Delete**.
 
 {{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
 ```bash
@@ -68,6 +72,21 @@ aws guardduty delete-detector --detector-id <detector-id> --region ap-southeast-
 
 # === Tắt Security Hub ===
 aws securityhub disable-security-hub --region ap-southeast-1
+
+# === Dọn AWS Config ===
+# Dừng recorder trước (tên "default" khớp với recorder tạo ở Bước 1)
+aws configservice stop-configuration-recorder \
+    --configuration-recorder-name default --region ap-southeast-1
+
+# Xóa recorder và delivery channel
+aws configservice delete-configuration-recorder \
+    --configuration-recorder-name default --region ap-southeast-1
+aws configservice delete-delivery-channel \
+    --delivery-channel-name default --region ap-southeast-1
+
+# Xóa nội dung và bucket S3 của Config
+aws s3 rm s3://config-bucket-<account-id>-ap-southeast-1 --recursive
+aws s3 rb s3://config-bucket-<account-id>-ap-southeast-1
 
 # === Dọn CloudTrail ===
 aws cloudtrail delete-trail --name FCAJ-Central-Trail
