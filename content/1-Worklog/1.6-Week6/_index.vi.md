@@ -1,58 +1,43 @@
 ---
 title: "Worklog Tuần 6"
-date: 2026-04-28
-weight: 1
+date: 2026-07-25
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nghiên cứu và hiểu về Amazon EKS Pod Identity và tính năng Session Policies.
+* Viết blog kỹ thuật giải thích cách Session Policies thu hẹp IAM permissions cho từng pod riêng lẻ.
+* Đăng tải blog lên cộng đồng AWS Study Group và chia sẻ kiến thức với các bạn học viên khác.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 (20/07) | - Nghiên cứu kiến trúc Amazon EKS Pod Identity <br>&emsp; + Hiểu cách Pod Identity ánh xạ IAM roles vào Kubernetes service accounts <br>&emsp; + So sánh với phương pháp IRSA (IAM Roles for Service Accounts) truyền thống <br> - Thiết lập EKS cluster thử nghiệm (nếu cần) để khám phá thực hành | 20/07/2026 | 20/07/2026 | <https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html> |
+| 3 (21/07) | - Tìm hiểu sâu về Session Policies cho EKS Pod Identity <br>&emsp; + Học cách session policies giới hạn thêm permissions ở cấp pod <br>&emsp; + Hiểu các use cases: workloads đa tenant, đặc quyền tối thiểu cho từng pod <br>&emsp; + Xem xét các ví dụ IAM session policy documents | 21/07/2026 | 21/07/2026 | <https://docs.aws.amazon.com/eks/latest/userguide/eks-pod-identity-session-policies.html> |
+| 4 (22/07) | - Viết bản nháp đầu tiên của blog kỹ thuật <br>&emsp; + Cấu trúc: giới thiệu, vấn đề, giải pháp, hướng dẫn từng bước <br>&emsp; + Bao gồm code snippets cho IAM roles, service accounts và session policies <br>&emsp; + Thêm sơ đồ kiến trúc giải thích luồng hoạt động | 22/07/2026 | 23/07/2026 | |
+| 5 (23/07) | - Xem xét và hoàn thiện bản nháp blog <br>&emsp; + Xác minh độ chính xác kỹ thuật của tất cả lệnh AWS CLI và ví dụ IAM policy <br>&emsp; + Thêm ảnh chụp màn hình EKS console và cấu hình IAM <br>&emsp; + Soát lỗi chính tả và đảm bảo văn phong rõ ràng | 23/07/2026 | 24/07/2026 | |
+| 6 (24/07) | - Xem xét lần cuối và đăng blog lên AWS Study Group <br>&emsp; + Định dạng bài viết cho nền tảng cộng đồng <br>&emsp; + Thêm tags và danh mục để dễ tìm kiếm <br>&emsp; + Chia sẻ link đã xuất bản với nhóm FCAJ để nhận phản hồi | 24/07/2026 | 24/07/2026 | <https://awsstudygroup.com/> |
+| 7 (25/07) | - **Thực hành:** <br>&emsp; + Ghi chép các kiến thức kỹ thuật chính thu nhận được trong quá trình viết blog <br>&emsp; + Suy ngẫm về cách session policies so sánh với các cơ chế IAM isolation khác <br> - Xem xét tiến độ tuần 6 và chuẩn bị cho hội thảo tuần 7 | 25/07/2026 | 25/07/2026 | |
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Nắm vững kiến thức về Amazon EKS Pod Identity — cách nó ánh xạ IAM roles vào Kubernetes service accounts ở cấp pod, và cách nó đơn giản hóa quy trình quản lý credentials so với phương pháp IRSA truyền thống.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Làm chủ tính năng Session Policies cho EKS Pod Identity:
+  * Hiểu cách session policies hoạt động như một ranh giới permission runtime, thu hẹp thêm quyền của IAM role cho từng pod riêng lẻ
+  * Xác định các use cases chính: EKS clusters đa tenant nơi các pod khác nhau cần mức phân quyền khác nhau, và các kịch bản yêu cầu kiểm soát truy cập linh hoạt
+  * Tạo các ví dụ session policy documents minh họa mẫu truy cập read-only và read-write
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Đã viết và xuất bản blog kỹ thuật về chủ đề này, bao gồm:
+  * Động lực cho việc IAM isolation ở cấp pod trong Kubernetes
+  * Hướng dẫn từng bước thiết lập EKS Pod Identity với session policies
+  * Ví dụ code thực tế và sơ đồ kiến trúc
+  * So sánh giữa IRSA và phương pháp Pod Identity mới
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Đã đăng blog lên nền tảng cộng đồng AWS Study Group và chia sẻ với nhóm FCAJ, nhận được phản hồi tích cực từ bạn học và người hướng dẫn.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Củng cố kỹ năng viết kỹ thuật — học cách giải thích các khái niệm bảo mật AWS phức tạp một cách dễ hiểu cho cộng đồng cloud.

@@ -1,59 +1,55 @@
 ---
 title: "Worklog Tuần 7"
-date: 2026-04-28
-weight: 1
+date: 2026-08-01
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 7:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tham gia hội thảo GenAI-powered App-DB Modernization do AWS tổ chức.
+* Tìm hiểu về Domain-Driven Design (DDD) và Event-Driven Architecture.
+* Nắm được chiến lược hiện đại hóa ứng dụng và cơ sở dữ liệu trên AWS.
+* Khám phá Amazon Q Developer như công cụ AI hỗ trợ vòng đời phát triển phần mềm.
+* Củng cố kiến thức về Mô hình Shared Responsibility qua phổ tính toán (EC2 → ECS → Fargate → Lambda).
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 (27/07) | - Chuẩn bị trước hội thảo: <br>&emsp; + Xem chương trình hội thảo và các yêu cầu cần chuẩn bị <br>&emsp; + Đọc tài liệu nền tảng về Domain-Driven Design <br>&emsp; + Thiết lập môi trường AWS nếu cần | 27/07/2026 | 27/07/2026 | |
+| 3 (28/07) | - Tham gia Ngày 1 của hội thảo GenAI-powered App-DB Modernization: <br>&emsp; + Domain-Driven Design (DDD) — strategic vs tactical design <br>&emsp; + Nguyên lý và mẫu hình Event-Driven Architecture <br>&emsp; + Chiến lược hiện đại hóa cho ứng dụng kế thừa | 28/07/2026 | 28/07/2026 | |
+| 4 (29/07) | - Tham gia Ngày 2 của hội thảo: <br>&emsp; + Hiện đại hóa cơ sở dữ liệu — di chuyển từ monolithic sang purpose-built databases <br>&emsp; + Amazon Q Developer — trợ lý lập trình hỗ trợ AI <br>&emsp; + Mô hình Shared Responsibility qua phổ tính toán (EC2 → ECS → Fargate → Lambda) <br> - Tham gia các bài thực hành trong hội thảo | 29/07/2026 | 29/07/2026 | |
+| 5 (30/07) | - Xem xét và tổng hợp kiến thức hội thảo: <br>&emsp; + Viết ghi chú chi tiết về các mẫu tactical DDD (entities, aggregates, domain events) <br>&emsp; + Ghi chép các mẫu Event-Driven Architecture (event sourcing, CQRS, saga) <br>&emsp; + Tóm tắt khả năng của Amazon Q Developer và các use cases | 30/07/2026 | 30/07/2026 | |
+| 6 (31/07) | - Áp dụng kiến thức hội thảo: <br>&emsp; + Ánh xạ kiến trúc Security Operations Lab sang khái niệm DDD <br>&emsp; + Xác định các mẫu event-driven tiềm năng cho tự động hóa bảo mật <br>&emsp; + Khám phá cách Amazon Q Developer có thể hỗ trợ IaC templates và remediation scripts | 31/07/2026 | 31/07/2026 | |
+| 7 (01/08) | - **Thực hành:** <br>&emsp; + Viết bài tóm tắt về hội thảo cho nhóm FCAJ <br>&emsp; + Suy ngẫm về cách phổ tính toán ảnh hưởng đến trách nhiệm bảo mật <br> - Xem xét tiến độ tuần 7 và chuẩn bị tài liệu cuối cùng cho tuần 8 | 01/08/2026 | 01/08/2026 | |
 
 ### Kết quả đạt được tuần 7:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Đã tham gia thành công hội thảo GenAI-powered App-DB Modernization do AWS tổ chức, tiếp cận các mẫu kiến trúc phần mềm hiện đại và dịch vụ AI của AWS.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tiếp thu kiến thức nền tảng về Domain-Driven Design (DDD):
+  * Hiểu sự khác biệt giữa strategic design (bounded contexts, ubiquitous language) và tactical design (entities, value objects, aggregates, domain events)
+  * Học cách DDD giúp quản lý độ phức tạp trong hệ thống lớn qua ranh giới domain rõ ràng
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Nắm được các nguyên lý Event-Driven Architecture:
+  * Event sourcing, CQRS (Command Query Responsibility Segregation) và Saga pattern cho distributed transactions
+  * Cách hệ thống event-driven cải thiện khả năng mở rộng, chịu lỗi và tách rời giữa các services
+  * Các dịch vụ AWS hỗ trợ kiến trúc event-driven (EventBridge, SQS, SNS, Lambda)
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Khám phá chiến lược hiện đại hóa cơ sở dữ liệu:
+  * Lộ trình di chuyển từ cơ sở dữ liệu monolithic sang purpose-built databases (relational, key-value, document, graph)
+  * Các dịch vụ cơ sở dữ liệu AWS và use cases tối ưu
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Có trải nghiệm thực hành với **Amazon Q Developer**:
+  * Hiểu cách trợ lý lập trình AI tăng tốc vòng đời phát triển phần mềm
+  * Khám phá khả năng sinh code, gỡ lỗi và đề xuất AWS best practices
+  * Xác định ứng dụng tiềm năng cho tự động hóa bảo mật và tạo IaC templates
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Củng cố hiểu biết về **Mô hình Shared Responsibility qua phổ tính toán**:
+  * Trách nhiệm khách hàng giảm dần khi di chuyển từ EC2 (nhiều kiểm soát, nhiều trách nhiệm) đến Lambda (ít kiểm soát, ít trách nhiệm)
+  * Hệ quả cho tư thế bảo mật khi chọn các dịch vụ compute khác nhau
+  * Ví dụ thực tế: gánh nặng vá lỗi trên EC2 so với Fargate được quản lý so với Lambda serverless
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Đã chia sẻ kiến thức hội thảo với nhóm FCAJ qua bài viết tóm tắt, củng cố kiến thức thông qua giảng dạy lại.
