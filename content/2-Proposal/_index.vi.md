@@ -90,25 +90,31 @@ Kiến trúc phòng thí nghiệm của workshop tuân theo **vòng đời bảo
 #### Phương pháp triển khai
 Workshop được cấu trúc theo các bước tuần tự để xây dựng kiến thức bảo mật tiến bộ:
 
-**Bước 1: Kích hoạt dịch vụ bảo mật (Tuần 1)**
+**Bước 1: Kiến thức nền tảng (Giai đoạn Nền tảng - Tuần 1-2)**
+- Học các khái niệm cơ bản về AWS: hạ tầng toàn cầu, mô hình trách nhiệm chung, dịch vụ cốt lõi
+- Thực hành IAM, S3, VPC và CloudTrail
+- Thiết lập tài khoản AWS Free Tier, IAM users, CLI và cảnh báo thanh toán
+
+**Bước 2: Lập kế hoạch (Giai đoạn Lập kế hoạch - Tuần 3)**
+- Thiết kế kiến trúc dự án Insecure-by-Design
+- Xác định ba kịch bản lỗi cấu hình chính: S3 public, IAM quá hạn, EC2 lộ SSH
+- Định nghĩa cấu trúc thư mục và bố cục module
+
+**Bước 3: Kích hoạt dịch vụ bảo mật (Giai đoạn Thực thi - Tuần 4)**
 - Bật AWS CloudTrail logging vào S3 để kiểm toán API tập trung
 - Kích hoạt Amazon GuardDuty để phát hiện mối đe dọa
 - Cấu hình AWS Security Hub làm bảng điều khiển bảo mật tập trung
 
-**Bước 2: Triển khai hạ tầng lỗi cấu hình (Tuần 1-2)**
+**Bước 4: Triển khai hạ tầng lỗi & Kiểm thử (Giai đoạn Thực thi - Tuần 4)**
 - Cung cấp hạ tầng AWS cơ bản với các cấu hình sai cố ý
 - Tạo IAM role và policy quá hạn với quyền wildcard
 - Bật S3 bucket public không mã hóa
 - Thiết lập EC2 instance với Security Group quá thoáng (SSH mở 0.0.0.0/0)
-- Ghi lại trạng thái lỗ hổng để so sánh sau này
+- Xem xét các cảnh báo bảo mật trong Security Hub
+- Triển khai GuardDuty Tester để tạo 50+ loại cảnh báo
+- Ghi nhận baseline tuân thủ trước khi gia cố để so sánh
 
-**Bước 3: Kiểm thử & Đo lường (Tuần 2)**
-- Xem xét các cảnh báo bảo mật được tạo trong Security Hub
-- Phân tích các cảnh báo phát hiện mối đe dọa từ GuardDuty
-- Ghi nhận baseline tuân thủ trước khi gia cố và điểm số Security Hub
-- Lưu lại bằng chứng về các lỗi cấu hình để so sánh
-
-**Bước 4: Gia cố & Khắc phục (Tuần 3-4)**
+**Bước 5: Gia cố & Khắc phục (Giai đoạn Thực thi - Tuần 4-5)**
 - Triển khai IAM đặc quyền tối thiểu (loại bỏ wildcard, thu hẹp quyền)
 - Bật mã hóa trên S3 bucket và EBS volumes
 - Giới hạn Security Groups EC2 chỉ cho phép các cổng cần thiết
@@ -116,13 +122,11 @@ Workshop được cấu trúc theo các bước tuần tự để xây dựng ki
 - Triển khai VPC Flow Logs để giám sát mạng
 - Xử lý từng cảnh báo từ Security Hub một cách có hệ thống
 
-**Bước 5: Tái thẩm định (Tuần 4)**
+**Bước 6: Tái thẩm định & Dọn dẹp (Giai đoạn Thực thi - Tuần 5)**
 - Xem xét điểm số tuân thủ Security Hub sau khi gia cố
 - So sánh với baseline trước khi gia cố
 - Xác nhận các cảnh báo chuyển từ Failed sang Passed
 - Ghi lại tất cả các hành động khắc phục đã thực hiện
-
-**Bước 6: Dọn dẹp tài nguyên (Tuần 5)**
 - Xóa EC2 instances và S3 buckets
 - Tắt CloudTrail, GuardDuty và Security Hub
 - Xác minh toàn bộ tài nguyên đã được xóa để tránh phát sinh chi phí
@@ -135,15 +139,21 @@ Workshop được cấu trúc theo các bước tuần tự để xây dựng ki
 - Khả năng đọc và diễn giải CloudTrail logs và Security Hub findings
 
 ### 5. Lộ trình & Mốc triển khai
-#### Tiến độ dự án
-- **Trước workshop (Tuần 0)**: Nghiên cứu các khái niệm bảo mật cloud và yêu cầu CIS benchmark
-- **Thực hiện workshop (Tuần 1-5)**:
-    - Tuần 1: Kích hoạt dịch vụ bảo mật (CloudTrail, GuardDuty, Security Hub)
-    - Tuần 1-2: Triển khai hạ tầng lỗi cấu hình và chạy kiểm thử & đo lường
-    - Tuần 3-4: Thực hiện gia cố và khắc phục
-    - Tuần 4: Tái thẩm định điểm số tuân thủ
-    - Tuần 5: Dọn dẹp tất cả tài nguyên lab
-- **Sau workshop**: Tiếp tục truy cập lab để xem xét và các kịch bản bổ sung (tối đa 8 tuần)
+#### Tiến độ dự án (Chương trình Thực tập 8 Tuần)
+
+Workshop được thực hiện trong khuôn khổ chương trình thực tập FCAJ kéo dài 8 tuần, được tổ chức thành năm giai đoạn:
+
+- **Giai đoạn Nền tảng (Tuần 1-2, 15-27/06)**: Học kiến thức cơ bản về AWS — hạ tầng toàn cầu, mô hình trách nhiệm chung, dịch vụ cốt lõi (EC2, IAM, S3, VPC, CloudTrail). Thiết lập tài khoản AWS, CLI, cảnh báo thanh toán và các bài thực hành.
+
+- **Giai đoạn Lập kế hoạch (Tuần 3, 01-04/07)**: Thiết kế kiến trúc workshop Insecure-by-Design; xác định ba kịch bản lỗi cấu hình chính (S3 bucket public, IAM role với quyền wildcard, EC2 instance với SSH không giới hạn); định nghĩa cấu trúc dự án.
+
+- **Giai đoạn Thực thi (Tuần 4-5, 06-18/07)**: Thực hiện vòng đời bảo mật đầy đủ:
+    - **Tuần 4 (06-10/07)**: Kích hoạt CloudTrail, GuardDuty và Security Hub; triển khai hạ tầng lỗi cấu hình; chạy kiểm thử với GuardDuty Tester (50+ cảnh báo); thực hiện gia cố và khắc phục.
+    - **Tuần 5 (13-18/07)**: Tái thẩm định tuân thủ — cả ba kiểm soát CIS chuyển từ FAILED sang PASSED; dọn dẹp toàn bộ tài nguyên lab; tổng hợp tài liệu dự án.
+
+- **Giai đoạn Mở rộng (Tuần 6-7, 20/07-01/08)**: Nghiên cứu và xuất bản blog kỹ thuật về Amazon EKS Pod Identity Session Policies; tham dự hội thảo GenAI-powered App-DB Modernization do AWS tổ chức.
+
+- **Giai đoạn Hoàn thiện (Tuần 8, 03-14/08)**: Hoàn thiện tài liệu workshop song ngữ; tổng hợp báo cáo so sánh tuân thủ trước/sau; phân loại cảnh báo GuardDuty; nộp báo cáo thực tập cuối kỳ.
 
 #### Các sản phẩm bàn giao chính
 - Tài liệu hạ tầng lỗi cấu hình baseline
@@ -153,30 +163,33 @@ Workshop được cấu trúc theo các bước tuần tự để xây dựng ki
 - So sánh tuân thủ và tóm tắt khắc phục
 
 ### 6. Ước tính ngân sách
-#### Chi phí dịch vụ AWS (Thực hiện lab)
-Các dịch vụ sau sẽ được sử dụng trong suốt 5 tuần workshop:
+#### Chi phí dịch vụ AWS (Thực tế triển khai)
+
+Tài nguyên lab hoạt động trong khoảng **2 tuần** (Tuần 4-5), với hầu hết dịch vụ được bao phủ bởi AWS Free Tier hoặc giai đoạn dùng thử:
 
 **Phân tích chi phí**
-- **AWS CloudTrail**: ~2,50 USD (ghi log API calls trong 5 tuần)
-- **Amazon GuardDuty**: ~30-40 USD (phát hiện mối đe dọa trong 5 tuần, ~6-8 USD/tuần)
-- **AWS Security Hub**: ~30-40 USD (cảnh báo tập trung, ~6-8 USD/tuần)
-- **Amazon S3**: ~1-2 USD (lưu trữ CloudTrail và log)
-- **Amazon EC2**: ~5-10 USD (instance nhỏ trong 5 tuần)
+- **AWS CloudTrail**: Miễn phí (1 trail trong AWS Free Tier, chỉ ghi management events)
+- **Amazon GuardDuty**: Miễn phí (30 ngày dùng thử bao phủ toàn bộ thời gian hoạt động)
+- **AWS Security Hub**: Miễn phí (30 ngày dùng thử bao phủ toàn bộ thời gian hoạt động)
+- **Amazon S3**: ~1-2 USD (lưu trữ log CloudTrail; dung lượng rất nhỏ)
+- **Amazon EC2**: ~3-5 USD (instance t3.micro, chạy ~2 tuần)
 - **AWS IAM**: Miễn phí
 - **Amazon VPC**: Miễn phí
+- **GuardDuty Tester (CDK)**: Nằm trong giới hạn Free Tier
 
-**Tổng chi phí ước tính**: 70-90 USD cho toàn bộ 5 tuần lab
+**Tổng chi phí thực tế**: ~4-7 USD (EC2 t3.micro + lưu trữ S3 cho log CloudTrail)
 
-**Ghi chú tối ưu chi phí**
-- Tài nguyên lab được thiết kế tối thiểu để giữ chi phí thấp
-- CloudTrail và GuardDuty là các dịch vụ thiết yếu cho mục tiêu học tập
-- Có thể xóa tài nguyên ngay sau khi hoàn thành giai đoạn xác thực
-- AWS Free Tier có thể giảm hoặc loại bỏ chi phí thực tế
+**Tóm tắt tối ưu chi phí**
+- Cửa sổ lab được nén xuống còn 2 tuần để giảm thiểu chi phí
+- Giai đoạn dùng thử 30 ngày của GuardDuty và Security Hub bao phủ toàn bộ thời gian giám sát
+- Instance t3.micro được chọn vì hiệu quả chi phí (~0,0104 USD/giờ)
+- Tất cả tài nguyên đã được xác minh đã xóa/tắt trong Tuần 5
+- Cảnh báo AWS Budgets được cấu hình ở mức 50 USD và 75 USD để đảm bảo an toàn
 
-**Lưu ý sau workshop**
-- Cần dọn dẹp hạ tầng lab sau khi hoàn thành để tránh phát sinh chi phí
-- Có thể lưu trữ CloudTrail logs vào Glacier để lưu trữ dài hạn với chi phí tối thiểu
-- Có thể tạm ngưng Security Hub cho đến khi cần đánh giá bảo mật tiếp theo
+**Lưu ý chi phí sau workshop**
+- Hạ tầng lab đã được dọn dẹp hoàn toàn sau Tuần 5 — không phát sinh chi phí
+- Log CloudTrai được giữ lại trong S3 (chi phí tối thiểu, ~1-2 USD/tháng cho lưu trữ)
+- Thiết kế lab cho phép tái triển khai trong tương lai với chi phí tối thiểu khi làm theo các bước đã ghi lại
 
 ### 7. Đánh giá rủi ro
 #### Ma trận rủi ro

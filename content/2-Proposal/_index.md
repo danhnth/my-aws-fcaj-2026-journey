@@ -90,25 +90,31 @@ The workshop lab architecture follows a **complete security lifecycle** with 6 s
 **Implementation Approach**
 The workshop is structured in sequential steps designed to build progressive security knowledge:
 
-**Step 1: Enable Security Services (Week 1)**
+**Step 1: Enable Security Services (Foundation Phase - Weeks 1-2)**
+- Learn AWS fundamentals: global infrastructure, shared responsibility model, core services
+- Master IAM, S3, VPC, and CloudTrail through hands-on practice
+- Set up AWS Free Tier account, IAM users, CLI, and billing alerts
+
+**Step 2: Planning (Planning Phase - Week 3)**
+- Design the Insecure-by-Design project architecture
+- Identify three core misconfiguration scenarios: public S3, over-privileged IAM, exposed EC2
+- Define the project directory structure and module layout
+
+**Step 3: Enable Security Services (Execution Phase - Week 4)**
 - Enable AWS CloudTrail logging to S3 for centralized API audit
 - Activate Amazon GuardDuty for threat detection
 - Configure AWS Security Hub as the centralized security dashboard
 
-**Step 2: Deploy Insecure Baseline (Week 1-2)**
+**Step 4: Deploy Insecure Baseline & Test (Execution Phase - Week 4)**
 - Provision basic AWS infrastructure with intentional misconfigurations
 - Create over-privileged IAM roles and policies with wildcard permissions
 - Enable public S3 buckets without encryption
 - Set up EC2 instances with permissive security groups (SSH open to 0.0.0.0/0)
-- Document the vulnerable state for later comparison
-
-**Step 3: Test & Validation (Week 2)**
 - Review generated security findings in Security Hub dashboard
-- Analyze threat detection alerts from GuardDuty
-- Document the pre-hardening compliance baseline and Security Hub score
-- Capture evidence of misconfigurations for comparison
+- Deploy GuardDuty Tester to generate 50+ finding types
+- Document the pre-hardening compliance baseline for later comparison
 
-**Step 4: Hardening & Remediation (Week 3-4)**
+**Step 5: Hardening & Remediation (Execution Phase - Week 4-5)**
 - Implement IAM least privilege (remove wildcards, scope permissions)
 - Enable encryption on S3 buckets and EBS volumes
 - Restrict EC2 security groups to required ports only
@@ -116,13 +122,11 @@ The workshop is structured in sequential steps designed to build progressive sec
 - Implement VPC Flow Logs for network monitoring
 - Address each finding from Security Hub systematically
 
-**Step 5: Re-validation (Week 4)**
+**Step 6: Re-validation & Clean-up (Execution Phase - Week 5)**
 - Review post-hardening Security Hub compliance scores
 - Compare with pre-hardening baseline
 - Confirm findings transition from Failed to Passed
 - Document all remediation actions taken
-
-**Step 6: Clean-up (Week 5)**
 - Terminate EC2 instances and delete S3 buckets
 - Disable CloudTrail, GuardDuty, and Security Hub
 - Verify complete resource teardown to avoid ongoing charges
@@ -135,15 +139,21 @@ The workshop is structured in sequential steps designed to build progressive sec
 - Ability to read and interpret CloudTrail logs and Security Hub findings
 
 ### 5. Timeline & Milestones
-**Project Timeline**
-- **Pre-Workshop (Week 0)**: Research cloud security concepts and CIS benchmark requirements
-- **Workshop Execution (Weeks 1-5)**: 
-    - Week 1: Enable security services (CloudTrail, GuardDuty, Security Hub)
-    - Week 1-2: Deploy vulnerable baseline and run test & validation
-    - Week 3-4: Execute hardening and remediation
-    - Week 4: Re-validation of compliance scores
-    - Week 5: Clean-up all lab resources
-- **Post-Workshop**: Ongoing lab access for review and additional scenarios (up to 12 weeks)
+**Project Timeline (8-Week Internship Program)**
+
+The workshop was conducted within an 8-week FCAJ internship program, structured in five phases:
+
+- **Foundation Phase (Weeks 1-2, Jun 15-27)**: AWS fundamentals learning — global infrastructure, shared responsibility model, core services (EC2, IAM, S3, VPC, CloudTrail). AWS account setup, CLI configuration, billing alerts, and hands-on practice labs.
+
+- **Planning Phase (Week 3, Jul 1-4)**: Designed the Insecure-by-Design workshop architecture; identified three core misconfiguration scenarios (public S3 bucket, over-privileged IAM role with wildcard permissions, EC2 instance with unrestricted SSH); defined the project structure.
+
+- **Execution Phase (Weeks 4-5, Jul 6-18)**: Full security lifecycle execution:
+    - **Week 4 (Jul 6-10)**: Enabled CloudTrail, GuardDuty, and Security Hub; deployed vulnerable baseline infrastructure; ran test & validation with GuardDuty Tester (50+ findings); executed hardening & remediation.
+    - **Week 5 (Jul 13-18)**: Re-validated compliance — all three CIS controls transitioned from FAILED to PASSED; cleaned up all lab resources; compiled project documentation.
+
+- **Extension Phase (Weeks 6-7, Jul 20-Aug 1)**: Researched and published a technical blog on Amazon EKS Pod Identity Session Policies; attended the GenAI-powered App-DB Modernization workshop by AWS.
+
+- **Finalization Phase (Week 8, Aug 3-14)**: Finalized bilingual workshop documentation; compiled compliance comparison report with before/after evidence; completed GuardDuty findings categorization; submitted final internship report.
 
 **Key Deliverables**
 - Vulnerable baseline infrastructure documentation
@@ -153,31 +163,33 @@ The workshop is structured in sequential steps designed to build progressive sec
 - Compliance comparison and remediation summary
 
 ### 6. Budget Estimation
-**AWS Services Cost Estimation (Lab Execution)**
+**AWS Services Cost Estimation (Actual Lab Execution)**
 
-The following services will be utilized during the 5-week workshop:
+The lab resources were active for approximately **2 weeks** (Weeks 4-5), with most services covered by AWS Free Tier or trial periods:
 
 **Service Breakdown**
-- **AWS CloudTrail**: ~$2.50 (logging API calls across 5 weeks)
-- **Amazon GuardDuty**: ~$30-40 (threat detection for 5 weeks, ~$6-8/week)
-- **AWS Security Hub**: ~$30-40 (centralized findings, ~$6-8/week)
-- **Amazon S3**: ~$1-2 (CloudTrail and log storage)
-- **Amazon EC2**: ~$5-10 (small instances for 5 weeks)
+- **AWS CloudTrail**: Free (1 trail included in AWS Free Tier, management events only)
+- **Amazon GuardDuty**: Free (30-day free trial covered the entire active period)
+- **AWS Security Hub**: Free (30-day free trial covered the entire active period)
+- **Amazon S3**: ~$1-2 (CloudTrail log storage; minimal data)
+- **Amazon EC2**: ~$3-5 (t3.micro instance, ~2 weeks runtime)
 - **AWS IAM**: Free (identity and access management)
 - **Amazon VPC**: Free (virtual private cloud)
+- **GuardDuty Tester (CDK)**: Covered under existing Free Tier limits
 
-**Total Estimated Cost**: $70-90 USD for the complete 5-week lab
+**Total Actual Cost**: ~$4-7 USD (EC2 t3.micro + S3 storage for CloudTrail logs)
 
-**Cost Optimization Notes**
-- Lab resources are intentionally minimal to keep costs low
-- CloudTrail and GuardDuty are essential for the learning objectives
-- Resources can be terminated immediately after validation phase
-- AWS Free Tier coverage may reduce or eliminate actual costs
+**Cost Optimization Summary**
+- Active lab window was intentionally compressed into 2 weeks to minimize costs
+- GuardDuty and Security Hub 30-day free trials fully covered the security monitoring period
+- t3.micro instance was selected for cost efficiency (~$0.0104/hr)
+- All resources were verified as terminated/disabled during Week 5 clean-up
+- AWS Budgets alerts were configured at $50 and $75 as a safety net
 
-**Post-Workshop Considerations**
-- Lab infrastructure should be cleaned up after completion to prevent ongoing charges
-- CloudTrail logs can be archived to Glacier for long-term retention at minimal cost
-- Security Hub can be suspended until future security assessments are needed
+**Post-Workshop Cost Considerations**
+- Lab infrastructure was fully cleaned up after Week 5 — no ongoing charges
+- CloudTrail logs for the internship period are retained in S3 (minimal cost, ~$1-2/month for storage)
+- The lab design enables future re-deployment using the documented steps at minimal cost
 
 ### 7. Risk Assessment
 #### Risk Matrix
