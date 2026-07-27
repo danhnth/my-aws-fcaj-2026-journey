@@ -1,4 +1,4 @@
----
+﻿---
 title: "Events Participated"
 date: 2026-01-06
 weight: 4
@@ -8,12 +8,12 @@ pre: " <b> 4. </b> "
 
 > In this section, you should list and describe in detail the events you have participated in during your internship or work experience.  
 > 
-> Each event should be presented in the format Event 1, Event 2, Event 3…, along with the following details:
+> Each event should be presented in the format Event 1, Event 2, Event 3..., along with the following details:
 > * Event name
 > * Date and time
 > * Location (if applicable)
 > * Your role in the event (attendee, event support, speaker, etc.)
-> * A brief description of the event’s content and main activities
+> * A brief description of the event's content and main activities
 > * Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
 > * This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
 
@@ -24,7 +24,7 @@ During my internship, I participated in the following events. They were memorabl
 
 &emsp;**Date & Time:** July 25, 2026  
 
-&emsp;**Location:** AWS Event Hall – 26th Floor, Bitexco Tower, District 1, Ho Chi Minh City  
+&emsp;**Location:** AWS Event Hall - 26th Floor, Bitexco Tower, District 1, Ho Chi Minh City  
 
 &emsp;**Role:** Attendee  
 

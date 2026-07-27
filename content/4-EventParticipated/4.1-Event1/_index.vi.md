@@ -1,4 +1,4 @@
----
+﻿---
 title: "Event 1"
 date: 2026-07-27
 weight: 1
@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Bài thu hoạch “Agentic AI Build Week (AABW)”
+# Bài thu hoạch "Agentic AI Build Week (AABW)"
 
 ### Mục Đích Của Sự Kiện
 
@@ -19,12 +19,12 @@ pre: " <b> 4.1. </b> "
 
 - **Tên sự kiện:** Agentic AI Build Week (AABW)
 - **Thời gian:** ngày 25/07/2026
-- **Địa điểm:** AWS Event Hall – Tầng 26, tòa nhà Bitexco, Quận 1, TP. Hồ Chí Minh
+- **Địa điểm:** AWS Event Hall - Tầng 26, tòa nhà Bitexco, Quận 1, TP. Hồ Chí Minh
 - **Vai trò:** Người tham dự
 
 ### Nội Dung Nổi Bật
 
-#### Đội 3KA — S.H.E.P.H.E.R.D
+#### Đội 3KA - S.H.E.P.H.E.R.D
 
 *Smart Human-flow Evaluation, Prediction, Hazard Detection, Response, and Dispatch*
 
@@ -34,19 +34,19 @@ pre: " <b> 4.1. </b> "
 - **Lớp Agentic AI:** *Autonomous Monitor* liên tục theo dõi chỉ số và tự tạo cảnh báo chủ động; *Operator Copilot* cho phép nhân viên hỏi bằng ngôn ngữ tự nhiên và nhận câu trả lời ngắn gọn dựa trên số liệu trực tiếp.
 - **Thách thức đội gặp phải:** giữ luồng video ổn định, giảm độ trễ inference, duy trì tracking giữa các frame, chọn vị trí camera hiệu quả, kiểm soát chi phí và giữ phạm vi khả thi trong 24 giờ.
 
-#### Đội Signal Scout — Phát hiện sớm thay đổi chiến lược doanh nghiệp
+#### Đội Signal Scout - Phát hiện sớm thay đổi chiến lược doanh nghiệp
 
-- **Giá trị mang lại:** phát hiện sớm dấu hiệu tái cấu trúc, nối các tín hiệu rời rạc thành một câu chuyện rõ ràng, phân tích chỉ số và dựng kịch bản, hỗ trợ quyết định *Maintain – Adapt – Accelerate*.
+- **Giá trị mang lại:** phát hiện sớm dấu hiệu tái cấu trúc, nối các tín hiệu rời rạc thành một câu chuyện rõ ràng, phân tích chỉ số và dựng kịch bản, hỗ trợ quyết định *Maintain - Adapt - Accelerate*.
 - **Nguyên tắc thiết kế:** mọi kết luận đều phải có bằng chứng kiểm chứng được; phân tích minh bạch; con người giữ quyền quyết định cuối cùng.
 - **Khách hàng mục tiêu:** đội chiến lược doanh nghiệp, quản trị rủi ro, competitive intelligence và quản lý tài khoản B2B.
-- **Công nghệ và đối tác:** AWS (Bedrock, AgentCore, Lambda, DynamoDB, API Gateway, Amplify, Cognito, CloudWatch…), LangFuse, TinyFish, Apify.
-- **Bài toán chi phí:** đội trình bày bảng bóc tách chi phí theo ba kịch bản — riêng AWS khoảng 17–130 USD/tháng, tổng chi phí kể cả dịch vụ bên thứ ba khoảng 81 – 94 – 359 USD/tháng — kèm một phương án kiến trúc tối ưu chi phí hơn.
+- **Công nghệ và đối tác:** AWS (Bedrock, AgentCore, Lambda, DynamoDB, API Gateway, Amplify, Cognito, CloudWatch...), LangFuse, TinyFish, Apify.
+- **Bài toán chi phí:** đội trình bày bảng bóc tách chi phí theo ba kịch bản - riêng AWS khoảng 17-130 USD/tháng, tổng chi phí kể cả dịch vụ bên thứ ba khoảng 81 - 94 - 359 USD/tháng - kèm một phương án kiến trúc tối ưu chi phí hơn.
 
-#### Đội Plan V — SA Professional Native App
+#### Đội Plan V - SA Professional Native App
 
 - **Bài toán:** Solution Architect thường xuyên bị ép tiến độ, phải tự làm bốn việc tốn thời gian nhất: trích xuất yêu cầu, phác thảo kiến trúc ban đầu, vẽ sơ đồ và ước tính chi phí cloud.
 - **Giải pháp:** ứng dụng AI native phân tích yêu cầu dạng ngôn ngữ tự nhiên và dạng có cấu trúc; đề xuất các phương án kiến trúc high-level có nhận biết hybrid-cloud và tuân theo chuẩn công ty; sinh sơ đồ Draw.io cùng AWS Architecture Icons chính thức; ước tính chi phí AWS cho vùng *ap-southeast-1*; chỉ ra khuyến nghị, giả định và lỗ hổng trong yêu cầu; tinh chỉnh lặp qua chat sidebar với custom instruction theo từng dự án.
-- **Tác động:** từ chỗ đọc BRD/PRD thủ công từng dòng, bắt đầu từ trang trắng, viết IaC bằng tay và ước tính theo cảm tính — nay chỉ cần upload tài liệu và trao đổi tự nhiên để có Requirements Catalogue trong vài phút, một bản nháp kiến trúc để phản biện, IaC sinh tự động và bản ước tính chi phí đi kèm.
+- **Tác động:** từ chỗ đọc BRD/PRD thủ công từng dòng, bắt đầu từ trang trắng, viết IaC bằng tay và ước tính theo cảm tính - nay chỉ cần upload tài liệu và trao đổi tự nhiên để có Requirements Catalogue trong vài phút, một bản nháp kiến trúc để phản biện, IaC sinh tự động và bản ước tính chi phí đi kèm.
 
 ### Những Gì Học Được
 
@@ -65,7 +65,7 @@ pre: " <b> 4.1. </b> "
 
 #### Kỹ Năng Mềm
 
-- **Phân vai rõ ràng:** ai code, ai thiết kế, ai pitch — quyết định sớm giúp tránh chồng chéo và tranh cãi giữa chừng.
+- **Phân vai rõ ràng:** ai code, ai thiết kế, ai pitch - quyết định sớm giúp tránh chồng chéo và tranh cãi giữa chừng.
 - **Kể chuyện trong 3 phút:** luyện trước phần demo là yếu tố quyết định khi trình bày trước ban giám khảo.
 - **Chuẩn bị trước không phải gian lận:** có mục tiêu rõ, template khởi tạo và tài khoản sẵn sàng giúp dành trọn thời gian cho việc xây dựng.
 
@@ -73,7 +73,7 @@ pre: " <b> 4.1. </b> "
 
 - **Thử nghiệm agentic pattern:** áp dụng mô hình *autonomous monitor + copilot* cho các tác vụ giám sát định kỳ thay vì dashboard thụ động.
 - **Chuẩn hóa việc ước tính chi phí:** lập bảng chi phí theo kịch bản min/mid/max cho mọi kiến trúc đề xuất.
-- **Bám nguyên tắc “có bằng chứng”:** mọi kết luận do AI sinh ra đều phải kèm nguồn để kiểm chứng.
+- **Bám nguyên tắc "có bằng chứng":** mọi kết luận do AI sinh ra đều phải kèm nguồn để kiểm chứng.
 - **Tăng tốc khâu tài liệu và sơ đồ:** dùng công cụ AI để sinh bản nháp kiến trúc và diagram, rồi con người phản biện và hoàn thiện.
 - **Rèn thói quen scoping:** chia bài toán thành MVP có thể hoàn thành trong khung thời gian ngắn.
 
@@ -83,7 +83,7 @@ Tham gia **Agentic AI Build Week** là một trải nghiệm rất khác so vớ
 
 #### Chứng kiến quá trình xây dựng thật
 
-- Các đội chia sẻ rất thẳng thắn về giai đoạn hoang mang lúc bắt đầu, khoảnh khắc ý tưởng “vỡ ra”, và cảm giác tự hào khi sản phẩm chạy được — một cung bậc cảm xúc mà slide kỹ thuật không thể hiện hết.
+- Các đội chia sẻ rất thẳng thắn về giai đoạn hoang mang lúc bắt đầu, khoảnh khắc ý tưởng "vỡ ra", và cảm giác tự hào khi sản phẩm chạy được - một cung bậc cảm xúc mà slide kỹ thuật không thể hiện hết.
 - Nhiều thành viên bắt đầu mà **không có nền tảng AI** và **lần đầu dùng AWS**, cho thấy rào cản thực sự không nằm ở kinh nghiệm mà ở việc dám bắt đầu.
 
 #### Học từ kiến trúc và chi phí thật
@@ -98,9 +98,9 @@ Tham gia **Agentic AI Build Week** là một trải nghiệm rất khác so vớ
 
 #### Bài học rút ra
 
-- **Việc xuất hiện và bắt tay vào làm đã là một nửa chặng đường** — không cần đợi đến khi cảm thấy đủ giỏi.
+- **Việc xuất hiện và bắt tay vào làm đã là một nửa chặng đường** - không cần đợi đến khi cảm thấy đủ giỏi.
 - **Một sản phẩm nhỏ chạy được có giá trị hơn một ý tưởng lớn còn dang dở.**
-- **Những người mình gặp quan trọng hơn giải thưởng** — mạng lưới và kinh nghiệm ở lại lâu hơn kết quả cuộc thi.
+- **Những người mình gặp quan trọng hơn giải thưởng** - mạng lưới và kinh nghiệm ở lại lâu hơn kết quả cuộc thi.
 - Agentic AI chỉ thực sự hữu ích khi agent **chủ động, giải thích được và hành động được**, đồng thời vẫn để con người giữ quyền quyết định cuối cùng.
 
 #### Một số hình ảnh khi tham gia sự kiện

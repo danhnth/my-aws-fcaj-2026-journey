@@ -20,9 +20,9 @@ Sau khi hoàn tất các bước gia cố, chúng ta cần xác minh rằng các
 
    | Mã Control | Trước khi gia cố | Sau khi gia cố |
    |------------|-----------------|----------------|
-   | S3.2 (Chặn S3 public) | **Failed** | **Passed** ✅ |
-   | IAM.1 (Không có policy toàn quyền) | **Failed** | **Passed** ✅ |
-   | EC2.19 (Giới hạn SSH) | **Failed** | **Passed** ✅ |
+   | S3.2 (Chặn S3 public) | **Failed** | **Passed** X |
+   | IAM.1 (Không có policy toàn quyền) | **Failed** | **Passed** X |
+   | EC2.19 (Giới hạn SSH) | **Failed** | **Passed** X |
 
     ![S3 Block Public Access Control Passed](Screenshots/s3-block-public-access-resolved.png)
 
@@ -80,12 +80,12 @@ Sau khi hoàn tất các bước gia cố, chúng ta cần xác minh rằng các
 
    > **Lưu ý:** Đây là thao tác nhạy cảm. Sau khi bật, tất cả thao tác xóa đều yêu cầu xác thực MFA. Hãy thận trọng khi sử dụng trong môi trường production.
 
-   Sau khi hoàn tất các bước khắc phục tùy chọn này, hãy chờ lần quét Security Hub tiếp theo (30–60 phút) để kiểm tra trạng thái **Passed** cho từng control 
+   Sau khi hoàn tất các bước khắc phục tùy chọn này, hãy chờ lần quét Security Hub tiếp theo (30-60 phút) để kiểm tra trạng thái **Passed** cho từng control 
 
 ![Security Score sau khi đã Hardening ](Screenshots/security-score-after-hardening.png)<br>
 *Điểm số CSPM của Security Hub sau khi đã được gia cố, khắc phục gần như tất cả các findings và đạt trạng thái Passed cho các Controls*
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # 1. Kiểm tra trạng thái S3.2 (sẽ là PASSED sau khi gia cố)
 aws securityhub get-findings \

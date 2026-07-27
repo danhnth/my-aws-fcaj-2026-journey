@@ -1,4 +1,4 @@
----
+﻿---
 title: "Nhật ký công việc"
 date: 2026-06-25
 weight: 1
@@ -6,19 +6,19 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-**Trong trang này** là nhật ký công việc của tôi trong suốt chương trình thực tập AWS FCAJ. Tôi đã hoàn thành chương trình trong 8 tuần, mỗi tuần tập trung vào các mốc quan trọng — từ kiến thức cơ bản về AWS và bảo mật đám mây, đến triển khai môi trường đám mây cố tình không an toàn, thiết lập giám sát, khắc phục và báo cáo cuối cùng.
+**Trong trang này** là nhật ký công việc của tôi trong suốt chương trình thực tập AWS FCAJ. Tôi đã hoàn thành chương trình trong 8 tuần, mỗi tuần tập trung vào các mốc quan trọng - từ kiến thức cơ bản về AWS và bảo mật đám mây, đến triển khai môi trường đám mây cố tình không an toàn, thiết lập giám sát, khắc phục và báo cáo cuối cùng.
 
 Dưới đây là tóm tắt những gì tôi đã làm mỗi tuần:
 
 **Tuần 1:** [Làm quen với AWS, kiến thức nền tảng về Cloud và bảo mật cơ bản](1.1-week1/)
 
-**Tuần 2:** [Tìm hiểu chuyên sâu về các dịch vụ bảo mật AWS — IAM, S3 security, VPC, CloudTrail](1.2-week2/)
+**Tuần 2:** [Tìm hiểu chuyên sâu về các dịch vụ bảo mật AWS - IAM, S3 security, VPC, CloudTrail](1.2-week2/)
 
-**Tuần 3:** [Bắt đầu dự án Insecure-by-Design — lập kế hoạch kiến trúc và triển khai hạ tầng ban đầu](1.3-week3/)
+**Tuần 3:** [Bắt đầu dự án Insecure-by-Design - lập kế hoạch kiến trúc và triển khai hạ tầng ban đầu](1.3-week3/)
 
-**Tuần 4:** [Triển khai các tài nguyên AWS dễ bị tấn công — public S3, IAM roles quá privilege, EC2 lộ diện](1.4-week4/)
+**Tuần 4:** [Triển khai các tài nguyên AWS dễ bị tấn công - public S3, IAM roles quá privilege, EC2 lộ diện](1.4-week4/)
 
-**Tuần 5:** [Thiết lập ghi log tập trung và phát hiện mối đe dọa — CloudTrail, GuardDuty, Security Hub](1.5-week5/)
+**Tuần 5:** [Thiết lập ghi log tập trung và phát hiện mối đe dọa - CloudTrail, GuardDuty, Security Hub](1.5-week5/)
 
 **Tuần 6:** [Viết blog kỹ thuật trên AWS Study Group](1.6-week6/)
 

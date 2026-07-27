@@ -1,4 +1,4 @@
----
+﻿---
 title: "Blog 3"
 date: 2026-07-22
 weight: 3
@@ -25,7 +25,7 @@ cdk bootstrap    # one-time setup
 cdk deploy       # deploys Lambda functions, IAM roles, test EC2
 ```
 
-The CDK stack creates the infrastructure needed to simulate attacks — Lambda functions for API-level simulations and optional EC2 instances for network-level scenarios. The whole process takes about 10 minutes.
+The CDK stack creates the infrastructure needed to simulate attacks - Lambda functions for API-level simulations and optional EC2 instances for network-level scenarios. The whole process takes about 10 minutes.
 
 ## Running the Tests
 
@@ -45,9 +45,9 @@ After running, findings appear in GuardDuty within 5-15 minutes. If you have Sec
 
 In my Security Operations Lab, I ran GuardDuty Tester in three phases:
 
-1. **Before hardening** — Established a baseline of 52 findings across all six categories
-2. **After applying security fixes** — Re-ran the same tests and saw Critical/High findings drop
-3. **As validation** — Confirmed that my fixes (blocking public S3, restricting IAM, locking down SSH) actually changed the detection results
+1. **Before hardening** - Established a baseline of 52 findings across all six categories
+2. **After applying security fixes** - Re-ran the same tests and saw Critical/High findings drop
+3. **As validation** - Confirmed that my fixes (blocking public S3, restricting IAM, locking down SSH) actually changed the detection results
 
 This workflow transformed security validation from a manual one-time effort into an automated, repeatable process.
 

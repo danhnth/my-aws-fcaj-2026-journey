@@ -1,4 +1,4 @@
----
+﻿---
 title: "Blog 3"
 date: 2026-07-22
 weight: 3
@@ -25,7 +25,7 @@ cdk bootstrap
 cdk deploy
 ```
 
-CDK stack tạo hạ tầng cần thiết để mô phỏng tấn công — Lambda functions cho mô phỏng cấp API và EC2 instances tùy chọn cho kịch bản cấp mạng. Toàn bộ quá trình mất khoảng 10 phút.
+CDK stack tạo hạ tầng cần thiết để mô phỏng tấn công - Lambda functions cho mô phỏng cấp API và EC2 instances tùy chọn cho kịch bản cấp mạng. Toàn bộ quá trình mất khoảng 10 phút.
 
 ## Chạy Kiểm Thử
 
@@ -45,9 +45,9 @@ Findings xuất hiện trong GuardDuty sau 5-15 phút. Nếu đã bật Security
 
 Tôi chạy GuardDuty Tester trong ba giai đoạn:
 
-1. **Trước hardening** — Thiết lập baseline với 52 findings trên sáu nhóm
-2. **Sau khi áp dụng bản sửa** — Chạy lại và thấy findings Critical/High giảm
-3. **Xác nhận** — Xác nhận các bản sửa (chặn public S3, giới hạn IAM, khóa SSH) thay đổi kết quả phát hiện
+1. **Trước hardening** - Thiết lập baseline với 52 findings trên sáu nhóm
+2. **Sau khi áp dụng bản sửa** - Chạy lại và thấy findings Critical/High giảm
+3. **Xác nhận** - Xác nhận các bản sửa (chặn public S3, giới hạn IAM, khóa SSH) thay đổi kết quả phát hiện
 
 ## Bài Học Chính
 

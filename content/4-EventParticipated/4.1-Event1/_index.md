@@ -1,4 +1,4 @@
----
+﻿---
 title: "Event 1"
 date: 2026-07-27
 weight: 1
@@ -19,12 +19,12 @@ pre: " <b> 4.1. </b> "
 
 - **Event Name:** Agentic AI Build Week (AABW)
 - **Date & Time:** July 25, 2026
-- **Location:** AWS Event Hall – 26th Floor, Bitexco Tower, District 1, Ho Chi Minh City
+- **Location:** AWS Event Hall - 26th Floor, Bitexco Tower, District 1, Ho Chi Minh City
 - **Role:** Attendee
 
 ### Key Highlights
 
-#### Team 3KA — S.H.E.P.H.E.R.D
+#### Team 3KA - S.H.E.P.H.E.R.D
 
 *Smart Human-flow Evaluation, Prediction, Hazard Detection, Response, and Dispatch*
 
@@ -34,19 +34,19 @@ pre: " <b> 4.1. </b> "
 - **Agentic AI layer:** an *Autonomous Monitor* continuously tracks metrics and proactively raises alerts; an *Operator Copilot* lets staff ask questions in natural language and get concise answers grounded in live data.
 - **Challenges the team faced:** keeping the video stream stable, reducing inference latency, maintaining tracking across frames, choosing effective camera placements, controlling costs, and keeping the scope feasible within 24 hours.
 
-#### Team Signal Scout — Early Detection of Corporate Strategy Shifts
+#### Team Signal Scout - Early Detection of Corporate Strategy Shifts
 
-- **Value delivered:** early detection of restructuring signals, connecting scattered signals into a clear narrative, analyzing metrics and building scenarios, and supporting *Maintain – Adapt – Accelerate* decisions.
+- **Value delivered:** early detection of restructuring signals, connecting scattered signals into a clear narrative, analyzing metrics and building scenarios, and supporting *Maintain - Adapt - Accelerate* decisions.
 - **Design principles:** every conclusion must be backed by verifiable evidence; analysis must be transparent; humans retain final decision-making authority.
 - **Target customers:** corporate strategy teams, risk management, competitive intelligence, and B2B account management.
 - **Technology and partners:** AWS (Bedrock, AgentCore, Lambda, DynamoDB, API Gateway, Amplify, Cognito, CloudWatch, etc.), LangFuse, TinyFish, Apify.
-- **Cost breakdown:** the team presented a cost breakdown across three scenarios — AWS-only costs of roughly USD 17–130/month, and total cost including third-party services of roughly USD 81 – 94 – 359/month — along with a more cost-optimized architecture option.
+- **Cost breakdown:** the team presented a cost breakdown across three scenarios - AWS-only costs of roughly USD 17-130/month, and total cost including third-party services of roughly USD 81 - 94 - 359/month - along with a more cost-optimized architecture option.
 
-#### Team Plan V — SA Professional Native App
+#### Team Plan V - SA Professional Native App
 
 - **Problem:** Solution Architects are frequently under tight deadlines and must personally handle the four most time-consuming tasks: extracting requirements, drafting an initial architecture, drawing diagrams, and estimating cloud costs.
 - **Solution:** a native AI application that analyzes requirements in both natural-language and structured form; proposes high-level architecture options that are hybrid-cloud aware and comply with company standards; generates Draw.io diagrams using official AWS Architecture Icons; estimates AWS costs for the *ap-southeast-1* region; surfaces recommendations, assumptions, and gaps in the requirements; and refines iteratively through a chat sidebar with per-project custom instructions.
-- **Impact:** instead of manually reading BRD/PRD documents line by line, starting from a blank page, hand-writing IaC, and estimating costs by gut feel — teams can now simply upload documents and have a natural conversation to get a Requirements Catalogue within minutes, a draft architecture to critique, auto-generated IaC, and an accompanying cost estimate.
+- **Impact:** instead of manually reading BRD/PRD documents line by line, starting from a blank page, hand-writing IaC, and estimating costs by gut feel - teams can now simply upload documents and have a natural conversation to get a Requirements Catalogue within minutes, a draft architecture to critique, auto-generated IaC, and an accompanying cost estimate.
 
 ### Key Takeaways
 
@@ -83,7 +83,7 @@ Attending the **Agentic AI Build Week** was a very different experience compared
 
 #### Witnessing the real building process
 
-- Teams shared very candidly about the confusing early stage, the moment an idea "clicked," and the pride of seeing the product actually work — an emotional arc that technical slides can never fully capture.
+- Teams shared very candidly about the confusing early stage, the moment an idea "clicked," and the pride of seeing the product actually work - an emotional arc that technical slides can never fully capture.
 - Many members started with **no AI background** and were **using AWS for the first time**, showing that the real barrier isn't experience but simply daring to start.
 
 #### Learning from real architecture and real costs
@@ -98,9 +98,9 @@ Attending the **Agentic AI Build Week** was a very different experience compared
 
 #### Lessons learned
 
-- **Showing up and getting started is already half the journey** — no need to wait until you feel skilled enough.
+- **Showing up and getting started is already half the journey** - no need to wait until you feel skilled enough.
 - **A small product that works is worth more than a big idea left unfinished.**
-- **The people you meet matter more than the prize** — the network and experience outlast the competition results.
+- **The people you meet matter more than the prize** - the network and experience outlast the competition results.
 - Agentic AI is only truly useful when the agent is **proactive, explainable, and actionable**, while humans still retain the final decision.
 
 #### Some event photos

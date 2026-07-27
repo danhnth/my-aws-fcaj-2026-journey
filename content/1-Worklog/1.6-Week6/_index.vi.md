@@ -1,4 +1,4 @@
----
+﻿---
 title: "Worklog Tuần 6"
 date: 2026-07-25
 weight: 6
@@ -25,7 +25,7 @@ pre: " <b> 1.6. </b> "
 
 ### Kết quả đạt được tuần 6:
 
-* Nắm vững kiến thức về Amazon EKS Pod Identity — cách nó ánh xạ IAM roles vào Kubernetes service accounts ở cấp pod, và cách nó đơn giản hóa quy trình quản lý credentials so với phương pháp IRSA truyền thống.
+* Nắm vững kiến thức về Amazon EKS Pod Identity - cách nó ánh xạ IAM roles vào Kubernetes service accounts ở cấp pod, và cách nó đơn giản hóa quy trình quản lý credentials so với phương pháp IRSA truyền thống.
 
 * Làm chủ tính năng Session Policies cho EKS Pod Identity:
   * Hiểu cách session policies hoạt động như một ranh giới permission runtime, thu hẹp thêm quyền của IAM role cho từng pod riêng lẻ
@@ -40,4 +40,4 @@ pre: " <b> 1.6. </b> "
 
 * Đã đăng blog lên nền tảng cộng đồng AWS Study Group và chia sẻ với nhóm FCAJ, nhận được phản hồi tích cực từ bạn học và người hướng dẫn.
 
-* Củng cố kỹ năng viết kỹ thuật — học cách giải thích các khái niệm bảo mật AWS phức tạp một cách dễ hiểu cho cộng đồng cloud.
+* Củng cố kỹ năng viết kỹ thuật - học cách giải thích các khái niệm bảo mật AWS phức tạp một cách dễ hiểu cho cộng đồng cloud.

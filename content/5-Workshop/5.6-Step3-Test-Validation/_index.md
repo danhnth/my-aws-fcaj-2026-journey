@@ -1,4 +1,4 @@
----
+﻿---
 title : "Step 3: Test & Validation"
 date : 2026-06-30
 weight : 6
@@ -77,7 +77,7 @@ aws guardduty get-findings --detector-id <detector-id> \
 
 **3. Deploy and Run Amazon GuardDuty Tester (Comprehensive)**
 
-For a more thorough validation, the repository includes the **Amazon GuardDuty Findings Tester** from AWS Labs at [`amazon-guardduty-tester-master/`](https://github.com/awslabs/amazon-guardduty-tester). This CDK-based tool deploys dedicated test resources (EC2, ECS, EKS, Lambda, S3) and runs real attack simulations to trigger a broad range of GuardDuty findings — far beyond what manual SSH or IAM tests can produce.
+For a more thorough validation, the repository includes the **Amazon GuardDuty Findings Tester** from AWS Labs at [`amazon-guardduty-tester-master/`](https://github.com/awslabs/amazon-guardduty-tester). This CDK-based tool deploys dedicated test resources (EC2, ECS, EKS, Lambda, S3) and runs real attack simulations to trigger a broad range of GuardDuty findings - far beyond what manual SSH or IAM tests can produce.
 
 > **Note**: Deploy the tester in the same AWS account and region where your insecure baseline is running, or in a separate non-production account to keep findings clearly scoped.
 
@@ -94,7 +94,7 @@ npm install
 cdk bootstrap    # only if this region hasn't been bootstrapped before
 cdk deploy
 ```
-Deployment takes approximately 10–15 minutes. It provisions an EC2 instance (the *test driver*), along with supporting resources for S3, ECS, EKS, and Lambda tests.
+Deployment takes approximately 10-15 minutes. It provisions an EC2 instance (the *test driver*), along with supporting resources for S3, ECS, EKS, and Lambda tests.
 
    ![CDK Bootstrap Result](Screenshots/cdk-bootstrap-result.png)
    *CDK bootstrap output*
@@ -122,7 +122,7 @@ aws ssm start-session \
 Inside the SSM session, the Python tester dynamically builds and executes bash scripts that simulate attacks. Start with a broad sweep or narrow down by resource or tactic:
 
 ```bash
-# Run ALL available tests (EC2, S3, IAM, Lambda, EKS, ECS — generates ~50+ finding types)
+# Run ALL available tests (EC2, S3, IAM, Lambda, EKS, ECS - generates ~50+ finding types)
 python3 guardduty_tester.py --all
 
 # Run only EC2 and S3 tests
@@ -139,7 +139,7 @@ python3 guardduty_tester.py --finding 'UnauthorizedAccess:EC2/SSHBruteForce'
 
 **Check the generated findings**
 
-Return to the **GuardDuty** console → **Findings** after 5–15 minutes. The `--all` run typically generates findings across categories such as:
+Return to the **GuardDuty** console → **Findings** after 5-15 minutes. The `--all` run typically generates findings across categories such as:
 
 | Category | Example Findings |
 |----------|-----------------|

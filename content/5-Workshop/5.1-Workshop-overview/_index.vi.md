@@ -1,4 +1,4 @@
----
+﻿---
 title : "Giới thiệu Workshop"
 date : 2026-06-26
 weight : 1
@@ -12,10 +12,10 @@ Workshop này tiếp cận AWS Cloud qua góc nhìn của một **Kỹ sư Bảo
 
 **Các giai đoạn chính:**
 
-1. **Xây dựng hạ tầng lỗi cấu hình** — Tạo các lỗ hổng phổ biến: S3 bucket công khai, IAM role với quyền wildcard quá rộng, và EC2 instance mở cổng SSH toàn cầu.
-2. **Giám sát & Phát hiện liên tục** — Thiết lập pipeline ghi nhật ký và phát hiện mối đe dọa tập trung với AWS CloudTrail, Amazon GuardDuty và AWS Security Hub.
-3. **Gia cố & Khắc phục** — Thực hiện các bước vá lỗi để áp dụng nguyên tắc đặc quyền tối thiểu và xử lý từng cảnh báo.
-4. **Kiểm toán & Xác thực** — So sánh điểm số tuân thủ trước và sau khi gia cố bằng bài đánh giá CIS AWS Foundations Benchmark của Security Hub.
+1. **Xây dựng hạ tầng lỗi cấu hình** - Tạo các lỗ hổng phổ biến: S3 bucket công khai, IAM role với quyền wildcard quá rộng, và EC2 instance mở cổng SSH toàn cầu.
+2. **Giám sát & Phát hiện liên tục** - Thiết lập pipeline ghi nhật ký và phát hiện mối đe dọa tập trung với AWS CloudTrail, Amazon GuardDuty và AWS Security Hub.
+3. **Gia cố & Khắc phục** - Thực hiện các bước vá lỗi để áp dụng nguyên tắc đặc quyền tối thiểu và xử lý từng cảnh báo.
+4. **Kiểm toán & Xác thực** - So sánh điểm số tuân thủ trước và sau khi gia cố bằng bài đánh giá CIS AWS Foundations Benchmark của Security Hub.
 
 **Kết quả đạt được:**
 

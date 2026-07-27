@@ -1,4 +1,4 @@
----
+﻿---
 title: "Worklog Tuần 2"
 date: 2026-06-27
 weight: 2
@@ -8,7 +8,7 @@ pre: " <b> 1.2. </b> "
 
 ### Mục tiêu tuần 2:
 
-* Hiểu sâu về AWS Identity and Access Management (IAM) — users, groups, roles, policies và nguyên tắc đặc quyền tối thiểu.
+* Hiểu sâu về AWS Identity and Access Management (IAM) - users, groups, roles, policies và nguyên tắc đặc quyền tối thiểu.
 * Tìm hiểu về bảo mật S3 - bucket policies, ACLs, cài đặt public access và mã hóa.
 * Khám phá các khái niệm VPC - subnets, route tables, Internet Gateway, NAT Gateway và các phương pháp bảo mật.
 * Làm quen với CloudTrail để ghi log và giám sát hoạt động API.

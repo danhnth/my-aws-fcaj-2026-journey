@@ -1,4 +1,4 @@
----
+﻿---
 title: "Week 2 Worklog"
 date: 2026-06-27
 weight: 2
@@ -8,7 +8,7 @@ pre: " <b> 1.2. </b> "
 
 ### Week 2 Objectives:
 
-* Understand AWS Identity and Access Management (IAM) in depth — users, groups, roles, policies, and the principle of least privilege.
+* Understand AWS Identity and Access Management (IAM) in depth - users, groups, roles, policies, and the principle of least privilege.
 * Learn about S3 security - bucket policies, ACLs, public access settings, and encryption.
 * Explore VPC fundamentals - subnets, route tables, Internet Gateway, NAT Gateway, and security best practices.
 * Get introduced to CloudTrail for API activity logging and monitoring.

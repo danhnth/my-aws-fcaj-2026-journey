@@ -10,7 +10,7 @@ pre : " <b> 5.5. </b> "
 
 Chúng ta sẽ cố tình tạo ra 3 "lỗ hổng" kinh điển để hệ thống quét phát hiện.
 
-**1. Lỗ hổng S3 — Public Bucket**
+**1. Lỗ hổng S3 - Public Bucket**
 
 1. Vào **S3** console → Chọn **Create bucket**.
 2. Cấu hình:
@@ -20,7 +20,7 @@ Chúng ta sẽ cố tình tạo ra 3 "lỗ hổng" kinh điển để hệ thố
 4. Xác nhận cảnh báo rằng bucket sẽ được công khai.
 5. Chọn **Create bucket**.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # 1. Tạo bucket (mặc định chặn public access)
 aws s3 mb s3://vulnerable-public-data-<tên-bạn> --region ap-southeast-1
@@ -43,7 +43,7 @@ aws s3api put-bucket-policy --bucket vulnerable-public-data-<your-name> --policy
 }'
 {{%/expand%}}
 
-**2. Lỗ hổng IAM — Wildcard Quyền hạn quá rộng**
+**2. Lỗ hổng IAM - Wildcard Quyền hạn quá rộng**
 
 1. Vào **IAM** console → **Users** → **Create user**.
 2. **Tên người dùng**: `developer-test`
@@ -71,7 +71,7 @@ aws s3api put-bucket-policy --bucket vulnerable-public-data-<your-name> --policy
 8. Quay lại, chọn policy `WildcardFullAccess` vừa tạo → Chọn **Next**.
 9. Xem lại và chọn **Create user**.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # 1. Tạo IAM policy wildcard
 aws iam create-policy --policy-name WildcardFullAccess --policy-document '{
@@ -94,11 +94,11 @@ aws iam attach-user-policy --user-name developer-test --policy-arn arn:aws:iam::
 # 4. Tạo access keys cho user
 aws iam create-access-key --user-name developer-test
 ```
-> **Lưu ý:** Lưu `AccessKeyId` và `SecretAccessKey` từ kết quả — cần dùng ở Bước 3.
+> **Lưu ý:** Lưu `AccessKeyId` và `SecretAccessKey` từ kết quả - cần dùng ở Bước 3.
 
 {{%/expand%}}
 
-**3. Lỗ hổng EC2 — Mở cổng SSH toàn cầu**
+**3. Lỗ hổng EC2 - Mở cổng SSH toàn cầu**
 
 1. Tạo security group:
    - Vào **EC2** console → **Security Groups** → **Create security group**.
@@ -116,7 +116,7 @@ aws iam create-access-key --user-name developer-test
    - **Network settings**: Chọn **Edit** → Chọn **Select existing security group** → Chọn `insecure-sg`.
    - Chọn **Launch instance**.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # 1. Tạo security group
 aws ec2 create-security-group --group-name insecure-sg \

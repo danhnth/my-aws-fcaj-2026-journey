@@ -32,7 +32,7 @@ Sau khi triển khai hạ tầng lỗi cấu hình, chờ khoảng **30 - 60 ph�
    ![Security Score](Screenshots/security-score.png)<br>
    *Điểm CSPM của Security Hub = Passed / Enabled controls*
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # Liệt kê tất cả Security Hub findings
 aws securityhub get-findings --region ap-southeast-1
@@ -60,7 +60,7 @@ aws securityhub get-findings \
 
 Thay vì giả lập thủ công (thường không kích hoạt được cảnh báo một cách đáng tin cậy), hãy sử dụng **Amazon GuardDuty Tester** ở [mục 3](#3-tri%e1%bb%83n-khai-v%c3%a0-s%e1%bb%ad-d%e1%bb%a5ng-amazon-guardduty-tester-to%c3%a0n-di%e1%bb%87n) bên dưới. Công cụ này triển khai các tài nguyên kiểm thử chuyên dụng và chạy các mô phỏng tấn công thực tế để tạo ra GuardDuty findings một cách đáng tin cậy.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # Liệt kê GuardDuty detectors để lấy detector ID
 aws guardduty list-detectors --region ap-southeast-1
@@ -77,7 +77,7 @@ aws guardduty get-findings --detector-id <detector-id> \
 
 **3. Triển khai và sử dụng Amazon GuardDuty Tester (Toàn diện)**
 
-Để kiểm thử một cách toàn diện hơn, repository này bao gồm **Amazon GuardDuty Findings Tester** từ AWS Labs tại thư mục [`amazon-guardduty-tester-master/`](https://github.com/awslabs/amazon-guardduty-tester). Công cụ này dựa trên AWS CDK, triển khai các tài nguyên kiểm thử chuyên dụng (EC2, ECS, EKS, Lambda, S3) và thực thi các mô phỏng tấn công thực tế để kích hoạt nhiều loại cảnh báo GuardDuty — vượt xa những gì kiểm thử SSH hoặc IAM thủ công có thể tạo ra.
+Để kiểm thử một cách toàn diện hơn, repository này bao gồm **Amazon GuardDuty Findings Tester** từ AWS Labs tại thư mục [`amazon-guardduty-tester-master/`](https://github.com/awslabs/amazon-guardduty-tester). Công cụ này dựa trên AWS CDK, triển khai các tài nguyên kiểm thử chuyên dụng (EC2, ECS, EKS, Lambda, S3) và thực thi các mô phỏng tấn công thực tế để kích hoạt nhiều loại cảnh báo GuardDuty - vượt xa những gì kiểm thử SSH hoặc IAM thủ công có thể tạo ra.
 
 > **Lưu ý**: Triển khai tester trong cùng tài khoản AWS và region nơi hạ tầng lỗi cấu hình đang chạy, hoặc trong một tài khoản non-production riêng để dễ dàng phân biệt findings.
 
@@ -94,7 +94,7 @@ npm install
 cdk bootstrap    # chỉ cần chạy nếu region này chưa được bootstrap trước đó
 cdk deploy
 ```
-Quá trình triển khai mất khoảng 10–15 phút. Nó sẽ tạo một EC2 instance (gọi là *test driver*), cùng với các tài nguyên hỗ trợ cho kiểm thử S3, ECS, EKS và Lambda.
+Quá trình triển khai mất khoảng 10-15 phút. Nó sẽ tạo một EC2 instance (gọi là *test driver*), cùng với các tài nguyên hỗ trợ cho kiểm thử S3, ECS, EKS và Lambda.
 
    ![CDK Bootstrap Result](Screenshots/cdk-bootstrap-result.png)
    *Kết quả CDK bootstrap*
@@ -122,7 +122,7 @@ aws ssm start-session \
 Bên trong phiên SSM, Python tester sẽ tự động xây dựng và thực thi các bash script mô phỏng tấn công. Bắt đầu bằng cách chạy tất cả các bài kiểm tra hoặc thu hẹp phạm vi theo tài nguyên hoặc chiến thuật:
 
 ```bash
-# Chạy TẤT CẢ các bài kiểm tra (EC2, S3, IAM, Lambda, EKS, ECS — sinh ra ~50+ loại finding)
+# Chạy TẤT CẢ các bài kiểm tra (EC2, S3, IAM, Lambda, EKS, ECS - sinh ra ~50+ loại finding)
 python3 guardduty_tester.py --all
 
 # Chỉ chạy kiểm thử EC2 và S3
@@ -139,7 +139,7 @@ python3 guardduty_tester.py --finding 'UnauthorizedAccess:EC2/SSHBruteForce'
 
 **Kiểm tra các cảnh báo đã được sinh ra**
 
-Quay lại **GuardDuty** console → **Findings** sau 5–15 phút. Chạy `--all` thông thường sẽ sinh ra các cảnh báo thuộc nhiều nhóm như:
+Quay lại **GuardDuty** console → **Findings** sau 5-15 phút. Chạy `--all` thông thường sẽ sinh ra các cảnh báo thuộc nhiều nhóm như:
 
 | Nhóm | Ví dụ Findings |
 |------|----------------|

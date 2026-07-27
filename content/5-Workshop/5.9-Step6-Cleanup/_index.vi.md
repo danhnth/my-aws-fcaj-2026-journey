@@ -30,7 +30,7 @@ Bước bắt buộc để tránh phát sinh chi phí ngoài ý muốn. Xóa t�
 
 10. **Xóa S3 bucket của CloudTrail**: Vào **S3** → Chọn bucket log (`fcaj-security-logs-<random-id>`) → **Empty** → **Delete**.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # === Dọn IAM ===
 # Liệt kê và xóa access keys của developer-test

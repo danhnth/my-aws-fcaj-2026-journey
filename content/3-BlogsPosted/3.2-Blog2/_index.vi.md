@@ -1,4 +1,4 @@
----
+﻿---
 title: "Blog 2"
 date: 2026-07-22
 weight: 2
@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 3.2. </b> "
 ---
 
-# Amazon GuardDuty Tester — Công Cụ Mới Kiểm Tra Phát Hiện Bảo Mật AWS
+# Amazon GuardDuty Tester - Công Cụ Mới Kiểm Tra Phát Hiện Bảo Mật AWS
 
 ## Amazon GuardDuty Tester Là Gì?
 
@@ -16,20 +16,20 @@ Thay vì chờ một sự cố bảo mật thực sự để kiểm tra khả n�
 
 ## Tại Sao Tôi Sử Dụng Nó
 
-Trong Security Operations Lab, tôi đã bật GuardDuty, CloudTrail và Security Hub — nhưng không có cách nào xác nhận chúng thực sự phát hiện mối đe dọa. Các tài nguyên dễ tổn thương như S3 bucket công khai sẽ không kích hoạt cảnh báo nếu chỉ nằm im. Tôi cần mô phỏng kẻ tấn công tương tác với chúng, và GuardDuty Tester làm chính xác điều đó.
+Trong Security Operations Lab, tôi đã bật GuardDuty, CloudTrail và Security Hub - nhưng không có cách nào xác nhận chúng thực sự phát hiện mối đe dọa. Các tài nguyên dễ tổn thương như S3 bucket công khai sẽ không kích hoạt cảnh báo nếu chỉ nằm im. Tôi cần mô phỏng kẻ tấn công tương tác với chúng, và GuardDuty Tester làm chính xác điều đó.
 
 ## Cách Hoạt Động
 
-Công cụ triển khai các Lambda functions qua AWS CDK để thực hiện các hoạt động độc hại mô phỏng — quét cổng, lạm dụng credential, DNS query đào crypto, v.v. Mô hình ML của GuardDuty phân tích các hoạt động này và tạo findings trên sáu nhóm:
+Công cụ triển khai các Lambda functions qua AWS CDK để thực hiện các hoạt động độc hại mô phỏng - quét cổng, lạm dụng credential, DNS query đào crypto, v.v. Mô hình ML của GuardDuty phân tích các hoạt động này và tạo findings trên sáu nhóm:
 
-- **Recon** — Quét cổng, dò DNS, liệt kê API
-- **UnauthorizedAccess** — Lạm dụng credential, SSH brute force
-- **Impact** — Xóa tài nguyên, kết thúc EC2
-- **CryptoCurrency** — DNS query đến mining pool
-- **Policy** — Vi phạm IAM policy, vượt S3 public access
-- **Trojan** — C2 communication, reverse shell
+- **Recon** - Quét cổng, dò DNS, liệt kê API
+- **UnauthorizedAccess** - Lạm dụng credential, SSH brute force
+- **Impact** - Xóa tài nguyên, kết thúc EC2
+- **CryptoCurrency** - DNS query đến mining pool
+- **Policy** - Vi phạm IAM policy, vượt S3 public access
+- **Trojan** - C2 communication, reverse shell
 
-Chạy `guardduty_tester.py --all` tạo ra hơn 50 findings trong khoảng 15 phút — xác nhận hoàn chỉnh hệ thống phát hiện của tôi.
+Chạy `guardduty_tester.py --all` tạo ra hơn 50 findings trong khoảng 15 phút - xác nhận hoàn chỉnh hệ thống phát hiện của tôi.
 
 ## Bài Học Chính
 

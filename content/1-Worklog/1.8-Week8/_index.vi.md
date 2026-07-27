@@ -1,4 +1,4 @@
----
+﻿---
 title: "Worklog Tuần 8"
 date: 2026-08-14
 weight: 8
@@ -27,7 +27,7 @@ pre: " <b> 1.8. </b> "
 
 ### Kết quả đạt được tuần 8:
 
-* Hoàn thiện **Security Operations & Hardening Lab Workshop** — hướng dẫn song ngữ (EN/VI) đầy đủ bao gồm tất cả 6 bước của vòng đời bảo mật với hướng dẫn AWS Console và CLI song song.
+* Hoàn thiện **Security Operations & Hardening Lab Workshop** - hướng dẫn song ngữ (EN/VI) đầy đủ bao gồm tất cả 6 bước của vòng đời bảo mật với hướng dẫn AWS Console và CLI song song.
 
 * Hoàn thành **Báo cáo So sánh Tuân thủ**:
   * Ghi chép baseline trước hardening với các phát hiện Security Hub (S3.2, IAM.1, EC2.19 đều FAILED)

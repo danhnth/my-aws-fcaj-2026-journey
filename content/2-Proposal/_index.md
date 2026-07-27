@@ -1,4 +1,4 @@
----
+﻿---
 title: "Proposal"
 date: 2026-06-30
 weight: 2
@@ -15,7 +15,7 @@ In this section, you need to summarize the contents of the workshop that you **p
 The AWS Security Operations & Hardening lab approaches AWS Cloud through the lens of a **Cloud Security Engineer**, rather than simply deploying functioning resources. The core objective is to deploy a controlled, intentionally vulnerable cloud environment ("Insecure-by-Design"), monitor it using AWS native security services, and systematically harden it to meet enterprise security benchmarks such as the **CIS AWS Foundations Benchmark**. This hands-on workshop demonstrates the complete security lifecycle: from identifying misconfigurations, detecting threats in real-time, executing remediation strategies, and validating compliance posture.
 
 ### 2. Problem Statement
-### What’s the Problem?
+### What's the Problem?
 Many cloud practitioners can deploy AWS infrastructure, but lack practical experience in **cloud security operations**. There is a significant gap between simply running cloud resources and securing them properly. Organizations often struggle with:
 - Detecting common misconfigurations early (public S3 buckets, over-privileged IAM roles, unencrypted data)
 - Implementing centralized logging and threat detection

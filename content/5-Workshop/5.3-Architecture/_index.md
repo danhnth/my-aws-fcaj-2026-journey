@@ -1,4 +1,4 @@
----
+﻿---
 title : "Architecture"
 date : 2026-06-26 
 weight : 3
@@ -28,10 +28,10 @@ The data flow and security detection pipeline for this workshop is as follows:
 
 #### Architecture Flow Explanation
 
-1. **Vulnerability Entry** — An attacker or user exploits misconfigurations on EC2, S3, or IAM (e.g., public S3 bucket, global SSH access, `*/*` IAM policy).
-2. **Log Capture** — AWS CloudTrail records all API calls, including malicious or unauthorized actions.
-3. **Threat Detection** — Amazon GuardDuty analyzes behavior and logs to detect threats and anomalies.
-4. **Aggregation & Assessment** — AWS Security Hub aggregates findings from GuardDuty and automatically scores compliance against the CIS AWS Foundations Benchmark.
+1. **Vulnerability Entry** - An attacker or user exploits misconfigurations on EC2, S3, or IAM (e.g., public S3 bucket, global SSH access, `*/*` IAM policy).
+2. **Log Capture** - AWS CloudTrail records all API calls, including malicious or unauthorized actions.
+3. **Threat Detection** - Amazon GuardDuty analyzes behavior and logs to detect threats and anomalies.
+4. **Aggregation & Assessment** - AWS Security Hub aggregates findings from GuardDuty and automatically scores compliance against the CIS AWS Foundations Benchmark.
 
 #### AWS Services Used
 

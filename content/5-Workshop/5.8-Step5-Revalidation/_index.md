@@ -1,4 +1,4 @@
----
+﻿---
 title : "Step 5: Re-validation"
 date : 2026-06-29
 weight : 8
@@ -20,9 +20,9 @@ After completing the hardening steps, we need to verify that our remediation act
 
    | Control ID | Before (Pre-Hardening) | After (Post-Hardening) |
    |------------|----------------------|----------------------|
-   | S3.2 (S3 public access blocked) | **Failed** | **Passed** ✅ |
-   | IAM.1 (No full admin policy) | **Failed** | **Passed** ✅ |
-   | EC2.19 (SSH restricted) | **Failed** | **Passed** ✅ |
+   | S3.2 (S3 public access blocked) | **Failed** | **Passed** X |
+   | IAM.1 (No full admin policy) | **Failed** | **Passed** X |
+   | EC2.19 (SSH restricted) | **Failed** | **Passed** X |
 
    ![S3 Block Public Access Control Passed](Screenshots/s3-block-public-access-resolved.png)
 
@@ -80,7 +80,7 @@ After completing the hardening steps, we need to verify that our remediation act
 
    > **Note:** This is a sensitive operation. Once enabled, all delete operations require MFA authentication. Use with caution in production environments.
 
-   After completing these optional remediations, wait for the next Security Hub scan (30–60 minutes) to verify the **Passed** status for each control.
+   After completing these optional remediations, wait for the next Security Hub scan (30-60 minutes) to verify the **Passed** status for each control.
 
 ![Security Score after Hardening](Screenshots/security-score-after-hardening.png)<br>
 *CSPM score in Security Hub after hardening, with nearly all findings remediated and controls achieving a Passed status*

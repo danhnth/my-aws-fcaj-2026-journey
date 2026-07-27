@@ -1,4 +1,4 @@
----
+﻿---
 title: "Workshop"
 date: 2026-06-26
 weight: 5
@@ -16,12 +16,12 @@ This workshop guides you through building a simulated AWS environment containing
 
 The workshop follows a complete security lifecycle:
 
-1. **Enable Security Services** — Activate AWS CloudTrail, Amazon GuardDuty, and AWS Security Hub to establish centralized logging and threat detection.
-2. **Deploy Insecure Baseline** — Intentionally create common cloud misconfigurations (public S3 bucket, over-privileged IAM role, exposed EC2 security group).
-3. **Test & Validation** — Observe how Security Hub and GuardDuty flag the misconfigurations and generate security findings.
-4. **Hardening & Remediation** — Apply the Principle of Least Privilege and fix each vulnerability based on Security Hub recommendations.
-5. **Re-validation** — Confirm that findings transition from Failed to Passed and the compliance score improves.
-6. **Clean-up** — Remove all lab resources to avoid ongoing charges.
+1. **Enable Security Services** - Activate AWS CloudTrail, Amazon GuardDuty, and AWS Security Hub to establish centralized logging and threat detection.
+2. **Deploy Insecure Baseline** - Intentionally create common cloud misconfigurations (public S3 bucket, over-privileged IAM role, exposed EC2 security group).
+3. **Test & Validation** - Observe how Security Hub and GuardDuty flag the misconfigurations and generate security findings.
+4. **Hardening & Remediation** - Apply the Principle of Least Privilege and fix each vulnerability based on Security Hub recommendations.
+5. **Re-validation** - Confirm that findings transition from Failed to Passed and the compliance score improves.
+6. **Clean-up** - Remove all lab resources to avoid ongoing charges.
 
 #### Content
 

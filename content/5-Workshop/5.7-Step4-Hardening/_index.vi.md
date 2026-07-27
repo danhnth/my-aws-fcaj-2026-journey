@@ -10,7 +10,7 @@ pre : " <b> 5.7. </b> "
 
 Bây giờ, chúng ta đóng vai trò Kỹ sư bảo mật để vá lại các lỗ hổng dựa trên gợi ý từ Security Hub.
 
-**1. Vá lỗi S3 — Bật lại Block Public Access**
+**1. Vá lỗi S3 - Bật lại Block Public Access**
 
 1. Vào **S3** console.
 2. Chọn bucket `vulnerable-public-data-<tên-bạn>`.
@@ -20,7 +20,7 @@ Bây giờ, chúng ta đóng vai trò Kỹ sư bảo mật để vá lại các 
 
    ![S3 Block Public Access](Screenshots/s3-block-public-access.jpeg)
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # Bật lại Block All Public Access cho bucket
 aws s3api put-public-access-block --bucket vulnerable-public-data-<tên-bạn> \
@@ -31,7 +31,7 @@ aws s3api put-bucket-acl --bucket vulnerable-public-data-<tên-bạn> --acl priv
 ```
 {{%/expand%}}
 
-**2. Vá lỗi IAM — Áp dụng đặc quyền tối thiểu**
+**2. Vá lỗi IAM - Áp dụng đặc quyền tối thiểu**
 
 1. Vào **IAM** console → **Users** → `developer-test`.
 2. Vào tab **Permissions**.
@@ -49,7 +49,7 @@ aws s3api put-bucket-acl --bucket vulnerable-public-data-<tên-bạn> --acl priv
 
    ![Gán MFA](Screenshots/IAM-MFA-assign.png)
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # 1. Gỡ bỏ wildcard policy (tìm policy ARN trước)
 aws iam list-attached-user-policies --user-name developer-test
@@ -66,7 +66,7 @@ aws iam list-attached-user-policies --user-name developer-test
 ```
 {{%/expand%}}
 
-**3. Vá lỗi EC2 — Giới hạn SSH**
+**3. Vá lỗi EC2 - Giới hạn SSH**
 
 1. Vào **EC2** console → **Security Groups**.
 2. Chọn `insecure-sg`.
@@ -80,7 +80,7 @@ aws iam list-attached-user-policies --user-name developer-test
 
    > Thao tác này giới hạn SSH chỉ đến địa chỉ IP của bạn, loại bỏ hoàn toàn việc phơi bày cổng SSH ra toàn cầu.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # 1. Xóa rule SSH toàn cầu
 aws ec2 revoke-security-group-ingress --group-name insecure-sg \

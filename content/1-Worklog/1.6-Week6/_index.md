@@ -1,4 +1,4 @@
----
+﻿---
 title: "Week 6 Worklog"
 date: 2026-07-25
 weight: 6
@@ -25,7 +25,7 @@ pre: " <b> 1.6. </b> "
 
 ### Week 6 Achievements:
 
-* Gained a thorough understanding of Amazon EKS Pod Identity — how it maps IAM roles to Kubernetes service accounts at the pod level, and how it simplifies the credential management pipeline compared to the traditional IRSA approach.
+* Gained a thorough understanding of Amazon EKS Pod Identity - how it maps IAM roles to Kubernetes service accounts at the pod level, and how it simplifies the credential management pipeline compared to the traditional IRSA approach.
 
 * Mastered the Session Policies feature for EKS Pod Identity:
   * Understand how session policies act as a runtime permission boundary, further narrowing the IAM role's permissions for individual pods
@@ -40,4 +40,4 @@ pre: " <b> 1.6. </b> "
 
 * Published the blog on the AWS Study Group community platform and shared it with the FCAJ cohort, receiving positive feedback from peers and mentors.
 
-* Strengthened technical writing skills — learned to explain complex AWS security concepts in an accessible way for the cloud community.
+* Strengthened technical writing skills - learned to explain complex AWS security concepts in an accessible way for the cloud community.

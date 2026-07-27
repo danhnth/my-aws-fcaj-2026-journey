@@ -21,7 +21,7 @@ CloudTrail ghi lại tất cả hoạt động API trong tài khoản AWS, cung 
    - Giữ nguyên các cài đặt mặc định khác.
 3. Chọn **Create trail**.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # 1. Tạo S3 bucket để lưu log CloudTrail
 aws s3 mb s3://fcaj-security-logs-<random-id> --region ap-southeast-1
@@ -42,7 +42,7 @@ GuardDuty sử dụng máy học (ML) và thông tin tình báo về mối đe d
 2. Nhấn **Enable GuardDuty** (không cần cấu hình thêm).
 3. GuardDuty sẽ bắt đầu phân tích nhật ký trong vòng vài phút.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # Kích hoạt GuardDuty (tạo detector)
 aws guardduty create-detector --enable --region ap-southeast-1
@@ -62,7 +62,7 @@ Security Hub cung cấp một giao diện tập trung cho các cảnh báo bảo
 4. (Tùy chọn) Thêm **Resource tags** nếu cần.
 5. Nhấn **Enable Security Hub**.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # Kích hoạt Security Hub với các tiêu chuẩn mặc định (bao gồm CIS Benchmark v1.4.0)
 aws securityhub enable-security-hub --enable-default-standards --region ap-southeast-1
@@ -92,7 +92,7 @@ Trạng thái đăng ký Security Hub hiển thị `READY` ngay khi bạn bật 
 4. Nhấn **Set up**.
 5. Sau khi Config bắt đầu ghi nhận, Security Hub sẽ tự động đánh giá các quy tắc CIS benchmark và tạo ra các findings. Điểm bảo mật được cập nhật mỗi 24 giờ một lần.
 
-{{%expand "AWS CLI — Phương thức Dòng lệnh" %}}
+{{%expand "AWS CLI Alternative" %}}
 ```bash
 # 1. Tạo S3 bucket cho Config logs (tên bucket phải là duy nhất toàn cầu)
 aws s3api create-bucket \

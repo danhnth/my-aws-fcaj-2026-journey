@@ -1,4 +1,4 @@
----
+﻿---
 title : "Step 4: Hardening & Remediation"
 date : 2026-06-29
 weight : 7
@@ -10,7 +10,7 @@ pre : " <b> 5.7. </b> "
 
 Now, acting as a Cloud Security Engineer, we will fix each vulnerability based on the recommendations from Security Hub.
 
-**1. Fix S3 — Block Public Access**
+**1. Fix S3 - Block Public Access**
 
 1. Navigate to **S3** console.
 2. Select the bucket `vulnerable-public-data-<your-name>`.
@@ -31,7 +31,7 @@ aws s3api put-bucket-acl --bucket vulnerable-public-data-<your-name> --acl priva
 ```
 {{%/expand%}}
 
-**2. Fix IAM — Apply Least Privilege**
+**2. Fix IAM - Apply Least Privilege**
 
 1. Navigate to **IAM** console → **Users** → `developer-test`.
 2. Go to the **Permissions** tab.
@@ -66,7 +66,7 @@ aws iam list-attached-user-policies --user-name developer-test
 ```
 {{%/expand%}}
 
-**3. Fix EC2 — Restrict SSH Access**
+**3. Fix EC2 - Restrict SSH Access**
 
 1. Navigate to **EC2** console → **Security Groups**.
 2. Select `insecure-sg`.

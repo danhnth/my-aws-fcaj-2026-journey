@@ -1,4 +1,4 @@
----
+﻿---
 title: "Các events đã tham gia"
 date: 2026-01-06
 weight: 4
@@ -8,7 +8,7 @@ pre: " <b> 4. </b> "
 
 > Trong phần này, các bạn cần liệt kê và mô tả chi tiết các sự kiện (event) mà mình đã tham gia trong suốt quá trình thực tập hoặc làm việc. 
 > 
-> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3…, kèm theo các thông tin:
+> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3..., kèm theo các thông tin:
 > * Tên sự kiện
 > * Thời gian tổ chức
 > * Địa điểm (nếu có)
@@ -18,14 +18,14 @@ pre: " <b> 4. </b> "
 > * Việc liệt kê này giúp thể hiện rõ sự tham gia thực tế của bạn, cũng như các kỹ năng mềm và kinh nghiệm bạn đã tích lũy qua từng sự kiện.
 
 
-Trong quá trình thực tập, em đã tham gia các sự kiện sau đây — những trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là những món quà và những khoảnh khắc rất tuyệt vời.
+Trong quá trình thực tập, em đã tham gia các sự kiện sau đây - những trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là những món quà và những khoảnh khắc rất tuyệt vời.
 
 ### [Event 1](4.1-Event1/)
 &emsp;**Tên sự kiện:** Agentic AI Build Week (AABW)
 
 &emsp;**Thời gian:** ngày 25/07/2026
 
-&emsp;**Địa điểm:** AWS Event Hall – Tầng 26, tòa nhà Bitexco, Quận 1, thành phố Hồ Chí Minh
+&emsp;**Địa điểm:** AWS Event Hall - Tầng 26, tòa nhà Bitexco, Quận 1, thành phố Hồ Chí Minh
 
 &emsp;**Vai trò trong sự kiện:** Người tham dự
 

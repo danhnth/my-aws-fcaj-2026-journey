@@ -1,4 +1,4 @@
----
+﻿---
 title : "Workshop Overview"
 date : 2026-06-26
 weight : 1 
@@ -12,10 +12,10 @@ This workshop approaches AWS Cloud through the lens of a **Cloud Security Engine
 
 **Key Phases:**
 
-1. **The Vulnerable Baseline** — Deploy common cloud misconfigurations: public S3 buckets, over-privileged wildcard IAM roles, and exposed EC2 instances with unrestricted SSH access.
-2. **Continuous Monitoring & Detection** — Orchestrate a centralized logging and threat detection pipeline using AWS CloudTrail, Amazon GuardDuty, and AWS Security Hub.
-3. **Securing & Remediation** — Execute step-by-step hardening to apply the Principle of Least Privilege and remediate each finding.
-4. **Audit & Validation** — Compare compliance scores before and after hardening using Security Hub's CIS AWS Foundations Benchmark assessment.
+1. **The Vulnerable Baseline** - Deploy common cloud misconfigurations: public S3 buckets, over-privileged wildcard IAM roles, and exposed EC2 instances with unrestricted SSH access.
+2. **Continuous Monitoring & Detection** - Orchestrate a centralized logging and threat detection pipeline using AWS CloudTrail, Amazon GuardDuty, and AWS Security Hub.
+3. **Securing & Remediation** - Execute step-by-step hardening to apply the Principle of Least Privilege and remediate each finding.
+4. **Audit & Validation** - Compare compliance scores before and after hardening using Security Hub's CIS AWS Foundations Benchmark assessment.
 
 **Learning Outcomes:**
 

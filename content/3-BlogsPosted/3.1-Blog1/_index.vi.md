@@ -1,4 +1,4 @@
----
+﻿---
 title: "Blog 1"
 date: 2026-07-24
 weight: 1
@@ -10,7 +10,7 @@ pre: " <b> 3.1. </b> "
 
 ## AWS Security Hub Là Gì?
 
-**AWS Security Hub** là giải pháp bảo mật đám mây thống nhất, giúp ưu tiên và phản hồi các vấn đề bảo mật quan trọng ở quy mô lớn. Dịch vụ này tự động thu thập, kết hợp và làm giàu các tín hiệu bảo mật từ nhiều dịch vụ AWS — bao gồm quản lý tư thế bảo mật (CSPM), quản lý lỗ hổng (Amazon Inspector), phát hiện dữ liệu nhạy cảm (Amazon Macie), và phát hiện mối đe dọa (Amazon GuardDuty) — mang đến một bảng điều khiển duy nhất cho tình trạng bảo mật của bạn.
+**AWS Security Hub** là giải pháp bảo mật đám mây thống nhất, giúp ưu tiên và phản hồi các vấn đề bảo mật quan trọng ở quy mô lớn. Dịch vụ này tự động thu thập, kết hợp và làm giàu các tín hiệu bảo mật từ nhiều dịch vụ AWS - bao gồm quản lý tư thế bảo mật (CSPM), quản lý lỗ hổng (Amazon Inspector), phát hiện dữ liệu nhạy cảm (Amazon Macie), và phát hiện mối đe dọa (Amazon GuardDuty) - mang đến một bảng điều khiển duy nhất cho tình trạng bảo mật của bạn.
 
 Thay vì chuyển đổi giữa nhiều bảng điều khiển bảo mật khác nhau, Security Hub tập trung các findings, áp dụng phân tích ngữ cảnh, và hiển thị các rủi ro có thể hành động trước tiên.
 
@@ -23,7 +23,7 @@ Security Hub cung cấp cái nhìn toàn diện về mức độ phơi nhiễm, 
 Thông qua phân tích nâng cao, Security Hub biến các tín hiệu bảo mật phức tạp thành thông tin chi tiết rõ ràng, được ưu tiên, giúp đội ngũ bảo mật đưa ra quyết định nhanh chóng.
 
 ### Exposure Findings
-Security Hub kết hợp findings từ nhiều nguồn — CSPM control checks, Amazon Inspector và các dịch vụ AWS khác — để phát hiện mức độ phơi nhiễm liên quan đến tài nguyên AWS của bạn.
+Security Hub kết hợp findings từ nhiều nguồn - CSPM control checks, Amazon Inspector và các dịch vụ AWS khác - để phát hiện mức độ phơi nhiễm liên quan đến tài nguyên AWS của bạn.
 
 ### Phân Tích Truy Cập Không Dùng
 Security Hub tự động xác định IAM roles, users, access keys và permissions không được sử dụng trong vòng **90 ngày**. Dịch vụ có thể tạo đề xuất chính sách đặc quyền tối thiểu để giúp thu hẹp quyền truy cập.
@@ -52,10 +52,10 @@ AWS khuyến nghị nên bật **cả hai** dịch vụ Security Hub và Securit
 
 Bạn có thể tương tác với Security Hub qua nhiều giao diện:
 
-- **Console** — Giao diện web với dashboard và attack path graph
-- **API** — Truy cập lập trình qua HTTPS
-- **AWS CLI** — Quản lý dòng lệnh và scripting
-- **AWS SDKs** — Thư viện cho C++, Go, Java, .NET và Python
+- **Console** - Giao diện web với dashboard và attack path graph
+- **API** - Truy cập lập trình qua HTTPS
+- **AWS CLI** - Quản lý dòng lệnh và scripting
+- **AWS SDKs** - Thư viện cho C++, Go, Java, .NET và Python
 
 ## Tại Sao Điều Này Quan Trọng Cho Lab Của Tôi
 

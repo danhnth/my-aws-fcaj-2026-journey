@@ -1,4 +1,4 @@
----
+﻿---
 title: "Week 5 Worklog"
 date: 2026-07-18
 weight: 5
@@ -27,14 +27,14 @@ pre: " <b> 1.5. </b> "
 ### Week 5 Achievements:
 
 * Completed the hardening & remediation phase with verified results:
-  * **S3**: Confirmed the bucket is fully private — anonymous access attempts returned 403 Forbidden
+  * **S3**: Confirmed the bucket is fully private - anonymous access attempts returned 403 Forbidden
   * **IAM**: Verified `developer-test` user only has `AmazonS3ReadOnlyAccess` attached; wildcard policy fully removed
   * **EC2**: Confirmed SSH inbound rule restricted to my public IP only; global access (0.0.0.0/0) revoked
 
 * Ran re-validation and confirmed all three Security Hub controls transitioned from FAILED to PASSED:
-  * **S3.2** (S3 public access blocked): FAILED → **PASSED** ✅
-  * **IAM.1** (No full admin policy): FAILED → **PASSED** ✅
-  * **EC2.19** (SSH restricted): FAILED → **PASSED** ✅
+  * **S3.2** (S3 public access blocked): FAILED → **PASSED** X
+  * **IAM.1** (No full admin policy): FAILED → **PASSED** X
+  * **EC2.19** (SSH restricted): FAILED → **PASSED** X
   * The overall Security Hub compliance score showed a significant improvement compared to the pre-hardening baseline
 
 * Executed complete clean-up of all lab resources:

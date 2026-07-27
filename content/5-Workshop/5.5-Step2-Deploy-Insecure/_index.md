@@ -1,4 +1,4 @@
----
+﻿---
 title : "Step 2: Deploy Insecure Baseline"
 date : 2026-06-29
 weight : 5
@@ -10,7 +10,7 @@ pre : " <b> 5.5. </b> "
 
 We will intentionally create three classic cloud misconfigurations so that Security Hub and GuardDuty can detect them.
 
-**1. S3 Vulnerability — Public Bucket**
+**1. S3 Vulnerability - Public Bucket**
 
 1. Navigate to **S3** console → Click **Create bucket**.
 2. Configure:
@@ -44,7 +44,7 @@ aws s3api put-bucket-policy --bucket vulnerable-public-data-<your-name> --policy
 ```
 {{%/expand%}}
 
-**2. IAM Vulnerability — Over-privileged Wildcard Policy**
+**2. IAM Vulnerability - Over-privileged Wildcard Policy**
 
 1. Navigate to **IAM** console → **Users** → **Create user**.
 2. **User name**: `developer-test`
@@ -95,11 +95,11 @@ aws iam attach-user-policy --user-name developer-test --policy-arn arn:aws:iam::
 # 4. Generate access keys for the user
 aws iam create-access-key --user-name developer-test
 ```
-> **Note:** Save the `AccessKeyId` and `SecretAccessKey` from the output — they are needed for Step 3.
+> **Note:** Save the `AccessKeyId` and `SecretAccessKey` from the output - they are needed for Step 3.
 
 {{%/expand%}}
 
-**3. EC2 Vulnerability — Open SSH to the World**
+**3. EC2 Vulnerability - Open SSH to the World**
 
 1. First, create a security group:
    - Navigate to **EC2** console → **Security Groups** → **Create security group**.

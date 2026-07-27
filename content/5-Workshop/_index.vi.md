@@ -1,4 +1,4 @@
----
+﻿---
 title: "Workshop"
 date: 2026-06-26
 weight: 5
@@ -16,12 +16,12 @@ Workshop này hướng dẫn cách xây dựng một môi trường AWS giả l�
 
 Workshop theo một vòng đời bảo mật hoàn chỉnh:
 
-1. **Kích hoạt dịch vụ bảo mật** — Bật AWS CloudTrail, Amazon GuardDuty và AWS Security Hub để thiết lập ghi nhật ký và phát hiện mối đe dọa tập trung.
-2. **Triển khai hạ tầng lỗi cấu hình** — Cố tình tạo các lỗ hổng bảo mật phổ biến (S3 public, IAM quyền hạn quá rộng, Security Group EC2 mở toàn cầu).
-3. **Kiểm thử & Đo lường** — Quan sát cách Security Hub và GuardDuty gắn cờ các lỗi cấu hình và tạo cảnh báo.
-4. **Gia cố & Khắc phục** — Áp dụng nguyên tắc đặc quyền tối thiểu và sửa từng lỗ hổng dựa trên khuyến nghị từ Security Hub.
-5. **Tái thẩm định** — Xác nhận các cảnh báo chuyển từ Failed sang Passed và điểm số tuân thủ được cải thiện.
-6. **Dọn dẹp tài nguyên** — Xóa tất cả tài nguyên trong lab để tránh phát sinh chi phí.
+1. **Kích hoạt dịch vụ bảo mật** - Bật AWS CloudTrail, Amazon GuardDuty và AWS Security Hub để thiết lập ghi nhật ký và phát hiện mối đe dọa tập trung.
+2. **Triển khai hạ tầng lỗi cấu hình** - Cố tình tạo các lỗ hổng bảo mật phổ biến (S3 public, IAM quyền hạn quá rộng, Security Group EC2 mở toàn cầu).
+3. **Kiểm thử & Đo lường** - Quan sát cách Security Hub và GuardDuty gắn cờ các lỗi cấu hình và tạo cảnh báo.
+4. **Gia cố & Khắc phục** - Áp dụng nguyên tắc đặc quyền tối thiểu và sửa từng lỗ hổng dựa trên khuyến nghị từ Security Hub.
+5. **Tái thẩm định** - Xác nhận các cảnh báo chuyển từ Failed sang Passed và điểm số tuân thủ được cải thiện.
+6. **Dọn dẹp tài nguyên** - Xóa tất cả tài nguyên trong lab để tránh phát sinh chi phí.
 
 #### Nội dung
 

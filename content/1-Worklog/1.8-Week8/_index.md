@@ -1,4 +1,4 @@
----
+﻿---
 title: "Week 8 Worklog"
 date: 2026-08-14
 weight: 8
@@ -27,7 +27,7 @@ pre: " <b> 1.8. </b> "
 
 ### Week 8 Achievements:
 
-* Finalized the **Security Operations & Hardening Lab Workshop** — a complete bilingual (EN/VI) guide covering all 6 steps of the security lifecycle with parallel AWS Console and CLI instructions.
+* Finalized the **Security Operations & Hardening Lab Workshop** - a complete bilingual (EN/VI) guide covering all 6 steps of the security lifecycle with parallel AWS Console and CLI instructions.
 
 * Completed the **Compliance Comparison Report**:
   * Documented the pre-hardening baseline with Security Hub findings (S3.2, IAM.1, EC2.19 all FAILED)

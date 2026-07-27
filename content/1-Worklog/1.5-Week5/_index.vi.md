@@ -1,4 +1,4 @@
----
+﻿---
 title: "Worklog Tuần 5"
 date: 2026-07-18
 weight: 5
@@ -27,14 +27,14 @@ pre: " <b> 1.5. </b> "
 ### Kết quả đạt được tuần 5:
 
 * Đã hoàn thành giai đoạn hardening & khắc phục với kết quả đã xác minh:
-  * **S3**: Xác nhận bucket đã hoàn toàn private — các yêu cầu truy cập ẩn danh trả về 403 Forbidden
+  * **S3**: Xác nhận bucket đã hoàn toàn private - các yêu cầu truy cập ẩn danh trả về 403 Forbidden
   * **IAM**: Xác nhận user `developer-test` chỉ còn `AmazonS3ReadOnlyAccess`; policy wildcard đã được gỡ hoàn toàn
   * **EC2**: Xác nhận quy tắc SSH inbound đã giới hạn chỉ đến IP công cộng của tôi; truy cập toàn cầu (0.0.0.0/0) đã bị thu hồi
 
 * Đã chạy đánh giá lại và xác nhận cả ba Security Hub controls chuyển từ FAILED sang PASSED:
-  * **S3.2** (Chặn truy cập public S3): FAILED → **PASSED** ✅
-  * **IAM.1** (Không có policy admin toàn quyền): FAILED → **PASSED** ✅
-  * **EC2.19** (SSH bị giới hạn): FAILED → **PASSED** ✅
+  * **S3.2** (Chặn truy cập public S3): FAILED → **PASSED** X
+  * **IAM.1** (Không có policy admin toàn quyền): FAILED → **PASSED** X
+  * **EC2.19** (SSH bị giới hạn): FAILED → **PASSED** X
   * Điểm tuân thủ Security Hub tổng thể đã cải thiện đáng kể so với baseline trước hardening
 
 * Đã thực hiện dọn dẹp hoàn toàn tất cả tài nguyên lab:
