@@ -29,9 +29,18 @@ aws s3 mb s3://vulnerable-public-data-<tên-bạn> --region ap-southeast-1
 aws s3api put-public-access-block --bucket vulnerable-public-data-<tên-bạn> \
     --public-access-block-configuration "BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false"
 
-# 3. Gán ACL public-read
-aws s3api put-bucket-acl --bucket vulnerable-public-data-<tên-bạn> --acl public-read
-```
+# 3. Apply a public-read bucket policy (ACLs are disabled by default on new buckets)
+aws s3api put-bucket-policy --bucket vulnerable-public-data-<your-name> --policy '{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::vulnerable-public-data-<your-name>/*"
+    }
+  ]
+}'
 {{%/expand%}}
 
 **2. Lỗ hổng IAM — Wildcard Quyền hạn quá rộng**
@@ -102,7 +111,7 @@ aws iam create-access-key --user-name developer-test
    - Vào **EC2** → **Instances** → **Launch instance**.
    - **Tên**: `vulnerable-ec2`
    - **AMI**: Amazon Linux 2023 (free tier eligible)
-   - **Loại instance**: `t2.micro`
+   - **Loại instance**: `t3.micro`
    - **Key pair**: Tiếp tục không cần key pair
    - **Network settings**: Chọn **Edit** → Chọn **Select existing security group** → Chọn `insecure-sg`.
    - Chọn **Launch instance**.
@@ -111,7 +120,7 @@ aws iam create-access-key --user-name developer-test
 ```bash
 # 1. Tạo security group
 aws ec2 create-security-group --group-name insecure-sg \
-    --description "Security group cho phép SSH toàn cầu" \
+    --description "Security group with global SSH access" \
     --region ap-southeast-1
 
 # 2. Thêm inbound rule SSH từ 0.0.0.0/0
@@ -122,7 +131,7 @@ aws ec2 authorize-security-group-ingress --group-name insecure-sg \
 # 3. (Tùy chọn) Khởi chạy EC2 instance
 aws ec2 run-instances \
     --image-id resolve-ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64 \
-    --instance-type t2.micro \
+    --instance-type t3.micro \
     --security-groups insecure-sg \
     --region ap-southeast-1
 ```

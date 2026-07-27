@@ -12,16 +12,25 @@ After deploying the insecure baseline, wait approximately **30-60 minutes** for 
 
 **1. Check Security Hub Findings**
 
-1. Navigate to **Security Hub** console → **Findings**.
+1. Navigate to **Security Hub** console → **All findings**.
 2. You should see findings flagged in relation to the misconfigurations we created:
 
    | Finding ID | Description |
    |------------|-------------|
-   | **S3.2** | S3 buckets should have public access blocked |
+    | **S3.8** | S3 general purpose buckets should block public access |
    | **IAM.1** | IAM policies should not have full administrative privileges |
    | **EC2.19** | Security groups should not allow unrestricted SSH access |
 
-3. Navigate to **Security Hub** → **Summary** to view the overall **Compliance score**. Take a screenshot of the low score for your report.
+3. Navigate to **Security Hub** → **Posture management** to view the overall **Compliance score**.
+
+   ![Exposure Summary](Screenshots/Exposure-summary.png)<br>
+   *Security Hub Exposure Summary showing failed security controls*
+
+   ![Threats Summary](Screenshots/Threats-summary.png)<br>
+   *Security Hub Threats Summary*
+
+   ![Security Score](Screenshots/security-score.png)<br>
+   *Security Hub CSPM score = Passed / Enabled controls*
 
 {{%expand "AWS CLI Alternative" %}}
 ```bash
@@ -30,7 +39,7 @@ aws securityhub get-findings --region ap-southeast-1
 
 # Filter findings for specific controls
 aws securityhub get-findings \
-    --filters '{"ComplianceSecurityControlId":[{"Value":"S3.2","Comparison":"EQUALS"}]}' \
+    --filters '{"ComplianceSecurityControlId":[{"Value":"S3.8","Comparison":"EQUALS"}]}' \
     --region ap-southeast-1
 aws securityhub get-findings \
     --filters '{"ComplianceSecurityControlId":[{"Value":"IAM.1","Comparison":"EQUALS"}]}' \
@@ -49,28 +58,7 @@ aws securityhub get-findings \
 
 **2. Check GuardDuty Findings**
 
-To simulate an actual attack and trigger GuardDuty alerts:
-
-1. **Simulate SSH brute force**: From your local machine, attempt to SSH into the EC2 instance (the attempt will fail without a key, but GuardDuty will log it):
-
-   ```bash
-   ssh ec2-user@<EC2-PUBLIC-IP>
-   ```
-
-2. **Simulate suspicious IAM activity**: Using the `developer-test` credentials (generate access keys from the IAM console), run an unusual API call:
-
-   ```bash
-   aws configure --profile dev-test
-   # Enter the access key and secret key for developer-test
-   aws ec2 describe-instances --profile dev-test
-   aws ec2 create-snapshot --profile dev-test --volume-id <any-volume-id>
-   ```
-
-3. Return to **GuardDuty** console → **Findings** after 15-30 minutes. You should see alerts such as:
-   - `UnauthorizedAccess:EC2/SSHBruteForce`
-   - `Behavior:IAMUser/ResourceConsumption`
-
-4. Take screenshots of these findings for your workshop report documentation.
+Instead of manual simulations (which often fail to trigger reliably), use the **Amazon GuardDuty Tester** in [section 3](#3-deploy-and-run-amazon-guardduty-tester-comprehensive) below. It deploys dedicated test resources and runs real attack simulations that reliably generate GuardDuty findings.
 
 {{%expand "AWS CLI Alternative" %}}
 ```bash
@@ -107,6 +95,12 @@ cdk bootstrap    # only if this region hasn't been bootstrapped before
 cdk deploy
 ```
 Deployment takes approximately 10–15 minutes. It provisions an EC2 instance (the *test driver*), along with supporting resources for S3, ECS, EKS, and Lambda tests.
+
+   ![CDK Bootstrap Result](Screenshots/cdk-bootstrap-result.png)
+   *CDK bootstrap output*
+
+   ![CDK Deploy Result](Screenshots/cdk-deploy-result.png)
+   *CDK deploy successful output showing all resources created*
 
 **Start an SSM session into the test driver**
 ```bash
@@ -156,9 +150,19 @@ Return to the **GuardDuty** console → **Findings** after 5–15 minutes. The `
 | Policy | `Policy:S3/BucketPublicAccessGranted`, `Policy:IAMUser/UnauthorizedAPICall` |
 | Trojan | `Trojan:EC2/BlackholeTraffic!DNS`, `Trojan:EC2/DGADomainRequest.C!DNS` |
 
+   ![Generated Findings](Screenshots/generated-findings-result.png)
+   *GuardDuty generated findings from the tester*
+
+   ![Generated Findings Detail](Screenshots/generated-findings-result-2.png)
+   *GuardDuty findings detail view*
+
 **Clean up the tester resources** when finished:
 ```bash
 cd amazon-guardduty-tester-master
 cdk destroy
 ```
+
+   ![CDK Destroy Result](Screenshots/cdk-destroy-result.png)
+   *CDK destroy output cleaning up all tester resources*
+
 This removes all tester-provisioned resources to avoid ongoing costs.
