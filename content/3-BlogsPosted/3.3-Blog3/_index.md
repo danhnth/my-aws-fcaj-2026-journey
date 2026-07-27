@@ -1,31 +1,58 @@
 ---
 title: "Blog 3"
-date: 2026-05-06
-weight: 1
+date: 2026-07-22
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# Using Amazon GuardDuty Tester to Automate Security Testing
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+## The Problem
 
-Key points to know:
+After deploying your AWS infrastructure, how do you know your security monitoring is actually working? Manual checks are slow and easy to miss things. Waiting for a real attack is dangerous. You need a way to **automatically validate** that GuardDuty, Security Hub, and your incident response workflows function correctly.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+This is where GuardDuty Tester comes in.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+## Deploying the Tool
 
-...Image...
+Deployment is straightforward using the AWS CDK:
 
-...Link...
+```bash
+git clone https://github.com/awslabs/amazon-guardduty-tester.git
+cd amazon-guardduty-tester/cdk
+cdk bootstrap    # one-time setup
+cdk deploy       # deploys Lambda functions, IAM roles, test EC2
+```
 
-...Guide...
+The CDK stack creates the infrastructure needed to simulate attacks — Lambda functions for API-level simulations and optional EC2 instances for network-level scenarios. The whole process takes about 10 minutes.
+
+## Running the Tests
+
+Once deployed, use the Python CLI to run tests:
+
+```bash
+# Run all test categories
+python3 guardduty_tester.py --all --region us-east-1
+
+# Or run a single category
+python3 guardduty_tester.py --test-type Recon --region us-east-1
+```
+
+After running, findings appear in GuardDuty within 5-15 minutes. If you have Security Hub enabled, they appear there too alongside your compliance checks.
+
+## How I Used It in My Lab
+
+In my Security Operations Lab, I ran GuardDuty Tester in three phases:
+
+1. **Before hardening** — Established a baseline of 52 findings across all six categories
+2. **After applying security fixes** — Re-ran the same tests and saw Critical/High findings drop
+3. **As validation** — Confirmed that my fixes (blocking public S3, restricting IAM, locking down SSH) actually changed the detection results
+
+This workflow transformed security validation from a manual one-time effort into an automated, repeatable process.
+
+## Key Takeaway
+
+GuardDuty Tester makes it possible to **automate the validation of your security detection pipeline**. One command runs the full suite, and you get immediate confirmation that your monitoring is working as expected.
+
+**Tags:** `#AWS` `#GuardDuty` `#Automation` `#SecurityTesting` `#CloudSecurity` `#FCAJ` `#AWSStudyGroup`

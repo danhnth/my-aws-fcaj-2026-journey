@@ -1,31 +1,38 @@
 ---
 title: "Blog 2"
-date: 2026-05-06
-weight: 1
+date: 2026-07-22
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# Amazon GuardDuty Tester — Công Cụ Mới Kiểm Tra Phát Hiện Bảo Mật AWS
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+## Amazon GuardDuty Tester Là Gì?
 
-Các điểm chính cần nắm:
+**Amazon GuardDuty Tester** là công cụ mã nguồn mở từ AWS Labs, mô phỏng các kịch bản tấn công thực tế trong tài khoản AWS của bạn. Công cụ này tạo ra các GuardDuty findings thật để bạn xác nhận pipeline phát hiện mối đe dọa hoạt động đúng cách.
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+Thay vì chờ một sự cố bảo mật thực sự để kiểm tra khả năng phát hiện, bạn có thể chạy công cụ này và thấy findings xuất hiện trong GuardDuty và Security Hub chỉ trong vài phút.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+## Tại Sao Tôi Sử Dụng Nó
 
-...Hình ảnh...
+Trong Security Operations Lab, tôi đã bật GuardDuty, CloudTrail và Security Hub — nhưng không có cách nào xác nhận chúng thực sự phát hiện mối đe dọa. Các tài nguyên dễ tổn thương như S3 bucket công khai sẽ không kích hoạt cảnh báo nếu chỉ nằm im. Tôi cần mô phỏng kẻ tấn công tương tác với chúng, và GuardDuty Tester làm chính xác điều đó.
 
-...Link...
+## Cách Hoạt Động
 
-...Hướng dẫn...
+Công cụ triển khai các Lambda functions qua AWS CDK để thực hiện các hoạt động độc hại mô phỏng — quét cổng, lạm dụng credential, DNS query đào crypto, v.v. Mô hình ML của GuardDuty phân tích các hoạt động này và tạo findings trên sáu nhóm:
+
+- **Recon** — Quét cổng, dò DNS, liệt kê API
+- **UnauthorizedAccess** — Lạm dụng credential, SSH brute force
+- **Impact** — Xóa tài nguyên, kết thúc EC2
+- **CryptoCurrency** — DNS query đến mining pool
+- **Policy** — Vi phạm IAM policy, vượt S3 public access
+- **Trojan** — C2 communication, reverse shell
+
+Chạy `guardduty_tester.py --all` tạo ra hơn 50 findings trong khoảng 15 phút — xác nhận hoàn chỉnh hệ thống phát hiện của tôi.
+
+## Bài Học Chính
+
+GuardDuty Tester biến một hệ thống giám sát thụ động thành pipeline phát hiện được xác nhận chủ động. Bạn chuyển từ *hy vọng* các dịch vụ bảo mật hoạt động sang *biết chắc* chúng hoạt động.
+
+**Tags:** `#AWS` `#GuardDuty` `#SecurityTesting` `#CloudSecurity` `#FCAJ` `#AWSStudyGroup`
