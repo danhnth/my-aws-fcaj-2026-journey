@@ -151,7 +151,7 @@ The workshop was conducted within an 8-week FCAJ internship program, structured 
     - **Week 4 (Jul 6-10)**: Enabled CloudTrail, GuardDuty, and Security Hub; deployed vulnerable baseline infrastructure; ran test & validation with GuardDuty Tester (50+ findings); executed hardening & remediation.
     - **Week 5 (Jul 13-18)**: Re-validated compliance — all three CIS controls transitioned from FAILED to PASSED; cleaned up all lab resources; compiled project documentation.
 
-- **Extension Phase (Weeks 6-7, Jul 20-Aug 1)**: Researched and published a technical blog on Amazon EKS Pod Identity Session Policies; attended the GenAI-powered App-DB Modernization workshop by AWS.
+- **Extension Phase (Weeks 6-7, Jul 20-Aug 1)**: Researched and published technical blogs on AWS Security Hub and the Amazon GuardDuty Tester; attended the GenAI-powered App-DB Modernization workshop by AWS.
 
 - **Finalization Phase (Week 8, Aug 3-14)**: Finalized bilingual workshop documentation; compiled compliance comparison report with before/after evidence; completed GuardDuty findings categorization; submitted final internship report.
 

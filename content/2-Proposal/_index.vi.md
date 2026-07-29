@@ -151,7 +151,7 @@ Workshop được thực hiện trong khuôn khổ chương trình thực tập 
     - **Tuần 4 (06-10/07)**: Kích hoạt CloudTrail, GuardDuty và Security Hub; triển khai hạ tầng lỗi cấu hình; chạy kiểm thử với GuardDuty Tester (50+ cảnh báo); thực hiện gia cố và khắc phục.
     - **Tuần 5 (13-18/07)**: Tái thẩm định tuân thủ — cả ba kiểm soát CIS chuyển từ FAILED sang PASSED; dọn dẹp toàn bộ tài nguyên lab; tổng hợp tài liệu dự án.
 
-- **Giai đoạn Mở rộng (Tuần 6-7, 20/07-01/08)**: Nghiên cứu và xuất bản blog kỹ thuật về Amazon EKS Pod Identity Session Policies; tham dự hội thảo GenAI-powered App-DB Modernization do AWS tổ chức.
+- **Giai đoạn Mở rộng (Tuần 6-7, 20/07-01/08)**: Nghiên cứu và xuất bản các blog kỹ thuật về AWS Security Hub và Amazon GuardDuty Tester; tham dự hội thảo GenAI-powered App-DB Modernization do AWS tổ chức.
 
 - **Giai đoạn Hoàn thiện (Tuần 8, 03-14/08)**: Hoàn thiện tài liệu workshop song ngữ; tổng hợp báo cáo so sánh tuân thủ trước/sau; phân loại cảnh báo GuardDuty; nộp báo cáo thực tập cuối kỳ.
 

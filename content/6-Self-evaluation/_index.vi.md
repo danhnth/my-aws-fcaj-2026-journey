@@ -10,7 +10,7 @@ Trong suốt thời gian thực tập tại **Công ty TNHH Amazon Web Services 
 
 Sản phẩm chính của tôi là workshop **"AWS Security Operations & Hardening Lab: Insecure-by-Design to Managed Remediation"**. Tôi đã dựng một môi trường cố tình chứa lỗ hổng (S3 bucket public, IAM user gắn policy `WildcardFullAccess`, EC2 instance mở SSH ra `0.0.0.0/0`), đưa môi trường đó vào giám sát liên tục bằng **CloudTrail**, **GuardDuty**, **AWS Config** và **Security Hub** với chuẩn **CIS AWS Foundations Benchmark v1.4.0**, sau đó khắc phục và chứng minh mức cải thiện. Cả ba control mục tiêu - **S3.2**, **IAM.1** và **EC2.19** - đều chuyển từ **FAILED** sang **PASSED**. Song song đó, tôi triển khai **Amazon GuardDuty Tester** bằng **AWS CDK** và phân tích **hơn 50 loại finding** thuộc sáu nhóm của GuardDuty (Recon, UnauthorizedAccess, Impact, CryptoCurrency, Policy, Trojan).
 
-Ngoài phần lab, tôi đã đăng các bài blog kỹ thuật trên cộng đồng **AWS Study Group** về AWS Security Hub, Amazon GuardDuty Tester và Amazon EKS Pod Identity Session Policies; đồng thời tham dự workshop hai ngày của AWS về **GenAI-powered App-DB Modernization**, qua đó tiếp cận Domain-Driven Design, Event-Driven Architecture và Amazon Q Developer.
+Ngoài phần lab, tôi đã đăng các bài blog kỹ thuật trên cộng đồng **AWS Study Group** về **AWS Security Hub** và **Amazon GuardDuty Tester** (cả hai được liệt kê tại [3-BlogsPosted](../3-BlogsPosted/)); đồng thời tham dự **Agentic AI Build Week (AABW)** — hackathon tại AWS Event Hall ở tòa nhà Bitexco, nơi các đội xây dựng ứng dụng agentic AI sử dụng Amazon Bedrock AgentCore, Strands Agent và SageMaker, trình bày ba sản phẩm hoạt động được (S.H.E.P.H.E.R.D, Signal Scout, SA Professional Native App) kèm kiến trúc và bảng chi phí chi tiết.
 
 Qua quá trình này, tôi đã cải thiện các kỹ năng về **vận hành bảo mật trên cloud, thiết kế IAM theo nguyên tắc least privilege, networking với VPC, sử dụng AWS CLI, triển khai hạ tầng bằng CDK, kiểm toán tuân thủ theo CIS và viết tài liệu kỹ thuật song ngữ**.
 
@@ -37,7 +37,7 @@ Về tác phong, tôi duy trì worklog hằng ngày trong suốt tám tuần, ho
 
 * **Hoàn thành trọn vẹn vòng đời bảo mật** - Enable → Deploy → Detect → Harden → Re-validate → Clean-up - với kết quả đo lường được (S3.2, IAM.1, EC2.19 đều FAILED → PASSED), không dừng lại ở lý thuyết.
 * **Kiểm chứng dựa trên bằng chứng.** Với mỗi bước khắc phục, tôi đều chạy lại quét Security Hub, lưu output CLI và ảnh chụp console, rồi so sánh điểm tuân thủ với baseline trước khi hardening thay vì mặc định là đã sửa xong.
-* **Làm vượt phạm vi được giao.** Việc triển khai Amazon GuardDuty Tester bằng CDK và nghiên cứu EKS Pod Identity Session Policies đều do tôi tự đề xuất, không nằm trong proposal ban đầu.
+* **Làm vượt phạm vi được giao.** Việc triển khai Amazon GuardDuty Tester bằng CDK và viết và đăng blog kỹ thuật về AWS Security Hub và Amazon GuardDuty Tester trên AWS Study Group đều do tôi tự đề xuất, không nằm trong proposal ban đầu.
 * **Tài liệu song ngữ.** Mọi bước của workshop được viết bằng cả tiếng Anh và tiếng Việt, kèm hướng dẫn song song theo Console và CLI, để người khác có thể tái hiện lại lab.
 * **Ý thức về chi phí.** Tôi đã xoá toàn bộ tài nguyên sau khi kết thúc lab và xác nhận qua Cost Explorer rằng không còn tài nguyên nào phát sinh phí.
 

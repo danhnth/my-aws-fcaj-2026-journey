@@ -8,48 +8,41 @@ pre: " <b> 1.7. </b> "
 
 ### Week 7 Objectives:
 
-* Attend the GenAI-powered App-DB Modernization workshop organized by AWS.
-* Learn about Domain-Driven Design (DDD) and Event-Driven Architecture patterns.
-* Understand modernization strategies for applications and databases on AWS.
-* Explore Amazon Q Developer as an AI-powered assistant for the software development lifecycle.
-* Deepen knowledge of the Shared Responsibility Model across the compute spectrum (EC2 → ECS → Fargate → Lambda).
+* Attend the Agentic AI Build Week (AABW) — a hackathon on building Agentic AI applications on AWS.
+* Learn about Amazon Bedrock AgentCore, Strands Agent, and the agentic AI ecosystem on AWS.
+* Understand three real-world agentic AI architectures from team presentations (S.H.E.P.H.E.R.D, Signal Scout, SA Professional Native App).
+* Gain insights into product mindset, cost estimation, and scoping for AI applications under tight time constraints.
+* Write the AABW event summary report for the FCAJ internship portfolio.
 
 ### Tasks to be carried out this week:
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | --- | --- | --- | --- |
-| Mon (27/07) | - Pre-workshop preparation: <br>&emsp; + Review the workshop agenda and prerequisites <br>&emsp; + Read up on Domain-Driven Design fundamentals <br>&emsp; + Set up any required AWS resources or environments | 27/07/2026 | 27/07/2026 | |
-| Tue (28/07) | - Attend Day 1 of the GenAI-powered App-DB Modernization workshop: <br>&emsp; + Domain-Driven Design (DDD) - strategic vs tactical design <br>&emsp; + Event-Driven Architecture principles and patterns <br>&emsp; + Modernization strategies for legacy applications | 28/07/2026 | 28/07/2026 | |
-| Wed (29/07) | - Attend Day 2 of the workshop: <br>&emsp; + Database modernization - migrating from monolithic to purpose-built databases <br>&emsp; + Amazon Q Developer - AI-powered coding assistant <br>&emsp; + Shared Responsibility Model across the compute spectrum (EC2 → ECS → Fargate → Lambda) <br> - Participate in hands-on labs during the workshop | 29/07/2026 | 29/07/2026 | |
-| Thu (30/07) | - Review and consolidate workshop learnings: <br>&emsp; + Write detailed notes on DDD tactical patterns (entities, aggregates, domain events) <br>&emsp; + Document Event-Driven Architecture patterns (event sourcing, CQRS, saga) <br>&emsp; + Summarize Amazon Q Developer capabilities and use cases | 30/07/2026 | 30/07/2026 | |
-| Fri (31/07) | - Apply workshop insights: <br>&emsp; + Map the Security Operations Lab architecture to DDD concepts <br>&emsp; + Identify potential event-driven patterns for security automation <br>&emsp; + Explore how Amazon Q Developer could assist with IaC templates and remediation scripts | 31/07/2026 | 31/07/2026 | |
-| Sat (01/08) | - **Practice:** <br>&emsp; + Write a summary post about the workshop for the FCAJ cohort <br>&emsp; + Reflect on how the compute spectrum affects security responsibility <br> - Review Week 7 progress and plan final documentation for Week 8 | 01/08/2026 | 01/08/2026 | |
+| Mon (27/07) | - Research Agentic AI fundamentals on AWS: <br>&emsp; + Amazon Bedrock AgentCore and Strands Agent <br>&emsp; + Agentic patterns: autonomous monitoring, copilot interfaces <br>&emsp; + Review the AABW event agenda and team list | 27/07/2026 | 27/07/2026 | <https://aws.amazon.com/bedrock/agent/> |
+| Tue (28/07) | - Attend AABW demo day at Bitexco Tower: <br>&emsp; + Watch team presentations (S.H.E.P.H.E.R.D, Signal Scout, SA Professional Native App) <br>&emsp; + Learn about architecture decisions, trade-offs, and operating costs <br>&emsp; + Network with participants and AWS speakers | 28/07/2026 | 28/07/2026 | <4.1-Event1/> |
+| Wed (29/07) | - Analyze the three product architectures in depth: <br>&emsp; + S.H.E.P.H.E.R.D - real-time computer vision + agentic AI for crowd monitoring <br>&emsp; + Signal Scout - early detection of corporate strategy-shift signals <br>&emsp; + SA Professional Native App - AI assistant for Solution Architects <br> - Document key architectural patterns and technology choices | 29/07/2026 | 29/07/2026 | |
+| Thu (30/07) | - Consolidate AABW learnings: <br>&emsp; + Write detailed notes on agentic AI patterns (Autonomous Monitor, Operator Copilot) <br>&emsp; + Summarize costing models and design principles shared by teams <br>&emsp; + Document takeaways on product mindset and team collaboration | 30/07/2026 | 30/07/2026 | |
+| Fri (31/07) | - Apply AABW insights to Security Operations Lab: <br>&emsp; + Explore how agentic patterns could enhance security monitoring <br>&emsp; + Consider autonomous incident detection and response workflows <br>&emsp; + Evaluate AI-assisted documentation and diagramming for the workshop | 31/07/2026 | 31/07/2026 | <../5-Workshop/> |
+| Sat (01/08) | - **Practice:** <br>&emsp; + Write the AABW event summary for the FCAJ internship portfolio <br>&emsp; + Reflect on how agentic AI differs from traditional automation approaches <br> - Review Week 7 progress and plan final documentation for Week 8 | 01/08/2026 | 01/08/2026 | |
 
 ### Week 7 Achievements:
 
-* Successfully attended the GenAI-powered App-DB Modernization workshop by AWS, gaining exposure to modern software architecture patterns and AWS AI services.
+* Successfully attended the **Agentic AI Build Week (AABW)** at AWS Event Hall, Bitexco Tower, experiencing how teams build end-to-end Agentic AI applications on AWS within 24 hours.
 
-* Acquired foundational knowledge of Domain-Driven Design (DDD):
-  * Understood the distinction between strategic design (bounded contexts, ubiquitous language) and tactical design (entities, value objects, aggregates, domain events)
-  * Learned how DDD helps manage complexity in large-scale systems through clear domain boundaries
+* Acquired practical knowledge about **Amazon Bedrock AgentCore and Strands Agent** — the core AWS services for building autonomous agents that proactively monitor, analyze, and alert rather than only respond when asked.
 
-* Learned Event-Driven Architecture principles:
-  * Event sourcing, CQRS (Command Query Responsibility Segregation), and the Saga pattern for distributed transactions
-  * How event-driven systems improve scalability, resilience, and decoupling between services
-  * AWS services that support event-driven architectures (EventBridge, SQS, SNS, Lambda)
+* Studied three distinct product architectures in detail:
 
-* Explored database modernization strategies:
-  * Migration paths from monolithic databases to purpose-built databases (relational, key-value, document, graph)
-  * AWS database services and their optimal use cases
+  * **S.H.E.P.H.E.R.D** — a real-time crowd monitoring system combining YOLO + ByteTrack (computer vision), Amazon SageMaker (cloud inference), and two agentic AI layers: an *Autonomous Monitor* that continuously tracks metrics and proactively raises alerts, and an *Operator Copilot* that lets staff ask questions in natural language grounded in live data.
 
-* Got hands-on experience with **Amazon Q Developer**:
-  * Understanding how AI-powered coding assistance accelerates the software development lifecycle
-  * Exploring its capabilities for code generation, debugging, and AWS best practice recommendations
-  * Identifying potential applications for security automation and IaC template generation
+  * **Signal Scout** — an early detection system for corporate strategy-shift signals, using Amazon Bedrock, Lambda, DynamoDB, API Gateway, and multi-source intelligence aggregation. The team presented a detailed per-service cost breakdown across three scenarios (USD 17-130/month for AWS-only), demonstrating that cost estimation must be part of the design from day one.
 
-* Deepened understanding of the **Shared Responsibility Model across the compute spectrum**:
-  * How customer responsibility decreases as you move from EC2 (more control, more responsibility) to Lambda (less control, less responsibility)
-  * Implications for security posture when choosing different compute services
-  * Practical examples: patching burden on EC2 vs managed Fargate vs serverless Lambda
+  * **SA Professional Native App** — an AI assistant that automates the four most time-consuming tasks for Solution Architects: extracting requirements from BRD/PRD documents, drafting high-level architecture proposals, generating Draw.io diagrams with official AWS Architecture Icons, and estimating AWS costs for the *ap-southeast-1* region.
 
-* Shared workshop insights with the FCAJ cohort through a summary post, reinforcing the learnings through teaching.
+* Gained insights into **product mindset**: start from a real operational pain point rather than the technology itself, keep scope small and finish completely, and always keep humans in the decision loop with evidence-backed AI recommendations.
+
+* Learned about **effective team collaboration**: clear role division early, rehearsing demos to tell a story in 3 minutes, and preparing starter templates in advance to maximize building time.
+
+* Understood the importance of **cost estimation from day one** — every team presented a per-service cost breakdown by min/mid/max scenario as a mandatory part of their architecture, not an afterthought.
+
+* Wrote the AABW event summary report for the FCAJ internship portfolio, documenting all three product architectures, key takeaways, and how the experience connects to the broader security operations work.

@@ -10,7 +10,7 @@ During my internship at **Amazon Web Services Vietnam Company Limited** - **Work
 
 My main deliverable was the workshop **"AWS Security Operations & Hardening Lab: Insecure-by-Design to Managed Remediation"**. I built an intentionally vulnerable environment (a public S3 bucket, an IAM user carrying a `WildcardFullAccess` policy, and an EC2 instance with SSH open to `0.0.0.0/0`), placed it under continuous monitoring with **CloudTrail**, **GuardDuty**, **AWS Config**, and **Security Hub** running the **CIS AWS Foundations Benchmark v1.4.0**, then remediated it and proved the improvement. All three targeted controls - **S3.2**, **IAM.1**, and **EC2.19** - moved from **FAILED** to **PASSED**. Alongside this, I deployed the **Amazon GuardDuty Tester** through the **AWS CDK** and analysed **50+ generated finding types** across the six GuardDuty categories (Recon, UnauthorizedAccess, Impact, CryptoCurrency, Policy, Trojan).
 
-Beyond the lab, I published technical blog posts on the **AWS Study Group** community covering AWS Security Hub, the Amazon GuardDuty Tester, and Amazon EKS Pod Identity Session Policies; and I attended the two-day AWS **GenAI-powered App-DB Modernization** workshop, which introduced me to Domain-Driven Design, Event-Driven Architecture, and Amazon Q Developer.
+Beyond the lab, I published technical blog posts on the **AWS Study Group** community covering **AWS Security Hub** and the **Amazon GuardDuty Tester** (both linked from [3-BlogsPosted](../3-BlogsPosted/)); and I attended the **Agentic AI Build Week (AABW)** — a hackathon at the AWS Event Hall in Bitexco Tower where teams built agentic AI applications using Amazon Bedrock AgentCore, Strands Agent, and SageMaker, and presented three working products (S.H.E.P.H.E.R.D, Signal Scout, SA Professional Native App) with detailed architecture and cost breakdowns.
 
 Through this process I strengthened my skills in **cloud security operations, IAM least-privilege design, VPC networking, the AWS CLI, infrastructure deployment with CDK, compliance auditing against CIS, and bilingual technical writing**.
 
@@ -37,7 +37,7 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 
 * **Delivered the full security lifecycle end to end** - Enable → Deploy → Detect → Harden → Re-validate → Clean-up - with measurable results (S3.2, IAM.1, EC2.19 all FAILED → PASSED) rather than stopping at theory.
 * **Evidence-driven verification.** For every remediation I re-ran the Security Hub scan, captured the CLI output and console screenshots, and compared the compliance score against the pre-hardening baseline instead of assuming the fix worked.
-* **Went beyond the assigned scope.** Deploying the Amazon GuardDuty Tester via CDK and researching EKS Pod Identity Session Policies were self-initiated; neither was required by the original proposal.
+* **Went beyond the assigned scope.** Deploying the Amazon GuardDuty Tester via CDK and writing and publishing technical blogs on AWS Security Hub and the Amazon GuardDuty Tester on AWS Study Group were self-initiated; neither was required by the original proposal.
 * **Documented bilingually.** Every workshop step was written in both English and Vietnamese with parallel Console and CLI instructions, so the lab is reproducible by someone who was not there.
 * **Cost discipline.** I tore down every resource at the end of the lab and confirmed via Cost Explorer that nothing was left running.
 
