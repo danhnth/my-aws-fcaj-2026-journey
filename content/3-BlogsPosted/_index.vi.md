@@ -14,5 +14,5 @@ Giới thiệu AWS Security Hub, giải pháp bảo mật đám mây thống nh�
 ###  [Blog 2 - Amazon GuardDuty Tester: Công Cụ Mới Kiểm Tra Phát Hiện Bảo Mật AWS](3.2-Blog2/)
 Giới thiệu Amazon GuardDuty Tester, công cụ mã nguồn mở từ AWS Labs mô phỏng các kịch bản tấn công thực tế để xác nhận pipeline GuardDuty. Bao gồm khái niệm, cách hoạt động và sáu nhóm finding.
 
-###  [Blog 3 - Sử Dụng Amazon GuardDuty Tester Để Tự Động Hóa Kiểm Thử Bảo Mật](3.3-Blog3/)
-Hướng dẫn triển khai GuardDuty Tester qua CDK và sử dụng để tự động hóa xác nhận bảo mật. Bao gồm quy trình triển khai, chạy tests và quy trình ba giai đoạn (trước hardening, sau sửa lỗi, xác nhận).
+###  [Blog 3 - AWS Cloud Security & Compliance: Tìm hiểu về Rủi ro và Sự tuân thủ trên Cloud](3.3-Blog3/)
+Tìm hiểu về whitepaper AWS Risk and Compliance — Mô hình trách nhiệm chung (Shared Responsibility Model), quy trình quản trị tuân thủ (Compliance Governance), và cách AWS xây dựng niềm tin qua các third-party audits và chứng chỉ bảo mật.

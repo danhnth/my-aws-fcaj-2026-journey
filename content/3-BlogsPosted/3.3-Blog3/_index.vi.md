@@ -6,51 +6,33 @@ chapter: false
 pre: " <b> 3.3. </b> "
 ---
 
-# Sử Dụng Amazon GuardDuty Tester Để Tự Động Hóa Kiểm Thử Bảo Mật
+# AWS Cloud Security & Compliance — Tìm hiểu về Rủi ro và Sự tuân thủ trên môi trường Cloud
 
-## Vấn Đề
+Chào mọi người, trong quá trình thực tập tại AWS FCAJ, mình có hứng thú với chủ đề Cloud Security và đã tìm hiểu nhiều tài liệu AWS. Mình có lướt qua whitepaper **AWS Risk and Compliance** nói về nền tảng cơ bản để đưa hệ thống lên Cloud một cách chuẩn chỉnh.
 
-Sau khi triển khai hạ tầng AWS, làm thế nào để biết hệ thống giám sát bảo mật thực sự hoạt động? Kiểm tra thủ công thì chậm và dễ bỏ sót. Chờ một cuộc tấn công thực sự thì quá nguy hiểm. Bạn cần một cách để **tự động xác nhận** GuardDuty, Security Hub và quy trình incident response hoạt động chính xác.
+## Mô hình trách nhiệm chung (Shared Responsibility Model)
 
-GuardDuty Tester giải quyết vấn đề này.
+Điểm cốt lõi nhất mà tài liệu này nhấn mạnh chính là **Mô hình trách nhiệm chung**. Nhiều người hay nhầm tưởng đưa mọi thứ lên đám mây là AWS sẽ lo hết từ A-Z. Nhưng thực tế, AWS chỉ chịu trách nhiệm bảo mật cho bản thân hạ tầng đám mây như an ninh vật lý tại data center, phần cứng, mạng và lớp ảo hóa. Còn phần bảo mật bên trong đám mây từ dữ liệu, phân quyền IAM, hệ điều hành cho đến cấu hình firewall lại hoàn toàn thuộc về phía người dùng.
 
-## Triển Khai
+## Quản trị tuân thủ (Compliance Governance)
 
-Triển khai đơn giản với AWS CDK:
+Ngoài ra tài liệu cũng làm rõ cách người dùng AWS phải tự chủ động quản lý và đảm bảo tính tuân thủ (Compliance Governance) trên môi trường của mình ra sao. Một quy trình quản trị tuân thủ tốt thường qua các bước:
 
-```bash
-git clone https://github.com/awslabs/amazon-guardduty-tester.git
-cd amazon-guardduty-tester/cdk
-cdk bootstrap
-cdk deploy
-```
+1. **Tìm hiểu và nắm rõ các mục tiêu cần tuân thủ** bằng cách đối chiếu tài liệu về AWS Shared Responsibility Model, AWS Security Documentation, các báo cáo trên AWS Artifact.
+2. **Thiết kế và triển khai các bộ kiểm soát (controls)** đáp ứng đúng tiêu chuẩn đề ra theo mô hình trách nhiệm chung.
+3. **Xác định và ghi nhận rõ ràng các phần kiểm soát do bên thứ ba nắm giữ.**
+4. **Liên tục kiểm tra, xác minh** xem các cơ chế bảo mật có thực sự hoạt động hiệu quả như thiết kế đã đặt ra hay không.
 
-CDK stack tạo hạ tầng cần thiết để mô phỏng tấn công - Lambda functions cho mô phỏng cấp API và EC2 instances tùy chọn cho kịch bản cấp mạng. Toàn bộ quá trình mất khoảng 10 phút.
+## Về phía AWS
 
-## Chạy Kiểm Thử
+Ở chiều ngược lại, về phía AWS, để xây dựng niềm tin cho khách hàng, họ cũng tích hợp sẵn hàng loạt cơ chế quản lý rủi ro và tuân thủ chặt chẽ như triển khai các công cụ tự động hóa và bộ kiểm soát bảo mật đa dạng. Thêm vào đó, AWS được định kì trải qua những cuộc **third-party audits** để duy trì các chứng chỉ uy tín nhằm duy trì tính đảm bảo của môi trường kiểm soát của AWS, qua đó mang lại lợi ích trực tiếp đến khách hàng của họ.
 
-Sau khi triển khai, dùng Python CLI để chạy tests:
+## Kết luận
 
-```bash
-# Chạy tất cả nhóm
-python3 guardduty_tester.py --all --region us-east-1
+Đọc xong whitepaper này giúp mình có góc nhìn thực tế hơn khi thiết kế và làm lab trên cloud. Bảo mật không chỉ dừng lại ở việc bật công cụ quét hay viết code, mà còn là việc hiểu rõ ranh giới trách nhiệm và xây dựng quy trình kiểm soát liên tục để hệ thống luôn vận hành an toàn.
 
-# Hoặc chạy một nhóm
-python3 guardduty_tester.py --test-type Recon --region us-east-1
-```
+## Tài liệu tham khảo
 
-Findings xuất hiện trong GuardDuty sau 5-15 phút. Nếu đã bật Security Hub, chúng cũng xuất hiện ở đó cùng với kiểm tra tuân thủ.
+- [AWS Risk and Compliance Whitepaper](https://docs.aws.amazon.com/whitepapers/latest/aws-risk-and-compliance/welcome.html)
 
-## Cách Tôi Sử Dụng Trong Lab
-
-Tôi chạy GuardDuty Tester trong ba giai đoạn:
-
-1. **Trước hardening** - Thiết lập baseline với 52 findings trên sáu nhóm
-2. **Sau khi áp dụng bản sửa** - Chạy lại và thấy findings Critical/High giảm
-3. **Xác nhận** - Xác nhận các bản sửa (chặn public S3, giới hạn IAM, khóa SSH) thay đổi kết quả phát hiện
-
-## Bài Học Chính
-
-GuardDuty Tester cho phép **tự động hóa việc xác nhận pipeline phát hiện bảo mật**. Một lệnh chạy toàn bộ suite và bạn có xác nhận ngay rằng hệ thống giám sát hoạt động như mong đợi.
-
-**Tags:** `#AWS` `#GuardDuty` `#Automation` `#SecurityTesting` `#CloudSecurity` `#FCAJ` `#AWSStudyGroup`
+**Tags:** `#AWS` `#CloudSecurity` `#Compliance` `#SharedResponsibility` `#FCAJ` `#AWSStudyGroup`

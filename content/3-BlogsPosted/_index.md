@@ -14,5 +14,5 @@ Introduces AWS Security Hub, a unified cloud security solution that collects, co
 ###  [Blog 2 - Amazon GuardDuty Tester: A New Tool to Test Your AWS Security Detection](3.2-Blog2/)
 Introduces Amazon GuardDuty Tester, an open-source tool from AWS Labs that simulates real attack scenarios to validate your GuardDuty detection pipeline. Covers what it is, how it works, and the six finding categories it generates.
 
-###  [Blog 3 - Using Amazon GuardDuty Tester to Automate Security Testing](3.3-Blog3/)
-Describes how to deploy GuardDuty Tester via CDK and use it to automate security validation. Covers the deployment process, running tests, and a three-phase workflow (before hardening, after fixes, as validation).
+###  [Blog 3 - AWS Cloud Security & Compliance: Understanding Risk and Compliance on the Cloud](3.3-Blog3/)
+A deep dive into the AWS Risk and Compliance whitepaper covering the Shared Responsibility Model, compliance governance processes, and how AWS builds customer trust through third-party audits and certifications.

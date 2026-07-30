@@ -6,53 +6,35 @@ chapter: false
 pre: " <b> 3.3. </b> "
 ---
 
-# Using Amazon GuardDuty Tester to Automate Security Testing
+# AWS Cloud Security & Compliance — Understanding Risk and Compliance on the Cloud
 
-## The Problem
+During my internship at AWS FCAJ, I've developed a strong interest in Cloud Security and have been exploring various AWS resources. I recently went through the **AWS Risk and Compliance** whitepaper, which lays out the fundamental framework for moving systems to the cloud properly.
 
-After deploying your AWS infrastructure, how do you know your security monitoring is actually working? Manual checks are slow and easy to miss things. Waiting for a real attack is dangerous. You need a way to **automatically validate** that GuardDuty, Security Hub, and your incident response workflows function correctly.
+## The Shared Responsibility Model
 
-This is where GuardDuty Tester comes in.
+The core takeaway from this whitepaper is the **Shared Responsibility Model**. Many people mistakenly believe that moving everything to the cloud means AWS handles everything from A to Z.
 
-## Deploying the Tool
+In reality, AWS is only responsible for securing **the cloud infrastructure itself** — physical security at data centers, hardware, networking, and the virtualization layer. Security **inside** the cloud — your data, IAM permissions, operating systems, and firewall configurations — is entirely the customer's responsibility.
 
-Deployment is straightforward using the AWS CDK:
+## Compliance Governance
 
-```bash
-git clone https://github.com/awslabs/amazon-guardduty-tester.git
-cd amazon-guardduty-tester/cdk
-cdk bootstrap    # one-time setup
-cdk deploy       # deploys Lambda functions, IAM roles, test EC2
-```
+The whitepaper also clarifies how AWS customers must proactively manage and ensure compliance within their own environments. A sound compliance governance process typically involves these steps:
 
-The CDK stack creates the infrastructure needed to simulate attacks - Lambda functions for API-level simulations and optional EC2 instances for network-level scenarios. The whole process takes about 10 minutes.
+1. **Understand your compliance requirements** by cross-referencing the AWS Shared Responsibility Model, AWS Security Documentation, and reports available on AWS Artifact.
+2. **Design and implement controls** that meet the required standards under the shared responsibility model.
+3. **Identify and document** any controls managed by third parties.
+4. **Continuously audit and verify** that your security mechanisms are actually working as intended.
 
-## Running the Tests
+## What AWS Does on Their Side
 
-Once deployed, use the Python CLI to run tests:
+On the flip side, to build customer trust, AWS integrates a wide range of risk management and compliance mechanisms into their platform — including automated tools and diverse security controls. Additionally, AWS undergoes regular **third-party audits** to maintain reputable certifications, ensuring the integrity of their control environment and directly benefiting their customers.
 
-```bash
-# Run all test categories
-python3 guardduty_tester.py --all --region us-east-1
+## Conclusion
 
-# Or run a single category
-python3 guardduty_tester.py --test-type Recon --region us-east-1
-```
+Reading this whitepaper gave me a more practical perspective when designing and running labs on the cloud. Security isn't just about turning on scanning tools or writing code — it's about understanding the lines of responsibility and building continuous control processes to keep systems running safely.
 
-After running, findings appear in GuardDuty within 5-15 minutes. If you have Security Hub enabled, they appear there too alongside your compliance checks.
+## References
 
-## How I Used It in My Lab
+- [AWS Risk and Compliance Whitepaper](https://docs.aws.amazon.com/whitepapers/latest/aws-risk-and-compliance/welcome.html)
 
-In my Security Operations Lab, I ran GuardDuty Tester in three phases:
-
-1. **Before hardening** - Established a baseline of 52 findings across all six categories
-2. **After applying security fixes** - Re-ran the same tests and saw Critical/High findings drop
-3. **As validation** - Confirmed that my fixes (blocking public S3, restricting IAM, locking down SSH) actually changed the detection results
-
-This workflow transformed security validation from a manual one-time effort into an automated, repeatable process.
-
-## Key Takeaway
-
-GuardDuty Tester makes it possible to **automate the validation of your security detection pipeline**. One command runs the full suite, and you get immediate confirmation that your monitoring is working as expected.
-
-**Tags:** `#AWS` `#GuardDuty` `#Automation` `#SecurityTesting` `#CloudSecurity` `#FCAJ` `#AWSStudyGroup`
+**Tags:** `#AWS` `#CloudSecurity` `#Compliance` `#SharedResponsibility` `#FCAJ` `#AWSStudyGroup`
